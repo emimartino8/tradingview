@@ -1,0 +1,338 @@
+{
+  "symbolsGroups": [
+    {
+      "name": "Acciones Argentinas",
+      "symbols": [
+        {
+          "name": "BCBA:BMA",
+          "displayName": "BMA – Banco Macro: Mayor banco privado local"
+        },
+        {
+          "name": "BCBA:BYMA",
+          "displayName": "BYMA – Bolsas y Mercados Argentinos: Opera la Bolsa de Buenos Aires"
+        },
+        {
+          "name": "BCBA:CEPU",
+          "displayName": "CEPU – Central Puerto: Generación privada de energía eléctrica"
+        },
+        {
+          "name": "BCBA:CRES",
+          "displayName": "CRES – Cresud: Inversiones agroindustriales e inmobiliarias"
+        },
+        {
+          "name": "BCBA:ECOG",
+          "displayName": "ECOG – Ecogas: Distribución de gas natural"
+        },
+        {
+          "name": "BCBA:GGAL",
+          "displayName": "GGAL – Grupo Financiero Galicia: Banco minorista y corporativo"
+        },
+        {
+          "name": "BCBA:IMV",
+          "displayName": "IMV – IMV Inc.: Índice Merval de IMV"
+        },
+        {
+          "name": "BCBA:IRSA",
+          "displayName": "IRSA – IRSA Inversiones: Bienes raíces comerciales"
+        },
+        {
+          "name": "BCBA:METR",
+          "displayName": "METR – MetroGAS: Distribución de gas natural en GBA"
+        },
+        {
+          "name": "BCBA:MOLI",
+          "displayName": "MOLI – Molinos Río: Productos alimenticios"
+        },
+        {
+          "name": "BCBA:PAMP",
+          "displayName": "PAMP – Pampa Energía: Energía integrada"
+        },
+        {
+          "name": "BCBA:TGSU2",
+          "displayName": "TGSU2 – Transportadora Gas del Sur: Transporte de gas natural"
+        },
+        {
+          "name": "BCBA:TRAN",
+          "displayName": "TRAN – Transener: Transmisión eléctrica"
+        },
+        {
+          "name": "BCBA:YPFD",
+          "displayName": "YPFD – YPF: Petróleo integrado estatal"
+        }
+      ]
+    },
+    {
+      "name": "Acciones Brasil",
+      "symbols": [
+        {
+          "name": "AMEX:EWZ",
+          "displayName": "EWZ – iShares MSCI Brazil: ETF Brasil"
+        },
+        {
+          "name": "NYSE:NU",
+          "displayName": "NU – Nu Holdings: Fintech latinoamericana (Brasil)"
+        }
+      ]
+    },
+    {
+      "name": "Communication Services",
+      "symbols": [
+        {
+          "name": "NASDAQ:GOOGL",
+          "displayName": "GOOGL – Alphabet: Búsquedas y publicidad"
+        },
+        {
+          "name": "NASDAQ:META",
+          "displayName": "META – Meta Platforms: Redes sociales"
+        },
+        {
+          "name": "NASDAQ:NFLX",
+          "displayName": "NFLX – Netflix: Streaming de video"
+        },
+        {
+          "name": "NYSE:SPOT",
+          "displayName": "SPOT – Spotify: Streaming de música"
+        },
+        {
+          "name": "NYSE:TME",
+          "displayName": "TME – Tencent Music: Streaming en China"
+        },
+        {
+          "name": "AMEX:XLC",
+          "displayName": "XLC – Communication Services Select Sector: ETF telecomunicaciones"
+        }
+      ]
+    },
+    {
+      "name": "Consumer Discretionary",
+      "symbols": [
+        {
+          "name": "NASDAQ:AMZN",
+          "displayName": "AMZN – Amazon: Comercio electrónico y servicios en la nube"
+        },
+        {
+          "name": "NYSE:BABA",
+          "displayName": "BABA – Alibaba Group: Comercio electrónico y nube en China"
+        },
+        {
+          "name": "NASDAQ:MELI",
+          "displayName": "MELI – MercadoLibre: E‑commerce y fintech LATAM"
+        },
+        {
+          "name": "NYSE:MCD",
+          "displayName": "MCD – McDonald’s: Comida rápida"
+        },
+        {
+          "name": "NYSE:NKE",
+          "displayName": "NKE – Nike: Calzado y ropa deportiva"
+        },
+        {
+          "name": "NASDAQ:TSLA",
+          "displayName": "TSLA – Tesla: Vehículos eléctricos"
+        },
+        {
+          "name": "NYSE:UBER",
+          "displayName": "UBER – Uber: Movilidad y delivery"
+        }
+      ]
+    },
+    {
+      "name": "Consumer Staples",
+      "symbols": [
+        {
+          "name": "NYSE:BTI",
+          "displayName": "BTI – British American Tobacco: Tabacalera global"
+        },
+        {
+          "name": "NYSE:KO",
+          "displayName": "KO – Coca‑Cola: Bebidas no alcohólicas"
+        },
+        {
+          "name": "NASDAQ:PEP",
+          "displayName": "PEP – PepsiCo: Alimentos y bebidas"
+        },
+        {
+          "name": "NYSE:PG",
+          "displayName": "PG – Procter & Gamble: Bienes de consumo"
+        },
+        {
+          "name": "NYSE:PM",
+          "displayName": "PM – Philip Morris: Tabacalera global"
+        }
+      ]
+    },
+    {
+      "name": "Energy",
+      "symbols": [
+        {
+          "name": "NYSE:CVX",
+          "displayName": "CVX – Chevron: Petróleo y gas"
+        },
+        {
+          "name": "NYSE:VIST",
+          "displayName": "VIST – Vista Oil & Gas: Exploración y producción"
+        },
+        {
+          "name": "AMEX:XLE",
+          "displayName": "XLE – Energy Select SPDR: ETF energético"
+        }
+      ]
+    },
+    {
+      "name": "ETFs Generales",
+      "symbols": [
+        {
+          "name": "AMEX:ARKK",
+          "displayName": "ARKK – ARK Innovation: ETF activo tecnología"
+        },
+        {
+          "name": "AMEX:DIA",
+          "displayName": "DIA – SPDR Dow Jones Industrial: ETF DJIA"
+        },
+        {
+          "name": "AMEX:GLD",
+          "displayName": "GLD – SPDR Gold Shares: ETF oro"
+        },
+        {
+          "name": "AMEX:SPHD",
+          "displayName": "SPHD – Invesco S&P 500 High Dividend"
+        },
+        {
+          "name": "AMEX:SPY",
+          "displayName": "SPY – SPDR S&P 500: ETF de S&P 500"
+        },
+        {
+          "name": "AMEX:SSO",
+          "displayName": "SSO – ProShares Ultra S&P 500: 2x apalancado"
+        },
+        {
+          "name": "AMEX:VIG",
+          "displayName": "VIG – Vanguard Dividend Appreciation: ETF de dividendos"
+        },
+        {
+          "name": "AMEX:VOO",
+          "displayName": "VOO – Vanguard S&P 500: ETF de bajo coste"
+        },
+        {
+          "name": "NASDAQ:QQQ",
+          "displayName": "QQQ – Invesco QQQ: Nasdaq‑100 ETF líder"
+        },
+        {
+          "name": "NASDAQ:QQQM",
+          "displayName": "QQQM – Invesco NASDAQ 100: ETF bajo coste"
+        },
+        {
+          "name": "NASDAQ:TLT",
+          "displayName": "TLT – iShares 20+ Year Treasury: ETF de bonos"
+        }
+      ]
+    },
+    {
+      "name": "Financials",
+      "symbols": [
+        {
+          "name": "NYSE:BAC",
+          "displayName": "BAC – Bank of America: Banca y servicios financieros"
+        },
+        {
+          "name": "NYSE:BRK.B",
+          "displayName": "BRK.B – Berkshire Hathaway: Conglomerado de inversiones"
+        },
+        {
+          "name": "NASDAQ:CME",
+          "displayName": "CME – CME Group: Futuros y opciones"
+        },
+        {
+          "name": "NASDAQ:COIN",
+          "displayName": "COIN – Coinbase: Exchange de criptomonedas"
+        },
+        {
+          "name": "NYSE:JPM",
+          "displayName": "JPM – JPMorgan Chase: Banca de inversión"
+        },
+        {
+          "name": "NYSE:V",
+          "displayName": "V – Visa: Pagos electrónicos"
+        },
+        {
+          "name": "AMEX:XLF",
+          "displayName": "XLF – Financial Select Sector SPDR: ETF financiero"
+        }
+      ]
+    },
+    {
+      "name": "Health Care",
+      "symbols": [
+        {
+          "name": "NYSE:JNJ",
+          "displayName": "JNJ – Johnson & Johnson: Pharma y cuidado personal"
+        },
+        {
+          "name": "NYSE:UNH",
+          "displayName": "UNH – UnitedHealth: Seguros de salud"
+        },
+        {
+          "name": "AMEX:XLV",
+          "displayName": "XLV – Health Care Select Sector SPDR: ETF salud"
+        }
+      ]
+    },
+    {
+      "name": "Information Technology",
+      "symbols": [
+        {
+          "name": "NASDAQ:AAPL",
+          "displayName": "AAPL – Apple Inc.: Dispositivos y servicios"
+        },
+        {
+          "name": "NASDAQ:AMD",
+          "displayName": "AMD – Advanced Micro Devices: Procesadores y GPUs"
+        },
+        {
+          "name": "NASDAQ:ASML",
+          "displayName": "ASML – ASML Holding: Equipos de litografía"
+        },
+        {
+          "name": "NASDAQ:AVGO",
+          "displayName": "AVGO – Broadcom: Semiconductores y conectividad"
+        },
+        {
+          "name": "NASDAQ:CRWD",
+          "displayName": "CRWD – CrowdStrike: Ciberseguridad en la nube"
+        },
+        {
+          "name": "NASDAQ:MDB",
+          "displayName": "MDB – MongoDB: Base de datos NoSQL"
+        },
+        {
+          "name": "NASDAQ:MPWR",
+          "displayName": "MPWR – Monolithic Power: Gestión de energía"
+        },
+        {
+          "name": "NASDAQ:MRVL",
+          "displayName": "MRVL – Marvell Technology: Chips de red y almacenamiento"
+        },
+        {
+          "name": "NASDAQ:MSFT",
+          "displayName": "MSFT – Microsoft Corp.: Software y nube"
+        },
+        {
+          "name": "NASDAQ:MU",
+          "displayName": "MU – Micron Technology: Memorias DRAM y flash"
+        },
+        {
+          "name": "NASDAQ:NVDA",
+          "displayName": "NVDA – NVIDIA: GPUs e IA"
+        },
+        {
+          "name": "NYSE:TSM",
+          "displayName": "TSM – Taiwan Semiconductor: Fundición de semiconductores"
+        },
+        {
+          "name": "AMEX:XLK",
+          "displayName": "XLK – Technology Select Sector SPDR: ETF tecnología"
+        }
+      ]
+    }
+  ]
+}
