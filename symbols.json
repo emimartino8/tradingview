@@ -28,10 +28,6 @@
           "displayName": "GGAL – Grupo Financiero Galicia: Banco minorista y corporativo"
         },
         {
-          "name": "BCBA:IMV",
-          "displayName": "IMV – IMV Inc.: Índice Merval de IMV"
-        },
-        {
           "name": "BCBA:IRSA",
           "displayName": "IRSA – IRSA Inversiones: Bienes raíces comerciales"
         },
@@ -58,6 +54,10 @@
         {
           "name": "BCBA:YPFD",
           "displayName": "YPFD – YPF: Petróleo integrado estatal"
+        },
+        {
+          "name": "BCBA:IMV",
+          "displayName": "IMV – IMV Inc.: Índice Merval de IMV"
         }
       ]
     },
