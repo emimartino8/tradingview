@@ -333,12 +333,20 @@
           "displayName": "MU – Micron Technology: Memorias DRAM y flash"
         },
         {
+          "name": "NASDAQ:NBIS",
+          "displayName": "NBIS – Nebius Group N.V.:  Infraestructura cloud para IA"
+        },
+        {
           "name": "NASDAQ:NVDA",
           "displayName": "NVDA – NVIDIA: GPUs e IA"
         },
         {
           "name": "NYSE:TSM",
           "displayName": "TSM – Taiwan Semiconductor: Fundición de semiconductores"
+        },
+        {
+          "name": "NYSA:ZETA",
+          "displayName": "ZETA – Zeta Global Holdings: Marketing digital basado en IA"
         },
         {
           "name": "AMEX:XLK",
