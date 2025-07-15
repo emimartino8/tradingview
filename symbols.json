@@ -99,7 +99,7 @@
         },
         {
           "name": "AMEX:XLC",
-          "displayName": "XLC – Communication Services Select Sector: ETF telecomunicaciones"
+          "displayName": "XLC – Communication Services Select Sector SPDR: ETF telecomunicaciones"
         }
       ]
     },
@@ -133,6 +133,10 @@
         {
           "name": "NYSE:UBER",
           "displayName": "UBER – Uber: Movilidad y delivery"
+        },
+        {
+          "name": "AMEX:XLY",
+          "displayName": "XLY – Consumer Discretionary Select Sector SPDR: ETF bienes de consumo no esenciales"
         }
       ]
     },
@@ -158,6 +162,10 @@
         {
           "name": "NYSE:PM",
           "displayName": "PM – Philip Morris: Tabacalera global"
+        },
+        {
+          "name": "AMEX:XLP",
+          "displayName": "XLP – Consumer Staples Select Sector SPDR: ETF bienes de consumo esenciales"
         }
       ]
     },
@@ -174,17 +182,13 @@
         },
         {
           "name": "AMEX:XLE",
-          "displayName": "XLE – Energy Select SPDR: ETF energético"
+          "displayName": "XLE – Energy Select Sector SPDR: ETF energético"
         }
       ]
     },
     {
       "name": "ETFs Generales",
       "symbols": [
-        {
-          "name": "AMEX:ARKK",
-          "displayName": "ARKK – ARK Innovation: ETF activo tecnología"
-        },
         {
           "name": "AMEX:DIA",
           "displayName": "DIA – SPDR Dow Jones Industrial: ETF DJIA"
@@ -289,6 +293,10 @@
           "displayName": "AMD – Advanced Micro Devices: Procesadores y GPUs"
         },
         {
+          "name": "AMEX:ARKK",
+          "displayName": "ARKK – ARK Innovation: ETF activo tecnología"
+        },
+        {
           "name": "NASDAQ:ASML",
           "displayName": "ASML – ASML Holding: Equipos de litografía"
         },
@@ -299,6 +307,10 @@
         {
           "name": "NASDAQ:CRWD",
           "displayName": "CRWD – CrowdStrike: Ciberseguridad en la nube"
+        },
+         {
+          "name": "NYSE:GE",
+          "displayName": "GE – GE Aerospace"
         },
         {
           "name": "NASDAQ:MDB",
