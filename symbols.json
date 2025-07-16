@@ -8,6 +8,10 @@
           "displayName": "USDARS – Dólar oficial"
         },
         {
+          "name": "BCBA:AL30/BCBA:AL30D",
+          "displayName": "USDARS – Dólar MEP (AL30)"
+        },
+        {
           "name": "BINANCE:USDTARS",
           "displayName": "USDTARS – Dólar cripto"
         }
