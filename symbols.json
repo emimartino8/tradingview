@@ -379,11 +379,11 @@
       "name": "Cripto",
       "symbols": [
         {
-          "name": "BINGX:BTCUSDT.P",
+          "name": "BINGX:BTCUSDT",
           "displayName": "BTC/USDT – Bitcoin (BingX Futuros Perpertuo)"
         },
         {
-          "name": "BINGX:ETHUSDT.P",
+          "name": "BINGX:ETHUSDT",
           "displayName": "ETH/USDT – Ethereum (BingX Futuros Perpertuo)"
         },
         {
