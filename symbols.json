@@ -379,12 +379,16 @@
       "name": "Cripto",
       "symbols": [
         {
-          "name": "BINGX:BTCUSDT",
-          "displayName": "BTCUSDT – BingX Futuros Perpertuo"
+          "name": "BINGX:BTCUSDT.P",
+          "displayName": "BTC/USDT – Bitcoin (BingX Futuros Perpertuo)"
         },
         {
-          "name": "BINGX:ETHUSDT",
-          "displayName": "ETHUSDT – BingX Futuros Perpertuo"
+          "name": "BINGX:ETHUSDT.P",
+          "displayName": "ETH/USDT – Ethereum (BingX Futuros Perpertuo)"
+        },
+        {
+          "name": "BINANCE:ETHBTC",
+          "displayName": "ETH/BTC - Spot"
         }
       ]
     }
