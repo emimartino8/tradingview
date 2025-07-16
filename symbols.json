@@ -12,6 +12,10 @@
           "displayName": "USDARS – Dólar MEP (AL30)"
         },
         {
+          "name": "(BCBA:GGAL/NASDAQ:GGAL*10+BCBA:BMA/NYSE:BMA*10+BCBA:YPFD/NYSE:YPF+BCBA:PAMP/NYSE:PAM*25+BCBA:BBAR/NYSE:BBAR*3)/5",
+          "displayName": "USDARS – Dólar CCL (Merval)"
+        },
+        {
           "name": "BINANCE:USDTARS",
           "displayName": "USDTARS – Dólar cripto"
         }
