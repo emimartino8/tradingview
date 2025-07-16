@@ -1,48 +1,334 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>TradingView Watchlist</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    .tradingview-widget-container {
-      width: 100%;
-      height: 100vh;
-    }
-    .tradingview-widget-container__widget {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-</head>
-<body>
-  <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-  </div>
 
-  <script>
-    fetch('symbols.json')
-      .then(response => response.json())
-      .then(data => {
-        const script = document.createElement("script");
-        script.type = "text/javascript";
-        script.async = true;
-        script.innerHTML = JSON.stringify({
-          colorTheme: "dark",
-          locale: "es",
-          isTransparent: false,
-          showSymbolLogo: true,
-          width: "100%",
-          height: "100%",
-          symbolsGroups: data.symbolsGroups
-        }, null, 2);
-        script.src = "https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js";
-        document.querySelector(".tradingview-widget-container").appendChild(script);
-      });
-  </script>
+<head>
+    <meta charset="UTF-8">
+    <title>TradingView</title>
+    <style>
+        /* ==== Reset y layout general ==== */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: #121212;
+            color: #e0e0e0;
+            font-family: sans-serif;
+        }
+
+        /* ==== Ticker Tape arriba ==== */
+        #ticker-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            z-index: 1001;
+            background: #ffffff;
+        }
+
+        /* ==== Barra de pestañas fija ==== */
+        .tabs {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            right: 0;
+            height: 50px;
+            display: flex;
+            background: #1f1f1f;
+            border-bottom: 1px solid #333;
+            z-index: 1000;
+        }
+
+        .tabs button {
+            flex: none;
+            width: 150px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: #bbb;
+            font-size: 1rem;
+            transition: background .2s, color .2s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tabs button:hover {
+            background: #2a2a2a;
+        }
+
+        .tabs button.active {
+            border-bottom: 3px solid #2979ff;
+            color: #fff;
+            background: #121212;
+            font-weight: bold;
+        }
+
+        /* ==== Área de contenido ==== */
+        #tab-contents {
+            position: absolute;
+            top: 100px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+        }
+
+        .tab-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ==== Estilo del widget ==== */
+        .tradingview-widget-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tradingview-widget-container__widget {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ticker-container" class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-button active" data-tab="watchlist">Watchlist</button>
+        <button class="tab-button" data-tab="advanced-chart">Advanced Chart</button>
+        <button class="tab-button" data-tab="stock-heatmap">Stock Heatmap</button>
+        <button class="tab-button" data-tab="etf-heatmap">ETF Heatmap</button>
+        <button class="tab-button" data-tab="crypto-heatmap">Crypto Heatmap</button>
+    </div>
+
+    <div id="tab-contents">
+        <!-- === Watchlist === -->
+        <div id="watchlist" class="tab-content active">
+            <div id="watchlist-container" class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+            </div>
+        </div>
+
+        <!-- === Advance Chart === -->
+        <div id="advanced-chart" class="tab-content">
+            <div id="advanced-chart-container" class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+            </div>
+        </div>
+
+        <!-- === Stock Heatmap === -->
+        <div id="stock-heatmap" class="tab-content">
+            <div id="stock-heatmap-container" class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+            </div>
+        </div>
+
+        <!-- === ETF Heatmap === -->
+        <div id="etf-heatmap" class="tab-content">
+            <div id="etf-heatmap-container" class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+            </div>
+        </div>
+
+        <!-- === Crypto Heatmap === -->
+        <div id="crypto-heatmap" class="tab-content">
+            <div id="crypto-heatmap-container" class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function initSymbols() {
+            fetch('symbols.json')
+                .then(res => res.json())
+                .then(data => {
+                    initTickerTape(data.symbolsGroups)
+                    initWatchlist(data.symbolsGroups);
+                    initAdvancedChart(data.symbolsGroups);
+                })
+                .catch(console.error);
+        }
+
+        function initTickerTape(symbolsGroups) {
+            const tapeSymbols = symbolsGroups.flatMap(g =>
+                g.symbols.map(s => ({ proName: s.name, title: s.shortName || s.displayName }))
+            );
+
+            const cfg = {
+                symbols: tapeSymbols,
+                colorTheme: "dark",
+                locale: "es",
+                displayMode: "adaptive",
+                isTransparent: false,
+                showSymbolLogo: true
+            };
+            const t = document.createElement('script');
+            t.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js';
+            t.async = true;
+            t.innerHTML = JSON.stringify(cfg, null, 2);
+            document.getElementById('ticker-container').appendChild(t);
+        }
+
+        function initWatchlist(symbolsGroups) {
+            const cfg = {
+                colorTheme: "dark",
+                locale: "es",
+                isTransparent: false,
+                showSymbolLogo: true,
+                width: "100%",
+                height: "100%",
+                symbolsGroups: symbolsGroups
+            };
+            const s = document.createElement('script');
+            s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js';
+            s.async = true;
+            s.innerHTML = JSON.stringify(cfg, null, 2);
+            document.getElementById('watchlist-container').appendChild(s);
+        }
+
+        function initAdvancedChart(symbolsGroups) {
+            symbolsList = symbolsGroups.flatMap(group => group.symbols.map(s => s.name));
+            const cfg = {
+                allow_symbol_change: true,
+                calendar: false,
+                details: true,
+                hide_side_toolbar: false,
+                hide_top_toolbar: false,
+                hide_legend: false,
+                hide_volume: false,
+                hotlist: false,
+                interval: "D",
+                locale: "es",
+                save_image: true,
+                style: "1",
+                symbol: "BCBA:IMV",
+                theme: "dark",
+                timezone: "Etc/UTC",
+                backgroundColor: "#0F0F0F",
+                gridColor: "rgba(242, 242, 242, 0.06)",
+                watchlist: symbolsList,
+                withdateranges: true,
+                range: "YTD",
+                compareSymbols: [],
+                studies: ["STD;EMA", "STD;MACD", "STD;RSI"],
+                autosize: true,
+                support_host: "https://www.tradingview.com"
+            };
+            const s = document.createElement('script');
+            s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+            s.async = true;
+            s.type = 'text/javascript';
+            s.innerHTML = JSON.stringify(cfg, null, 2);
+            document.getElementById('advanced-chart-container').appendChild(s);
+        }
+
+        function initStockHeatmap() {
+            const cfg = {
+                dataSource: "SPX500",
+                blockSize: "market_cap_basic",
+                blockColor: "change",
+                grouping: "sector",
+                locale: "es",
+                colorTheme: "dark",
+                width: "100%",
+                height: "100%",
+                hasTopBar: true,
+                isDataSetEnabled: true,
+                isZoomEnabled: true,
+                hasSymbolTooltip: true,
+                isMonoSize: false
+            };
+            const s = document.createElement('script');
+            s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js';
+            s.async = true;
+            s.type = 'text/javascript';
+            s.innerHTML = JSON.stringify(cfg, null, 2);
+            document.getElementById('stock-heatmap-container').appendChild(s);
+        }
+
+        function initEtfHeatmap() {
+            const cfg = {
+                dataSource: "AllUSEtf",
+                blockSize: "market_cap_basic",
+                blockColor: "change",
+                grouping: "asset_class",
+                locale: "es",
+                colorTheme: "dark",
+                width: "100%",
+                height: "100%",
+                hasTopBar: true,
+                isDataSetEnabled: true,
+                isZoomEnabled: true,
+                hasSymbolTooltip: true,
+                isMonoSize: false
+            };
+            const s = document.createElement('script');
+            s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-etf-heatmap.js';
+            s.async = true;
+            s.type = 'text/javascript';
+            s.innerHTML = JSON.stringify(cfg, null, 2);
+            document.getElementById('etf-heatmap-container').appendChild(s);
+        }
+
+        function initCryptoHeatmap() {
+            const cfg = {
+                dataSource: "Crypto",
+                blockSize: "market_cap_basic",
+                blockColor: "24h_close_chan",
+                locale: "es",
+                colorTheme: "dark",
+                width: "100%",
+                height: "100%",
+                hasTopBar: true,
+                isDataSetEnabled: true,
+                isZoomEnabled: true,
+                hasSymbolTooltip: true,
+                isMonoSize: false
+            };
+            const s = document.createElement('script');
+            s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-crypto-coins-heatmap.js';
+            s.async = true;
+            s.type = 'text/javascript';
+            s.innerHTML = JSON.stringify(cfg, null, 2);
+            document.getElementById('crypto-heatmap-container').appendChild(s);
+        }
+
+        // Cambia de pestaña
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const tab = btn.dataset.tab;
+                document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+                document.getElementById(tab).classList.add('active');
+            });
+        });
+
+        // Al cargar la página, inicializo ambos widgets:
+        window.addEventListener('DOMContentLoaded', () => {
+            initSymbols();
+            initStockHeatmap();
+            initEtfHeatmap();
+            initCryptoHeatmap();
+        });
+    </script>
+
 </body>
+
 </html>
