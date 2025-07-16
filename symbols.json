@@ -1,6 +1,19 @@
 {
   "symbolsGroups": [
     {
+      "name": "Cotizaciones",
+      "symbols": [
+        {
+          "name": "USDARS",
+          "displayName": "USDARS – Dólar oficial"
+        },
+        {
+          "name": "BINANCE:USDTARS",
+          "displayName": "USDTARS – Dólar cripto"
+        }
+      ]
+    },
+    {
       "name": "Acciones Argentinas",
       "symbols": [
         {
@@ -351,6 +364,19 @@
         {
           "name": "AMEX:XLK",
           "displayName": "XLK – Technology Select Sector SPDR: ETF tecnología"
+        }
+      ]
+    },
+    {
+      "name": "Cripto",
+      "symbols": [
+        {
+          "name": "BINGX:BTCUSDT",
+          "displayName": "BTCUSDT – BingX Futuros Perpertuo"
+        },
+        {
+          "name": "BINGX:ETHUSDT",
+          "displayName": "ETHUSDT – BingX Futuros Perpertuo"
         }
       ]
     }
