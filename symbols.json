@@ -5,19 +5,19 @@
       "symbols": [
         {
           "name": "USDARS",
-          "displayName": "USDARS – Dólar oficial"
+          "displayName": "USD/ARS – Dólar oficial"
         },
         {
           "name": "BCBA:AL30/BCBA:AL30D",
-          "displayName": "USDARS – Dólar MEP (AL30)"
+          "displayName": "USD/ARS – Dólar MEP (AL30)"
         },
         {
           "name": "(BCBA:GGAL/NASDAQ:GGAL*10+BCBA:BMA/NYSE:BMA*10+BCBA:YPFD/NYSE:YPF+BCBA:PAMP/NYSE:PAM*25+BCBA:BBAR/NYSE:BBAR*3)/5",
-          "displayName": "USDARS – Dólar CCL (Merval)"
+          "displayName": "USD/ARS – Dólar CCL (Merval)"
         },
         {
           "name": "BINANCE:USDTARS",
-          "displayName": "USDTARS – Dólar cripto"
+          "displayName": "USDT/ARS – Dólar cripto"
         }
       ]
     },
