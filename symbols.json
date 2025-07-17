@@ -6,22 +6,22 @@
                 {
                     "name": "USDARS",
                     "displayName": "USD/ARS – Dólar oficial",
-                    "shortName": "USD/ARS"
+                    "shortName": "Dólar oficial"
                 },
                 {
                     "name": "BCBA:AL30/BCBA:AL30D",
                     "displayName": "USD/ARS – Dólar MEP (AL30)",
-                    "shortName": "USD/ARS"
+                    "shortName": "Dólar MEP"
                 },
                 {
                     "name": "BCBA:AL30/BCBA:AL30C",
                     "displayName": "USD/ARS – Dólar CCL (AL30)",
-                    "shortName": "USD/ARS"
+                    "shortName": "Dólar CCL"
                 },
                 {
                     "name": "BINANCE:USDTARS",
                     "displayName": "USDT/ARS – Dólar cripto",
-                    "shortName": "USDT/ARS"
+                    "shortName": "Dólar cripto"
                 }
             ]
         },
