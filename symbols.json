@@ -14,8 +14,8 @@
                     "shortName": "USD/ARS"
                 },
                 {
-                    "name": "(BCBA:GGAL/NASDAQ:GGAL*10+BCBA:BMA/NYSE:BMA*10+BCBA:YPFD/NYSE:YPF+BCBA:PAMP/NYSE:PAM*25+BCBA:BBAR/NYSE:BBAR*3)/5",
-                    "displayName": "USD/ARS – Dólar CCL (Merval)",
+                    "name": "BCBA:AL30/BCBA:AL30C",
+                    "displayName": "USD/ARS – Dólar CCL (AL30)",
                     "shortName": "USD/ARS"
                 },
                 {
