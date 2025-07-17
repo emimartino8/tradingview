@@ -104,14 +104,19 @@
             "name": "Acciones Brasil",
             "symbols": [
                 {
+                    "name": "NYSE:NU",
+                    "displayName": "NU – Nu Holdings: Fintech latinoamericana",
+                    "shortName": "NU"
+                },
+                {
+                    "name": "NYSE:PAGS",
+                    "displayName": "PAGS – PagSeguro Digital: Servicios financieros y pagos digitales",
+                    "shortName": "PAGS"
+                },
+                {
                     "name": "AMEX:EWZ",
                     "displayName": "EWZ – iShares MSCI Brazil: ETF Brasil",
                     "shortName": "EWZ"
-                },
-                {
-                    "name": "NYSE:NU",
-                    "displayName": "NU – Nu Holdings: Fintech latinoamericana (Brasil)",
-                    "shortName": "NU"
                 }
             ]
         },
