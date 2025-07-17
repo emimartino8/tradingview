@@ -449,6 +449,11 @@
                     "shortName": "NVDA"
                 },
                 {
+                    "name": "NYSE:QBTS",
+                    "displayName": "QBTS – D-Wave Quantum: Hardware, software y servicios de computación cuántica",
+                    "shortName": "QBTS"
+                },
+                {
                     "name": "NYSE:TSM",
                     "displayName": "TSM – Taiwan Semiconductor: Fundición de semiconductores",
                     "shortName": "TSM"
