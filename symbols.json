@@ -339,6 +339,11 @@
                     "shortName": "JPM"
                 },
                 {
+                    "name": "NASDAQ:PYPL",
+                    "displayName": "PYPL – Paypal: Fintech, servicios de pago digital",
+                    "shortName": "PYPL"
+                },
+                {
                     "name": "NYSE:V",
                     "displayName": "V – Visa: Pagos electrónicos",
                     "shortName": "V"
