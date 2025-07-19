@@ -205,13 +205,18 @@
             "symbols": [
                 {
                     "name": "NYSE:BTI",
-                    "displayName": "BTI – British American Tobacco: Tabacalera global",
+                    "displayName": "BTI – British American Tobacco: Tabacalera global con alto dividendo y baja volatilidad",
                     "shortName": "BTI"
                 },
                 {
                     "name": "NYSE:KO",
                     "displayName": "KO – Coca‑Cola: Bebidas no alcohólicas",
                     "shortName": "KO"
+                },
+                {
+                    "name": "NYSE:MO",
+                    "displayName": "MO – Altria Group: acción defensiva del sector tabaco con dividendo alto y baja volatilidad",
+                    "shortName": "MO"
                 },
                 {
                     "name": "NASDAQ:PEP",
