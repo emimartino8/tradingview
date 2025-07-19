@@ -269,17 +269,17 @@
                     "shortName": "JEPI"
                 },
                 {
-                    "name": "AMEX:JEPQ",
+                    "name": "NASDAQ:JEPQ",
                     "displayName": "JEPQ – JPMorgan Nasdaq Equity Premium Income: Similar a JEPI pero con enfoque en tech, yield mensual",
                     "shortName": "JEPQ"
                 },
                 {
-                    "name": "AMEX:O",
+                    "name": "NYSE:O",
                     "displayName": "O – Realty Income Corporation: REIT que paga dividendo mensual, historial impecable",
                     "shortName": "O"
                 },
                 {
-                    "name": "NASDAQ:SCHD",
+                    "name": "AMEX:SCHD",
                     "displayName": "SCHD – Schwab U.S. Dividend Equity: Empresas sólidas con dividendos crecientes, bajo costo y riesgo",
                     "shortName": "SCHD"
                 },
