@@ -256,6 +256,56 @@
             ]
         },
         {
+            "name": "ETFs Dividendos",
+            "symbols": [
+                {
+                    "name": "AMEX:DGRO",
+                    "displayName": "DGRO – iShares Core Dividend Growth: Empresas que aumentan dividendos anualmente, muy confiable",
+                    "shortName": "DGRO"
+                },
+                {
+                    "name": "AMEX:JEPI",
+                    "displayName": "JEPI – JPMorgan Equity Premium Income: Alto dividendo mensual, baja volatilidad, usa opciones cubiertas",
+                    "shortName": "JEPI"
+                },
+                {
+                    "name": "AMEX:JEPQ",
+                    "displayName": "JEPQ – JPMorgan Nasdaq Equity Premium Income: Similar a JEPI pero con enfoque en tech, yield mensual",
+                    "shortName": "JEPQ"
+                },
+                {
+                    "name": "AMEX:O",
+                    "displayName": "O – Realty Income Corporation: REIT que paga dividendo mensual, historial impecable",
+                    "shortName": "O"
+                },
+                {
+                    "name": "NASDAQ:SCHD",
+                    "displayName": "SCHD – Schwab U.S. Dividend Equity: Empresas sólidas con dividendos crecientes, bajo costo y riesgo",
+                    "shortName": "SCHD"
+                },
+                {
+                    "name": "AMEX:SDY",
+                    "displayName": "SDY – SPDR S&P Dividend ETF: Compañías con más de 20 años de dividendos crecientes (aristócratas)",
+                    "shortName": "SDY"
+                },
+                {
+                    "name": "AMEX:VIG",
+                    "displayName": "VIG – Vanguard Dividend Appreciation: Crecimiento constante de dividendos, baja volatilidad",
+                    "shortName": "VIG"
+                },
+                {
+                    "name": "AMEX:VNQ",
+                    "displayName": "VNQO – Vanguard Real Estate ETF: ETF de bienes raíces diversificado, yield moderado",
+                    "shortName": "VNQ"
+                },
+                {
+                    "name": "AMEX:VYM",
+                    "displayName": "VYM – Vanguard High Dividend Yield: Amplio ETF con empresas de alto dividendo, enfoque value"
+                    "shortName": "VYM"
+                } 
+            ]
+        },
+        {
             "name": "ETFs Generales",
             "symbols": [
                 {
@@ -284,14 +334,14 @@
                     "shortName": "SSO"
                 },
                 {
-                    "name": "AMEX:VIG",
-                    "displayName": "VIG – Vanguard Dividend Appreciation: ETF de dividendos",
-                    "shortName": "VIG"
-                },
-                {
                     "name": "AMEX:VOO",
                     "displayName": "VOO – Vanguard S&P 500: ETF de bajo coste",
                     "shortName": "VOO"
+                },
+                {
+                    "name": "AMEX:VUG",
+                    "displayName": "VUG – Vanguard Growth ETF: ETF de acciones de crecimiento de gran capitalización en EE.UU.",
+                    "shortName": "VUG"
                 },
                 {
                     "name": "NASDAQ:QQQ",
