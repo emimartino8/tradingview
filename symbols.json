@@ -324,11 +324,6 @@
                     "shortName": "GLD"
                 },
                 {
-                    "name": "AMEX:SPHD",
-                    "displayName": "SPHD – Invesco S&P 500 High Dividend",
-                    "shortName": "SPHD"
-                },
-                {
                     "name": "AMEX:SPY",
                     "displayName": "SPY – SPDR S&P 500: ETF de S&P 500",
                     "shortName": "SPY"
