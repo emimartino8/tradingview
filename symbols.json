@@ -534,6 +534,16 @@
                     "shortName": "ETH/USDT"
                 },
                 {
+                    "name": "BINGX:SOLUSDT",
+                    "displayName": "SOL/USDT – Solana (BingX Futuros Perpertuo)",
+                    "shortName": "SOL/USDT"
+                },
+                {
+                    "name": "BINGX:XRPUSDT",
+                    "displayName": "XRP/USDT – XRP (BingX Futuros Perpertuo)",
+                    "shortName": "XRP/USDT"
+                },
+                {
                     "name": "BINANCE:ETHBTC",
                     "displayName": "ETH/BTC - Spot",
                     "shortName": "ETH/BTC"
