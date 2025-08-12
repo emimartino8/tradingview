@@ -26,7 +26,7 @@
             ]
         },
         {
-            "name": "Acciones Argentinas",
+            "name": "Acciones Argentina",
             "symbols": [
                 {
                     "name": "BCBA:BMA",
@@ -95,7 +95,7 @@
                 },
                 {
                     "name": "BCBA:IMV",
-                    "displayName": "IMV – IMV Inc.: Índice Merval de IMV",
+                    "displayName": "IMV – S&P Merval: Índice líder de acciones argentinas",
                     "shortName": "IMV"
                 }
             ]
@@ -121,42 +121,7 @@
             ]
         },
         {
-            "name": "Communication Services",
-            "symbols": [
-                {
-                    "name": "NASDAQ:GOOGL",
-                    "displayName": "GOOGL – Alphabet: Búsquedas y publicidad",
-                    "shortName": "GOOGL"
-                },
-                {
-                    "name": "NASDAQ:META",
-                    "displayName": "META – Meta Platforms: Redes sociales",
-                    "shortName": "META"
-                },
-                {
-                    "name": "NASDAQ:NFLX",
-                    "displayName": "NFLX – Netflix: Streaming de video",
-                    "shortName": "NFLX"
-                },
-                {
-                    "name": "NYSE:SPOT",
-                    "displayName": "SPOT – Spotify: Streaming de música",
-                    "shortName": "SPOT"
-                },
-                {
-                    "name": "NYSE:TME",
-                    "displayName": "TME – Tencent Music: Streaming en China",
-                    "shortName": "TME"
-                },
-                {
-                    "name": "AMEX:XLC",
-                    "displayName": "XLC – Communication Services Select Sector SPDR: ETF telecomunicaciones",
-                    "shortName": "XLC"
-                }
-            ]
-        },
-        {
-            "name": "Consumer Discretionary",
+            "name": "Consumos no esenciales",
             "symbols": [
                 {
                     "name": "NASDAQ:AMZN",
@@ -170,7 +135,7 @@
                 },
                 {
                     "name": "NASDAQ:MELI",
-                    "displayName": "MELI – MercadoLibre: E‑commerce y fintech LATAM",
+                    "displayName": "MELI – MercadoLibre: E-commerce y fintech LATAM",
                     "shortName": "MELI"
                 },
                 {
@@ -201,7 +166,7 @@
             ]
         },
         {
-            "name": "Consumer Staples",
+            "name": "Consumos esenciales",
             "symbols": [
                 {
                     "name": "NYSE:BTI",
@@ -210,7 +175,7 @@
                 },
                 {
                     "name": "NYSE:KO",
-                    "displayName": "KO – Coca‑Cola: Bebidas no alcohólicas",
+                    "displayName": "KO – Coca-Cola: Bebidas no alcohólicas",
                     "shortName": "KO"
                 },
                 {
@@ -241,7 +206,7 @@
             ]
         },
         {
-            "name": "Energy",
+            "name": "Energía",
             "symbols": [
                 {
                     "name": "NYSE:CVX",
@@ -300,14 +265,14 @@
                 },
                 {
                     "name": "AMEX:VNQ",
-                    "displayName": "VNQO – Vanguard Real Estate ETF: ETF de bienes raíces diversificado, yield moderado",
+                    "displayName": "VNQ – Vanguard Real Estate ETF: ETF de bienes raíces diversificado, yield moderado",
                     "shortName": "VNQ"
                 },
                 {
                     "name": "AMEX:VYM",
                     "displayName": "VYM – Vanguard High Dividend Yield: Amplio ETF con empresas de alto dividendo, enfoque value",
                     "shortName": "VYM"
-                } 
+                }
             ]
         },
         {
@@ -344,16 +309,6 @@
                     "shortName": "VUG"
                 },
                 {
-                    "name": "NASDAQ:QQQ",
-                    "displayName": "QQQ – Invesco QQQ: Nasdaq‑100 ETF líder",
-                    "shortName": "QQQ"
-                },
-                {
-                    "name": "NASDAQ:QQQM",
-                    "displayName": "QQQM – Invesco NASDAQ 100: ETF bajo coste",
-                    "shortName": "QQQM"
-                },
-                {
                     "name": "NASDAQ:TLT",
                     "displayName": "TLT – iShares 20+ Year Treasury: ETF de bonos",
                     "shortName": "TLT"
@@ -361,7 +316,7 @@
             ]
         },
         {
-            "name": "Financials",
+            "name": "Finanzas",
             "symbols": [
                 {
                     "name": "NYSE:BAC",
@@ -406,7 +361,7 @@
             ]
         },
         {
-            "name": "Health Care",
+            "name": "Salud",
             "symbols": [
                 {
                     "name": "NYSE:JNJ",
@@ -426,22 +381,67 @@
             ]
         },
         {
-            "name": "Information Technology",
+            "name": "Tecnología - ETFs",
             "symbols": [
-                {
-                    "name": "NASDAQ:AAPL",
-                    "displayName": "AAPL – Apple Inc.: Dispositivos y servicios",
-                    "shortName": "AAPL"
-                },
-                {
-                    "name": "NASDAQ:AMD",
-                    "displayName": "AMD – Advanced Micro Devices: Procesadores y GPUs",
-                    "shortName": "AMD"
-                },
                 {
                     "name": "AMEX:ARKK",
                     "displayName": "ARKK – ARK Innovation: ETF activo tecnología",
                     "shortName": "ARKK"
+                },
+                {
+                    "name": "AMEX:XLC",
+                    "displayName": "XLC – Communication Services Select Sector SPDR: ETF telecomunicaciones",
+                    "shortName": "XLC"
+                },
+                {
+                    "name": "AMEX:XLK",
+                    "displayName": "XLK – Technology Select Sector SPDR: ETF tecnología",
+                    "shortName": "XLK"
+                },
+                {
+                    "name": "NASDAQ:QQQ",
+                    "displayName": "QQQ – Invesco QQQ: Nasdaq-100 ETF líder",
+                    "shortName": "QQQ"
+                },
+                {
+                    "name": "NASDAQ:QQQM",
+                    "displayName": "QQQM – Invesco NASDAQ 100: ETF bajo coste",
+                    "shortName": "QQQM"
+                }
+            ]
+        },
+        {
+            "name": "Tecnología - Computación cuántica",
+            "symbols": [
+                {
+                    "name": "NYSE:QBTS",
+                    "displayName": "QBTS – D-Wave Quantum: Hardware, software y servicios de computación cuántica",
+                    "shortName": "QBTS"
+                },
+                {
+                    "name": "NYSE:IONQ",
+                    "displayName": "IONQ – IonQ: Computación cuántica basada en iones",
+                    "shortName": "IONQ"
+                },
+                {
+                    "name": "NASDAQ:RGTI",
+                    "displayName": "RGTI – Rigetti Computing: Computación cuántica superconductora",
+                    "shortName": "RGTI"
+                },
+                {
+                    "name": "AMEX:QTUM",
+                    "displayName": "QTUM – Defiance Quantum ETF: ETF de computación cuántica/IA",
+                    "shortName": "QTUM"
+                }
+            ]
+        },
+        {
+            "name": "Tecnología - IA y semiconductores",
+            "symbols": [
+                {
+                    "name": "NASDAQ:AMD",
+                    "displayName": "AMD – Advanced Micro Devices: Procesadores y GPUs",
+                    "shortName": "AMD"
                 },
                 {
                     "name": "NASDAQ:ASML",
@@ -454,34 +454,14 @@
                     "shortName": "AVGO"
                 },
                 {
-                    "name": "NASDAQ:CRWD",
-                    "displayName": "CRWD – CrowdStrike: Ciberseguridad en la nube",
-                    "shortName": "CRWD"
-                },
-                {
-                    "name": "NYSE:GE",
-                    "displayName": "GE – GE Aerospace",
-                    "shortName": "GE"
-                },
-                {
-                    "name": "NASDAQ:MDB",
-                    "displayName": "MDB – MongoDB: Base de datos NoSQL",
-                    "shortName": "MDB"
-                },
-                {
-                    "name": "NASDAQ:MPWR",
-                    "displayName": "MPWR – Monolithic Power: Gestión de energía",
-                    "shortName": "MPWR"
-                },
-                {
                     "name": "NASDAQ:MRVL",
-                    "displayName": "MRVL – Marvell Technology: Chips de red y almacenamiento",
+                    "displayName": "MRVL – Marvell Technology: Chips para conectividad y data centers",
                     "shortName": "MRVL"
                 },
                 {
-                    "name": "NASDAQ:MSFT",
-                    "displayName": "MSFT – Microsoft Corp.: Software y nube",
-                    "shortName": "MSFT"
+                    "name": "NASDAQ:MPWR",
+                    "displayName": "MPWR – Monolithic Power: Semiconductores de gestión de energía",
+                    "shortName": "MPWR"
                 },
                 {
                     "name": "NASDAQ:MU",
@@ -490,7 +470,7 @@
                 },
                 {
                     "name": "NASDAQ:NBIS",
-                    "displayName": "NBIS – Nebius Group N.V.:  Infraestructura cloud para IA",
+                    "displayName": "NBIS – Nebius Group N.V.: Infraestructura cloud para IA",
                     "shortName": "NBIS"
                 },
                 {
@@ -499,9 +479,9 @@
                     "shortName": "NVDA"
                 },
                 {
-                    "name": "NYSE:QBTS",
-                    "displayName": "QBTS – D-Wave Quantum: Hardware, software y servicios de computación cuántica",
-                    "shortName": "QBTS"
+                    "name": "NASDAQ:PLTR",
+                    "displayName": "PLTR – Palantir Technologies: Software de análisis de datos e IA para gobiernos y empresas",
+                    "shortName": "PLTR"
                 },
                 {
                     "name": "NYSE:TSM",
@@ -514,9 +494,79 @@
                     "shortName": "ZETA"
                 },
                 {
-                    "name": "AMEX:XLK",
-                    "displayName": "XLK – Technology Select Sector SPDR: ETF tecnología",
-                    "shortName": "XLK"
+                    "name": "AMEX:BOTZ",
+                    "displayName": "BOTZ – Global X Robotics & AI: ETF de IA/robótica",
+                    "shortName": "BOTZ"
+                },
+                {
+                    "name": "AMEX:SMH",
+                    "displayName": "SMH – VanEck Semiconductor ETF: ETF de empresas de semiconductores",
+                    "shortName": "SMH"
+                },
+                {
+                    "name": "NASDAQ:SOXX",
+                    "displayName": "SOXX – iShares Semiconductor ETF: ETF de empresas de semiconductores",
+                    "shortName": "SOXX"
+                }
+            ]
+        },
+        {
+            "name": "Tecnología - Servicios y electrónica",
+            "symbols": [
+                {
+                    "name": "NASDAQ:AAPL",
+                    "displayName": "AAPL – Apple Inc.: Dispositivos y servicios",
+                    "shortName": "AAPL"
+                },
+                {
+                    "name": "NASDAQ:CRWD",
+                    "displayName": "CRWD – CrowdStrike: Ciberseguridad en la nube",
+                    "shortName": "CRWD"
+                },
+                {
+                    "name": "NYSE:GE",
+                    "displayName": "GE – GE Aerospace: Motores aeronáuticos, servicios para aviación y defensa",
+                    "shortName": "GE"
+                },
+                {
+                    "name": "NASDAQ:GOOGL",
+                    "displayName": "GOOGL – Alphabet: Buscador y servicios de internet; publicidad y nube",
+                    "shortName": "GOOGL"
+                },
+                {
+                    "name": "NASDAQ:META",
+                    "displayName": "META – Meta Platforms: Redes sociales y mensajería; publicidad digital",
+                    "shortName": "META"
+                },
+                {
+                    "name": "NASDAQ:MSFT",
+                    "displayName": "MSFT – Microsoft Corp.: Software y nube",
+                    "shortName": "MSFT"
+                },
+                {
+                    "name": "NASDAQ:MDB",
+                    "displayName": "MDB – MongoDB: Base de datos NoSQL",
+                    "shortName": "MDB"
+                },
+                {
+                    "name": "NASDAQ:NFLX",
+                    "displayName": "NFLX – Netflix: Streaming de video",
+                    "shortName": "NFLX"
+                },
+                {
+                    "name": "NYSE:SPOT",
+                    "displayName": "SPOT – Spotify: Streaming de música",
+                    "shortName": "SPOT"
+                },
+                {
+                    "name": "NYSE:TME",
+                    "displayName": "TME – Tencent Music: Streaming en China",
+                    "shortName": "TME"
+                },
+                {
+                    "name": "AMEX:IGV",
+                    "displayName": "IGV – iShares Tech-Software: ETF de software/servicios",
+                    "shortName": "IGV"
                 }
             ]
         },
@@ -525,22 +575,22 @@
             "symbols": [
                 {
                     "name": "BINGX:BTCUSDT",
-                    "displayName": "BTC/USDT – Bitcoin (BingX Futuros Perpertuo)",
+                    "displayName": "BTC/USDT – Bitcoin (BingX Futuros Perpetuo)",
                     "shortName": "BTC/USDT"
                 },
                 {
                     "name": "BINGX:ETHUSDT",
-                    "displayName": "ETH/USDT – Ethereum (BingX Futuros Perpertuo)",
+                    "displayName": "ETH/USDT – Ethereum (BingX Futuros Perpetuo)",
                     "shortName": "ETH/USDT"
                 },
                 {
                     "name": "BINGX:SOLUSDT",
-                    "displayName": "SOL/USDT – Solana (BingX Futuros Perpertuo)",
+                    "displayName": "SOL/USDT – Solana (BingX Futuros Perpetuo)",
                     "shortName": "SOL/USDT"
                 },
                 {
                     "name": "BINGX:XRPUSDT",
-                    "displayName": "XRP/USDT – XRP (BingX Futuros Perpertuo)",
+                    "displayName": "XRP/USDT – XRP (BingX Futuros Perpetuo)",
                     "shortName": "XRP/USDT"
                 },
                 {
