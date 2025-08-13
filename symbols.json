@@ -429,7 +429,7 @@
                     "shortName": "RGTI"
                 },
                 {
-                    "name": "AMEX:QTUM",
+                    "name": "NASDAQ:QTUM",
                     "displayName": "QTUM – Defiance Quantum ETF: ETF de computación cuántica/IA",
                     "shortName": "QTUM"
                 }
@@ -494,18 +494,18 @@
                     "shortName": "ZETA"
                 },
                 {
-                    "name": "AMEX:BOTZ",
+                    "name": "NASDAQ:BOTZ",
                     "displayName": "BOTZ – Global X Robotics & AI: ETF de IA/robótica",
                     "shortName": "BOTZ"
                 },
                 {
-                    "name": "AMEX:SMH",
-                    "displayName": "SMH – VanEck Semiconductor ETF: ETF de empresas de semiconductores",
+                    "name": "NASDAQ:SMH",
+                    "displayName": "SMH – VanEck Semiconductor ETF: ETF de las 25 principales empresas de semiconductores de EE. UU",
                     "shortName": "SMH"
                 },
                 {
                     "name": "NASDAQ:SOXX",
-                    "displayName": "SOXX – iShares Semiconductor ETF: ETF de empresas de semiconductores",
+                    "displayName": "SOXX – iShares Semiconductor ETF: ETF de las 30 principales empresas de semiconductores de EE. UU",
                     "shortName": "SOXX"
                 }
             ]
