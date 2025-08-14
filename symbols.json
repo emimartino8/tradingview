@@ -159,6 +159,11 @@
                     "shortName": "UBER"
                 },
                 {
+                    "name": "NYSE:WMT",
+                    "displayName": "WMT – Walmart: Gigante minorista global",
+                    "shortName": "WMT"
+                },
+                {
                     "name": "AMEX:XLY",
                     "displayName": "XLY – Consumer Discretionary Select Sector SPDR: ETF bienes de consumo no esenciales",
                     "shortName": "XLY"
