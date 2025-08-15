@@ -579,22 +579,22 @@
             "name": "Cripto",
             "symbols": [
                 {
-                    "name": "BINGX:BTCUSDT",
+                    "name": "BINGX:BTCUSDT.P",
                     "displayName": "BTC/USDT – Bitcoin (BingX Futuros Perpetuo)",
                     "shortName": "BTC/USDT"
                 },
                 {
-                    "name": "BINGX:ETHUSDT",
+                    "name": "BINGX:ETHUSDT.P",
                     "displayName": "ETH/USDT – Ethereum (BingX Futuros Perpetuo)",
                     "shortName": "ETH/USDT"
                 },
                 {
-                    "name": "BINGX:SOLUSDT",
+                    "name": "BINGX:SOLUSDT.P",
                     "displayName": "SOL/USDT – Solana (BingX Futuros Perpetuo)",
                     "shortName": "SOL/USDT"
                 },
                 {
-                    "name": "BINGX:XRPUSDT",
+                    "name": "BINGX:XRPUSDT.P",
                     "displayName": "XRP/USDT – XRP (BingX Futuros Perpetuo)",
                     "shortName": "XRP/USDT"
                 },
