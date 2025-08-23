@@ -344,6 +344,11 @@
                     "shortName": "COIN"
                 },
                 {
+                    "name": "NASDAQ:DLO",
+                    "displayName": "DLO – dLocal: Pagos transfronterizos en mercados emergentes para comercios globales",
+                    "shortName": "DLO"
+                },
+                {
                     "name": "NYSE:JPM",
                     "displayName": "JPM – JPMorgan Chase: Banca de inversión",
                     "shortName": "JPM"
@@ -524,6 +529,16 @@
                     "shortName": "AAPL"
                 },
                 {
+                    "name": "NASDAQ:ADBE",
+                    "displayName": "ADBE – Adobe: Suite creativa, PDFs y marketing digital en la nube",
+                    "shortName": "ADBE"
+                },
+                {
+                    "name": "NYSE:CRM",
+                    "displayName": "CRM – Salesforce: CRM líder en la nube para ventas, servicio y marketing",
+                    "shortName": "CRM"
+                },
+                {
                     "name": "NASDAQ:CRWD",
                     "displayName": "CRWD – CrowdStrike: Ciberseguridad en la nube",
                     "shortName": "CRWD"
@@ -554,9 +569,14 @@
                     "shortName": "MDB"
                 },
                 {
-                    "name": "NASDAQ:NFLX",
-                    "displayName": "NFLX – Netflix: Streaming de video",
-                    "shortName": "NFLX"
+                    "name": "NASDAQ:SHOP",
+                    "displayName": "SHOP – Shopify: Plataforma SaaS de e-commerce y pagos para tiendas online",
+                    "shortName": "SHOP"
+                },
+                {
+                    "name": "NASDAQ:SPOT",
+                    "displayName": "SPOT – Spotify: Streaming de música",
+                    "shortName": "SPOT"
                 },
                 {
                     "name": "NYSE:SPOT",
