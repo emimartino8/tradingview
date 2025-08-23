@@ -569,14 +569,14 @@
                     "shortName": "MDB"
                 },
                 {
+                    "name": "NASDAQ:NFLX",
+                    "displayName": "NFLX – Netflix: Streaming de video",
+                    "shortName": "NFLX"
+                },
+                {
                     "name": "NASDAQ:SHOP",
                     "displayName": "SHOP – Shopify: Plataforma SaaS de e-commerce y pagos para tiendas online",
                     "shortName": "SHOP"
-                },
-                {
-                    "name": "NASDAQ:SPOT",
-                    "displayName": "SPOT – Spotify: Streaming de música",
-                    "shortName": "SPOT"
                 },
                 {
                     "name": "NYSE:SPOT",
