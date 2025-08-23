@@ -154,9 +154,9 @@
                     "shortName": "NKE"
                 },
                  {
-                    "name": "NASDAQ:PPD",
-                    "displayName": "PPD – PDD Holdings: E-commerce chino dueño de Pinduoduo y Temu, enfocado en ventas online de bajo costo",
-                    "shortName": "PPD"
+                    "name": "NASDAQ:PDD",
+                    "displayName": "PDD – PDD Holdings: E-commerce chino dueño de Pinduoduo y Temu, enfocado en ventas online de bajo costo",
+                    "shortName": "PDD"
                 },
                 {
                     "name": "NASDAQ:TSLA",
@@ -424,7 +424,7 @@
                     "shortName": "JNJ"
                 },
                 {
-                    "name": "NYSE:REGN",
+                    "name": "NASDAQ:REGN",
                     "displayName": "REGN – Regeneron: Biotecnológica enfocada en terapias innovadoras para enfermedades graves",
                     "shortName": "REGN"
                 },
