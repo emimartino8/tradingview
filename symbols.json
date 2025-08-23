@@ -134,9 +134,9 @@
                     "shortName": "BABA"
                 },
                 {
-                    "name": "NASDAQ:MELI",
-                    "displayName": "MELI – MercadoLibre: E-commerce y fintech LATAM",
-                    "shortName": "MELI"
+                    "name": "NASDAQ:LULU",
+                    "displayName": "LULU – Lululemon Athletica: Marca premium canadiense de indumentaria deportiva y lifestyle",
+                    "shortName": "LULU"
                 },
                 {
                     "name": "NYSE:MCD",
@@ -144,9 +144,19 @@
                     "shortName": "MCD"
                 },
                 {
+                    "name": "NASDAQ:MELI",
+                    "displayName": "MELI – MercadoLibre: E-commerce y fintech LATAM",
+                    "shortName": "MELI"
+                },
+                {
                     "name": "NYSE:NKE",
                     "displayName": "NKE – Nike: Calzado y ropa deportiva",
                     "shortName": "NKE"
+                },
+                 {
+                    "name": "NASDAQ:PPD",
+                    "displayName": "PPD – PDD Holdings: E-commerce chino dueño de Pinduoduo y Temu, enfocado en ventas online de bajo costo",
+                    "shortName": "PPD"
                 },
                 {
                     "name": "NASDAQ:TSLA",
@@ -349,6 +359,11 @@
                     "shortName": "DLO"
                 },
                 {
+                    "name": "NYSE:FI",
+                    "displayName": "FI – Fiserv: Provee soluciones globales de pagos digitales, banca y procesamiento financiero para empresas e instituciones",
+                    "shortName": "FI"
+                },
+                {
                     "name": "NYSE:JPM",
                     "displayName": "JPM – JPMorgan Chase: Banca de inversión",
                     "shortName": "JPM"
@@ -374,9 +389,29 @@
             "name": "Salud",
             "symbols": [
                 {
+                    "name": "NYSE:CI",
+                    "displayName": "CI – Cigna Group: Aseguradora global de salud y servicios médicos",
+                    "shortName": "CI"
+                },
+                {
+                    "name": "NYSE:DHR",
+                    "displayName": "DHR – Danaher: Conglomerado científico-industrial en salud, biotecnología y diagnóstico",
+                    "shortName": "DHR"
+                },
+                {
+                    "name": "NYSE:ELV",
+                    "displayName": "ELV – Elevance Health: Aseguradora líder de salud en EE. UU.",
+                    "shortName": "ELV"
+                },
+                {
                     "name": "NYSE:JNJ",
                     "displayName": "JNJ – Johnson & Johnson: Pharma y cuidado personal",
                     "shortName": "JNJ"
+                },
+                {
+                    "name": "NYSE:REGN",
+                    "displayName": "REGN – Regeneron: Biotecnológica enfocada en terapias innovadoras para enfermedades graves",
+                    "shortName": "REGN"
                 },
                 {
                     "name": "NYSE:UNH",
