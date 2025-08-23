@@ -327,6 +327,21 @@
                     "name": "NASDAQ:TLT",
                     "displayName": "TLT – iShares 20+ Year Treasury: ETF de bonos",
                     "shortName": "TLT"
+                },
+                {
+                    "name": "AMEX:XLB",
+                    "displayName": "XLB – Material Select Sector SPDR: ETF de empresas de materiales básicos",
+                    "shortName": "XLB"
+                },
+                {
+                    "name": "AMEX:XLI",
+                    "displayName": "XLI – Industrial Select Sector SPDR: ETF sector industrial",
+                    "shortName": "XLI"
+                },
+                {
+                    "name": "AMEX:XLRE",
+                    "displayName": "XLRE – Real State Select Sector SPDR: ETF real estate",
+                    "shortName": "XLRE"
                 }
             ]
         },
