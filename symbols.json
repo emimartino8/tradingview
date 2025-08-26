@@ -29,13 +29,23 @@
             "name": "Acciones Argentina",
             "symbols": [
                 {
+                    "name": "BCBA:AGRO",
+                    "displayName": "AGRO – Agrometal: Fabricante de sembradoras y maquinaria agrícola",
+                    "shortName": "AGRO"
+                },
+                {
+                    "name": "BCBA:ALUA",
+                    "displayName": "ALUA – Aluar: Principal productor de aluminio",
+                    "shortName": "ALUA"
+                },
+                {
                     "name": "BCBA:BMA",
                     "displayName": "BMA – Banco Macro: Mayor banco privado local",
                     "shortName": "BMA"
                 },
                 {
                     "name": "BCBA:BYMA",
-                    "displayName": "BYMA – Bolsas y Mercados Argentinos: Opera la Bolsa de Buenos Aires",
+                    "displayName": "BYMA – Bolsas y Mercados Argentinos: Opera la bolsa de Buenos Aires",
                     "shortName": "BYMA"
                 },
                 {
@@ -49,9 +59,19 @@
                     "shortName": "CRES"
                 },
                 {
+                    "name": "BCBA:CVH",
+                    "displayName": "CVH – Cablevision Holding: Telecomunicaciones y medios",
+                    "shortName": "CVH"
+                },
+                {
                     "name": "BCBA:ECOG",
                     "displayName": "ECOG – Ecogas: Distribución de gas natural",
                     "shortName": "ECOG"
+                },
+                {
+                    "name": "BCBA:EDN",
+                    "displayName": "EDN – Edenor: Distribuidora eléctrica",
+                    "shortName": "EDN"
                 },
                 {
                     "name": "BCBA:GGAL",
@@ -64,9 +84,19 @@
                     "shortName": "IRSA"
                 },
                 {
+                    "name": "BCBA:LOMA",
+                    "displayName": "LOMA – Loma Negra: Productora líder de cemento y materiales de construcción",
+                    "shortName": "LOMA"
+                },
+                {
                     "name": "BCBA:METR",
                     "displayName": "METR – MetroGAS: Distribución de gas natural en GBA",
                     "shortName": "METR"
+                },
+                {
+                    "name": "BCBA:MIRG",
+                    "displayName": "MIRG – Mirgor: Manufactura y tecnología, autopartes, electrónica y consumo",
+                    "shortName": "MIRG"
                 },
                 {
                     "name": "BCBA:MOLI",
@@ -78,6 +108,21 @@
                     "displayName": "PAMP – Pampa Energía: Energía integrada",
                     "shortName": "PAMP"
                 },
+                 {
+                    "name": "BCBA:SUPV",
+                    "displayName": "SUPV – Grupo Supervielle: Banco minorista",
+                    "shortName": "SUPV"
+                },
+                {
+                    "name": "BCBA:TECO2",
+                    "displayName": "TECO2 – Telecom: Transmisión eléctrica",
+                    "shortName": "TECO2"
+                },
+                {
+                    "name": "BCBA:TGNO4",
+                    "displayName": "TGNO4 – Transportadora Gas del Norte: Transporte de gas natural",
+                    "shortName": "TGNO4"
+                },
                 {
                     "name": "BCBA:TGSU2",
                     "displayName": "TGSU2 – Transportadora Gas del Sur: Transporte de gas natural",
@@ -87,6 +132,11 @@
                     "name": "BCBA:TRAN",
                     "displayName": "TRAN – Transener: Transmisión eléctrica",
                     "shortName": "TRAN"
+                },
+                {
+                    "name": "BCBA:TXAR",
+                    "displayName": "TXAR – Ternium: Productor líder de acero plano",
+                    "shortName": "TXAR"
                 },
                 {
                     "name": "BCBA:YPFD",
