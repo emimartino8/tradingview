@@ -214,12 +214,12 @@
                     "shortName": "TME"
                 },
                 {
-                    "name": "NASDAQ:XPEV",
+                    "name": "NYSE:XPEV",
                     "displayName": "XPEV – XPeng Inc: Fabricante chino de vehículos eléctricos inteligentes",
                     "shortName": "XPEV"
                 },
                 {
-                    "name": "NYSE:FXI",
+                    "name": "AMEX:FXI",
                     "displayName": "FXI – iShares China Large-Cap ETF: ETF compuesto por las 50 empresas más grandes de China que cotizan en Hong Kong",
                     "shortName": "FXI"
                 },
