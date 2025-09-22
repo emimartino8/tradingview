@@ -164,9 +164,69 @@
                     "shortName": "PAGS"
                 },
                 {
+                    "name": "NYSE:PBR",
+                    "displayName": "PBR – Petrobras: Empresa petrolera estatal de exploración y refino",
+                    "shortName": "PBR"
+                },
+                {
+                    "name": "NYSE:VALE",
+                    "displayName": "VALE – Vale: Multinacional minera líder en hierro y níquel",
+                    "shortName": "VALE"
+                },
+                {
                     "name": "AMEX:EWZ",
                     "displayName": "EWZ – iShares MSCI Brazil: ETF Brasil",
                     "shortName": "EWZ"
+                }
+            ]
+        },
+        {
+            "name": "Acciones China",
+            "symbols": [
+                {
+                    "name": "NYSE:BABA",
+                    "displayName": "BABA – Alibaba Group: Comercio electrónico y nube en China",
+                    "shortName": "BABA"
+                },
+                {
+                    "name": "NASDAQ:BIDU",
+                    "displayName": "BIDU – Baidu Inc: Líder en búsquedas online y desarrollos en inteligencia artificial",
+                    "shortName": "BIDU"
+                },
+                {
+                    "name": "NASDAQ:JD",
+                    "displayName": "JD – JD.com: E-commerce minorista china, con logística propia y fuerte inversión en tecnología y automatización",
+                    "shortName": "JD"
+                },
+                {
+                    "name": "NASDAQ:NTES",
+                    "displayName": "NTES – NetEase Inc: Gran desarrolladora y distribuidora de videojuegos en China",
+                    "shortName": "NTES"
+                },
+                {
+                    "name": "NASDAQ:PDD",
+                    "displayName": "PDD – PDD Holdings: E-commerce chino dueño de Pinduoduo y Temu, enfocado en ventas online de bajo costo",
+                    "shortName": "PDD"
+                },
+                {
+                    "name": "NYSE:TME",
+                    "displayName": "TME – Tencent Music: Streaming en China",
+                    "shortName": "TME"
+                },
+                {
+                    "name": "NASDAQ:XPEV",
+                    "displayName": "XPEV – XPeng Inc: Fabricante chino de vehículos eléctricos inteligentes",
+                    "shortName": "XPEV"
+                },
+                {
+                    "name": "NYSE:FXI",
+                    "displayName": "FXI – iShares China Large-Cap ETF: ETF compuesto por las 50 empresas más grandes de China que cotizan en Hong Kong",
+                    "shortName": "FXI"
+                },
+                {
+                    "name": "NASDAQ:MCHI",
+                    "displayName": "MCHI – iShares MSCI China ETF: ETF con exposición a las principales compañías chinas que cotizan en EE.UU. y Hong Kong",
+                    "shortName": "MCHI"
                 }
             ]
         },
@@ -177,12 +237,7 @@
                     "name": "NASDAQ:AMZN",
                     "displayName": "AMZN – Amazon: Comercio electrónico y servicios en la nube",
                     "shortName": "AMZN"
-                },
-                {
-                    "name": "NYSE:BABA",
-                    "displayName": "BABA – Alibaba Group: Comercio electrónico y nube en China",
-                    "shortName": "BABA"
-                },
+                },      
                 {
                     "name": "NASDAQ:LULU",
                     "displayName": "LULU – Lululemon Athletica: Marca premium canadiense de indumentaria deportiva y lifestyle",
@@ -202,11 +257,6 @@
                     "name": "NYSE:NKE",
                     "displayName": "NKE – Nike: Calzado y ropa deportiva",
                     "shortName": "NKE"
-                },
-                 {
-                    "name": "NASDAQ:PDD",
-                    "displayName": "PDD – PDD Holdings: E-commerce chino dueño de Pinduoduo y Temu, enfocado en ventas online de bajo costo",
-                    "shortName": "PDD"
                 },
                 {
                     "name": "NASDAQ:TSLA",
@@ -564,6 +614,11 @@
                     "shortName": "AVGO"
                 },
                 {
+                    "name": "NASDAQ:INTC",
+                    "displayName": "INTC – Intel Corp: Fabricante histórico de microprocesadores y soluciones de computación",
+                    "shortName": "INTC"
+                },
+                {
                     "name": "NASDAQ:MRVL",
                     "displayName": "MRVL – Marvell Technology: Chips para conectividad y data centers",
                     "shortName": "MRVL"
@@ -587,6 +642,11 @@
                     "name": "NASDAQ:NVDA",
                     "displayName": "NVDA – NVIDIA: GPUs e IA",
                     "shortName": "NVDA"
+                },
+                {
+                    "name": "NYSE:PATH",
+                    "displayName": "PATH – UiPath: Plataforma líder en RPA (Robotic Process Automation)",
+                    "shortName": "PATH"
                 },
                 {
                     "name": "NASDAQ:PLTR",
@@ -682,11 +742,6 @@
                     "name": "NYSE:SPOT",
                     "displayName": "SPOT – Spotify: Streaming de música",
                     "shortName": "SPOT"
-                },
-                {
-                    "name": "NYSE:TME",
-                    "displayName": "TME – Tencent Music: Streaming en China",
-                    "shortName": "TME"
                 },
                 {
                     "name": "AMEX:IGV",
