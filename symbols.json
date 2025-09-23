@@ -484,6 +484,11 @@
                     "shortName": "JPM"
                 },
                 {
+                    "name": "NASDAQ:OPEN",
+                    "displayName": "OPEN – Opendoor Technologies Inc: empresa en línea que compra y vende bienes raíces residenciales",
+                    "shortName": "OPEN"
+                },
+                {
                     "name": "NASDAQ:PYPL",
                     "displayName": "PYPL – Paypal: Fintech, servicios de pago digital",
                     "shortName": "PYPL"
