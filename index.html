@@ -203,7 +203,7 @@
         }
 
         function initAdvancedChart(symbolsGroups) {
-            symbolsList = symbolsGroups.flatMap(group => group.symbols.map(s => s.name));
+            symbolsList = symbolsGroups.flatMap(group => group.symbols.map(s => s.name)).sort((a, b) => a.localeCompare(b));
             const cfg = {
                 allow_symbol_change: true,
                 calendar: false,
