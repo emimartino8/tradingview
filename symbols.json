@@ -108,7 +108,7 @@
                     "displayName": "PAMP – Pampa Energía: Energía integrada",
                     "shortName": "PAMP"
                 },
-                 {
+                {
                     "name": "BCBA:SUPV",
                     "displayName": "SUPV – Grupo Supervielle: Banco minorista",
                     "shortName": "SUPV"
@@ -237,7 +237,7 @@
                     "name": "NASDAQ:AMZN",
                     "displayName": "AMZN – Amazon: Comercio electrónico y servicios en la nube",
                     "shortName": "AMZN"
-                },      
+                },
                 {
                     "name": "NASDAQ:LULU",
                     "displayName": "LULU – Lululemon Athletica: Marca premium canadiense de indumentaria deportiva y lifestyle",
@@ -785,5 +785,26 @@
                 }
             ]
         }
+    ],
+    "indexSymbols": [
+        "AMEX:SPY",
+        "NASDAQ:QQQ",
+        "BCBA:IMV",
+        "AMEX:EWZ",
+        "AMEX:FXI",
+        "AMEX:GLD",
+        "AMEX:XLK",
+        "AMEX:XLC",
+        "AMEX:XLF",
+        "AMEX:XLE",
+        "AMEX:XLP",
+        "AMEX:XLY",
+        "AMEX:XLV"
+    ],
+    "cryptoSymbols": [
+        "BINGX:BTCUSDT.P",
+        "BINGX:ETHUSDT.P",
+        "BINGX:SOLUSDT.P",
+        "BINGX:XRPUSDT.P"
     ]
 }
