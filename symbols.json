@@ -329,6 +329,11 @@
                     "shortName": "CVX"
                 },
                 {
+                    "name": "NYSE:OXY",
+                    "displayName": "OXY – Occidental Petroleum: Petróleo y gas",
+                    "shortName": "OXY"
+                },
+                {
                     "name": "NYSE:VIST",
                     "displayName": "VIST – Vista Oil & Gas: Exploración y producción",
                     "shortName": "VIST"
