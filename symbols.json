@@ -749,6 +749,11 @@
                     "shortName": "CRWD"
                 },
                 {
+                    "name": "NASDAQ:DDOG",
+                    "displayName": "DDOG – Datadog: Ofrece una plataforma de monitoreo y seguridad en la nube",
+                    "shortName": "DDOG"
+                },
+                {
                     "name": "NYSE:GE",
                     "displayName": "GE – GE Aerospace: Motores aeronáuticos, servicios para aviación y defensa",
                     "shortName": "GE"
