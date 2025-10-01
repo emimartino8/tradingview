@@ -749,7 +749,12 @@
                     "shortName": "NFLX"
                 },
                 {
-                    "name": "MYSE:S",
+                    "name": "NYSE:RDDT",
+                    "displayName": "RDDT – Reddit: Red social de foros y comunidades temáticas",
+                    "shortName": "RDDT"
+                },
+                {
+                    "name": "NYSE:S",
                     "displayName": "S – SentinelOne: Ciberseguridad en la nube usando IA",
                     "shortName": "S"
                 },
