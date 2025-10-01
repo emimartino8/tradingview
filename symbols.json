@@ -239,6 +239,11 @@
                     "shortName": "AMZN"
                 },
                 {
+                    "name": "NYSE:CMG",
+                    "displayName": "CMG – Chipotle Mexican Grill: Cadena de restaurantes de comida rápida estilo mexicano",
+                    "shortName": "CMG"
+                },
+                {
                     "name": "NASDAQ:LULU",
                     "displayName": "LULU – Lululemon Athletica: Marca premium canadiense de indumentaria deportiva y lifestyle",
                     "shortName": "LULU"
@@ -327,6 +332,11 @@
                     "name": "NYSE:CVX",
                     "displayName": "CVX – Chevron: Petróleo y gas",
                     "shortName": "CVX"
+                },
+                {
+                    "name": "NYSE:EQT",
+                    "displayName": "EQT – EQT Corporation: mayor productor de gas natural en EE.UU.",
+                    "shortName": "EQT"
                 },
                 {
                     "name": "NYSE:OXY",
@@ -489,6 +499,11 @@
                     "shortName": "JPM"
                 },
                 {
+                    "name": "NYSE:MA",
+                    "displayName": "MA – Mastercard: Pagos electrónicos",
+                    "shortName": "MA"
+                },
+                {
                     "name": "NASDAQ:OPEN",
                     "displayName": "OPEN – Opendoor Technologies Inc: empresa en línea que compra y vende bienes raíces residenciales",
                     "shortName": "OPEN"
@@ -514,6 +529,11 @@
             "name": "Salud",
             "symbols": [
                 {
+                    "name": "NYSE:BSX",
+                    "displayName": "BSX – Boston Scientific: Fabrica dispositivos médicos",
+                    "shortName": "BSX"
+                },
+                {
                     "name": "NYSE:CI",
                     "displayName": "CI – Cigna Group: Aseguradora global de salud y servicios médicos",
                     "shortName": "CI"
@@ -529,6 +549,11 @@
                     "shortName": "ELV"
                 },
                 {
+                    "name": "NYSE:IQV",
+                    "displayName": "IQV – IQVIA Holdings: Ofrece datos y servicios clínicos para farmacéuticas.",
+                    "shortName": "IQV"
+                },
+                {
                     "name": "NYSE:JNJ",
                     "displayName": "JNJ – Johnson & Johnson: Pharma y cuidado personal",
                     "shortName": "JNJ"
@@ -537,6 +562,11 @@
                     "name": "NASDAQ:REGN",
                     "displayName": "REGN – Regeneron: Biotecnológica enfocada en terapias innovadoras para enfermedades graves",
                     "shortName": "REGN"
+                },
+                {
+                    "name": "NYSE:TMO",
+                    "displayName": "TMO – Thermo Fisher Scientific: Provee equipos y servicios para investigación científica y biotecnología",
+                    "shortName": "TMO"
                 },
                 {
                     "name": "NYSE:UNH",
@@ -767,6 +797,11 @@
                     "name": "NYSE:SPOT",
                     "displayName": "SPOT – Spotify: Streaming de música",
                     "shortName": "SPOT"
+                },
+                {
+                    "name": "NYSE:TEAM",
+                    "displayName": "TEAM – Atlassian Corporation: Software de colaboración y gestión de proyectos (Jira, Confluence, Trello)",
+                    "shortName": "TEAM"
                 },
                 {
                     "name": "AMEX:IGV",
