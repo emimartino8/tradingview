@@ -609,6 +609,11 @@
             "name": "Tecnología - IA y semiconductores",
             "symbols": [
                 {
+                    "name": "NASDAQ:ALAB",
+                    "displayName": "ALAB – Astera Labs: Desarrolla conectividad de alta velocidad para data centers e IA",
+                    "shortName": "ALAB"
+                },
+                {
                     "name": "NASDAQ:AMD",
                     "displayName": "AMD – Advanced Micro Devices: Procesadores y GPUs",
                     "shortName": "AMD"
