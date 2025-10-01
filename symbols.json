@@ -744,6 +744,11 @@
                     "shortName": "NFLX"
                 },
                 {
+                    "name": "MYSE:S",
+                    "displayName": "S – SentinelOne: Ciberseguridad en la nube usando IA",
+                    "shortName": "S"
+                },
+                {
                     "name": "NASDAQ:SHOP",
                     "displayName": "SHOP – Shopify: Plataforma SaaS de e-commerce y pagos para tiendas online",
                     "shortName": "SHOP"
