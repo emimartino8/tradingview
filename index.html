@@ -200,18 +200,48 @@
     </div>
 
     <script>
+        let APP_DATA = null;
+        const initializedTabs = new Set();
 
         function initSymbols() {
             fetch('symbols.json')
                 .then(res => res.json())
                 .then(data => {
+                    APP_DATA = data;
+
                     initTickerTape(data.symbolsGroups)
                     initWatchlist(data.symbolsGroups);
-                    initAdvancedChart(data.symbolsGroups);
-                    initIndexChartGrid(data.indexSymbols);
-                    initCryptoChartGrid(data.cryptoSymbols);
+                    
+                    initializedTabs.add('watchlist');
                 })
                 .catch(console.error);
+        }
+
+        function ensureTabInitialized(tab) {
+            if (initializedTabs.has(tab) || !APP_DATA) return;
+
+            switch (tab) {
+                case 'advanced-chart':
+                initAdvancedChart(APP_DATA.symbolsGroups);
+                break;
+                case 'index-chart-grid':
+                initIndexChartGrid(APP_DATA.indexSymbols);
+                break;
+                case 'crypto-chart-grid':
+                initCryptoChartGrid(APP_DATA.cryptoSymbols);
+                break;
+                case 'stock-heatmap':
+                initStockHeatmap();
+                break;
+                case 'etf-heatmap':
+                initEtfHeatmap();
+                break;
+                case 'crypto-heatmap':
+                initCryptoHeatmap();
+                break;
+            }
+
+            initializedTabs.add(tab);
         }
 
         function initTickerTape(symbolsGroups) {
@@ -268,7 +298,7 @@
                 style: "1",
                 symbol: "BCBA:IMV",
                 theme: "dark",
-                timezone: "Etc/UTC",
+                timezone: "America/Argentina/Buenos_Aires",
                 backgroundColor: "#0F0F0F",
                 gridColor: "rgba(242, 242, 242, 0.06)",
                 watchlist: symbolsList,
@@ -384,7 +414,7 @@
                 style: "1",
                 symbol: symbol,
                 theme: "dark",
-                timezone: "Etc/UTC",
+                timezone: "America/Argentina/Buenos_Aires",
                 backgroundColor: "#0F0F0F",
                 gridColor: "rgba(242, 242, 242, 0.06)",
                 watchlist: [],
@@ -428,17 +458,17 @@
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+
                 const tab = btn.dataset.tab;
                 document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
                 document.getElementById(tab).classList.add('active');
+
+                ensureTabInitialized(tab);
             });
         });
 
         window.addEventListener('DOMContentLoaded', () => {
             initSymbols();
-            initStockHeatmap();
-            initEtfHeatmap();
-            initCryptoHeatmap();
         });
     </script>
 
