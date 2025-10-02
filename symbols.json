@@ -410,8 +410,13 @@
             "symbols": [
                 {
                     "name": "AMEX:DIA",
-                    "displayName": "DIA – SPDR Dow Jones Industrial: ETF DJIA",
+                    "displayName": "DIA – SPDR Dow Jones Industrial: Replica al índice Dow Jones Industrial Average (DJIA), compuesto por 30 grandes empresas blue-chip de EE.UU.",
                     "shortName": "DIA"
+                },
+                {
+                    "name": "AMEX:EEM",
+                    "displayName": "EEM – iShares MSCI Emerging Markets: ETF de mercados emergentes. Uno de los más grandes y líquidos",
+                    "shortName": "EEM"
                 },
                 {
                     "name": "AMEX:GLD",
@@ -430,13 +435,18 @@
                 },
                 {
                     "name": "AMEX:VOO",
-                    "displayName": "VOO – Vanguard S&P 500: ETF de bajo coste",
+                    "displayName": "VOO – Vanguard S&P 500: ETF de S&P 500 de bajo coste",
                     "shortName": "VOO"
                 },
                 {
                     "name": "AMEX:VUG",
-                    "displayName": "VUG – Vanguard Growth ETF: ETF de acciones de crecimiento de gran capitalización en EE.UU.",
+                    "displayName": "VUG – Vanguard Growth: ETF de acciones de crecimiento de gran capitalización en EE.UU.",
                     "shortName": "VUG"
+                },
+                {
+                    "name": "AMEX:VWO",
+                    "displayName": "VWO – Vanguard FTSE Emerging Markets ETF: ETF de mercados emergentes. Muy diversificado y de bajo costo",
+                    "shortName": "VWO"
                 },
                 {
                     "name": "NASDAQ:TLT",
