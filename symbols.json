@@ -559,6 +559,11 @@
                     "shortName": "JNJ"
                 },
                 {
+                    "name": "NYSE:NVO",
+                    "displayName": "NVO – Novo Nordisk: Farmacéutica danesa líder en diabetes y obesidad",
+                    "shortName": "NVO"
+                },
+                {
                     "name": "NASDAQ:REGN",
                     "displayName": "REGN – Regeneron: Biotecnológica enfocada en terapias innovadoras para enfermedades graves",
                     "shortName": "REGN"
