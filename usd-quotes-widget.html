@@ -1,0 +1,162 @@
+<div class="usd-quotes-tab-wrap">
+  <section id="cards" class="grid"></section>
+  <div class="updated" id="updated">Cargando…</div>
+
+  <script>
+    const ENDPOINT = 'https://dolarapi.com/v1/dolares';
+    const REFRESH_MS = 60000;
+    const ORDER = ['oficial', 'blue', 'bolsa', 'contadoconliqui', 'mayorista', 'tarjeta', 'cripto'];
+    const NAME = {
+      oficial: 'Dólar oficial', blue: 'Dólar blue', bolsa: 'Dólar MEP',
+      contadoconliqui: 'Dólar CCL', mayorista: 'Dólar mayorista',
+      tarjeta: 'Dólar tarjeta', cripto: 'Dólar cripto'
+    };
+
+    const $cards = document.getElementById('cards');
+    const $upd = document.getElementById('updated');
+    const refs = new Map();
+
+    function fmtARS(n) {
+      const x = Number(n);
+      return isFinite(x) ? '$' + x.toLocaleString('es-AR', { maximumFractionDigits: 2 }) : '—';
+    }
+    function fmtDate24(d) {
+      return new Date(d).toLocaleString('es-AR', { hour12: false, timeZone: 'America/Argentina/Buenos_Aires' });
+    }
+
+    function createCard(casa) {
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.innerHTML = `
+        <h3 class="title" id="${casa}-title">${NAME[casa] || casa}</h3>
+        <div class="row">
+          <div>
+            <span class="label">Compra</span>
+            <span class="value" id="${casa}-buy">—</span>
+          </div>
+          <div>
+            <span class="label">Venta</span>
+            <span class="value" id="${casa}-sell">—</span>
+          </div>
+        </div>
+        <div class="gap" id="${casa}-gap">Brecha con oficial: —</div>
+      `;
+      $cards.appendChild(el);
+      refs.set(casa, {
+        buy: el.querySelector(`#${casa}-buy`),
+        sell: el.querySelector(`#${casa}-sell`),
+        gap: el.querySelector(`#${casa}-gap`),
+        title: el.querySelector(`#${casa}-title`)
+      });
+    }
+
+    function ensureCards(data) {
+      const casas = [...data].sort((a, b) => {
+        const ia = ORDER.indexOf(a.casa), ib = ORDER.indexOf(b.casa);
+        return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib);
+      }).map(x => x.casa);
+
+      $cards.innerHTML = '';
+      refs.clear();
+      casas.forEach(createCard);
+    }
+
+    async function load() {
+      const res = await fetch(ENDPOINT, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+
+      if (refs.size === 0) ensureCards(data);
+
+      const oficial = data.find(x => x.casa === 'oficial');
+      const oficialVenta = oficial?.venta ?? null;
+
+      for (const d of data) {
+        const r = refs.get(d.casa);
+        if (!r) continue;
+        r.buy.textContent = fmtARS(d.compra);
+        r.sell.textContent = fmtARS(d.venta);
+        if (oficialVenta && d.casa !== 'oficial') {
+          const g = ((d.venta - oficialVenta) / oficialVenta) * 100;
+          r.gap.textContent = `Brecha con oficial: ${g >= 0 ? '+' : ''}${g.toFixed(2)}%`;
+        } else {
+          r.gap.textContent = `Brecha con oficial: -`;
+        }
+      }
+
+      $upd.textContent = `Última actualización: ${fmtDate24(new Date())}`;
+    }
+
+    (async () => {
+      try { await load(); } catch { }
+      setInterval(() => load().catch(() => { }), REFRESH_MS);
+    })();
+  </script>
+</div>
+
+<style>
+  .usd-quotes-tab-wrap {
+    padding: 20px;
+    background: #2a2a2a;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .updated {
+    text-align: left;
+    color: #bdbdbd;
+    font-size: .9rem;
+    margin-top: 20px;
+  }
+
+  .grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .card {
+    background: #121212;
+    border: 1px solid #333;
+    border-radius: 0;
+    padding: 10px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 1.0rem;
+    margin: 0;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .label {
+    display: block;
+    font-size: .85rem;
+    color: #bdbdbd;
+  }
+
+  .value {
+    color: #ffffff;
+    display: block;
+    font-size: 1.15rem;
+    margin-top: 15px;
+  }
+
+  .gap {
+    font-size: .9rem;
+    color: #bdbdbd;
+  }
+</style>

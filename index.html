@@ -143,7 +143,8 @@
         <button class="tab-button" data-tab="crypto-chart-grid">Crypto Charts</button>
         <button class="tab-button" data-tab="stock-heatmap">Stock Heatmap</button>
         <button class="tab-button" data-tab="etf-heatmap">ETF Heatmap</button>
-        <button class="tab-button" data-tab="crypto-heatmap">Crypto Heatmap</button>  
+        <button class="tab-button" data-tab="crypto-heatmap">Crypto Heatmap</button>
+        <button class="tab-button" data-tab="usd-quotes">USD/ARS</button>
     </div>
 
     <div id="tab-contents">
@@ -195,6 +196,9 @@
                 <div class="tradingview-widget-container__widget"></div>
             </div>
         </div>
+
+        <!-- === USD Quotes === -->
+        <div id="usd-quotes" class="tab-content"></div>
     </div>
 
     <script>
@@ -209,34 +213,46 @@
 
                     initTickerTape(data.symbolsGroups)
                     initWatchlist(data.symbolsGroups);
-                    
+
                     initializedTabs.add('watchlist');
                 })
                 .catch(console.error);
         }
 
         function ensureTabInitialized(tab) {
-            if (initializedTabs.has(tab) || !APP_DATA) return;
+            if (initializedTabs.has(tab)) return;
 
             switch (tab) {
                 case 'advanced-chart':
-                initAdvancedChart(APP_DATA.symbolsGroups);
-                break;
+                    if (!APP_DATA) return;
+                    initAdvancedChart(APP_DATA.symbolsGroups);
+                    break;
+
                 case 'index-chart-grid':
-                initIndexChartGrid(APP_DATA.indexSymbols);
-                break;
+                    if (!APP_DATA) return;
+                    initIndexChartGrid(APP_DATA.indexSymbols);
+                    break;
+
                 case 'crypto-chart-grid':
-                initCryptoChartGrid(APP_DATA.cryptoSymbols);
-                break;
+                    if (!APP_DATA) return;
+                    initCryptoChartGrid(APP_DATA.cryptoSymbols);
+                    break;
+
                 case 'stock-heatmap':
-                initStockHeatmap();
-                break;
+                    initStockHeatmap();
+                    break;
+
                 case 'etf-heatmap':
-                initEtfHeatmap();
-                break;
+                    initEtfHeatmap();
+                    break;
+
                 case 'crypto-heatmap':
-                initCryptoHeatmap();
-                break;
+                    initCryptoHeatmap();
+                    break;
+
+                case 'usd-quotes':
+                    initUsdQuotesTab();
+                    break;
             }
 
             initializedTabs.add(tab);
@@ -450,6 +466,40 @@
                 const card = createSymbolCard(item);
                 host.appendChild(card);
             });
+        }
+
+        async function initUsdQuotesTab() {
+            const container = document.getElementById('usd-quotes');
+            if (container.dataset.loaded) return;
+
+            try {
+                const res = await fetch('usd-quotes-widget.html', { cache: 'no-store' });
+                const html = await res.text();
+
+                const tmp = document.createElement('div');
+                tmp.innerHTML = html;
+
+                container.innerHTML = '';
+                Array.from(tmp.childNodes).forEach(n => container.appendChild(n));
+
+                const scripts = container.querySelectorAll('script');
+                scripts.forEach(old => {
+                    const s = document.createElement('script');
+
+                    if (old.src) {
+                        s.src = old.src;
+                        s.async = old.async;
+                    } else {
+                        s.textContent = old.textContent;
+                    }
+
+                    old.replaceWith(s);
+                });
+
+                container.dataset.loaded = 'true';
+            } catch (err) {
+                container.innerHTML = "<p style='padding:20px;color:#aaa;'>Error al cargar el widget del dólar.</p>";
+            }
         }
 
         document.querySelectorAll('.tab-button').forEach(btn => {
