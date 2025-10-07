@@ -49,11 +49,6 @@
                     "shortName": "BYMA"
                 },
                 {
-                    "name": "BCBA:CEPU",
-                    "displayName": "CEPU – Central Puerto: Generación privada de energía eléctrica",
-                    "shortName": "CEPU"
-                },
-                {
                     "name": "BCBA:CRES",
                     "displayName": "CRES – Cresud: Inversiones agroindustriales e inmobiliarias",
                     "shortName": "CRES"
@@ -832,7 +827,7 @@
         },
         {
             "name": "Cripto",
-            "symbols": [
+            "symbols": [ 
                 {
                     "name": "BINGX:BTCUSDT.P",
                     "displayName": "BTC/USDT – Bitcoin (BingX Futuros Perpetuo)",
@@ -844,6 +839,11 @@
                     "shortName": "ETH/USDT"
                 },
                 {
+                    "name": "BINGX:BNBUSDT.P",
+                    "displayName": "BNB/USDT – BNB (BingX Futuros Perpetuo)",
+                    "shortName": "BNB/USDT"
+                },
+                {
                     "name": "BINGX:SOLUSDT.P",
                     "displayName": "SOL/USDT – Solana (BingX Futuros Perpetuo)",
                     "shortName": "SOL/USDT"
@@ -852,11 +852,6 @@
                     "name": "BINGX:XRPUSDT.P",
                     "displayName": "XRP/USDT – XRP (BingX Futuros Perpetuo)",
                     "shortName": "XRP/USDT"
-                },
-                {
-                    "name": "BINANCE:ETHBTC",
-                    "displayName": "ETH/BTC - Spot",
-                    "shortName": "ETH/BTC"
                 }
             ]
         }
@@ -884,6 +879,7 @@
     "cryptoSymbols": [
         "BINGX:BTCUSDT.P",
         "BINGX:ETHUSDT.P",
+        "BINGX:BNBUSDT.P",
         "BINGX:SOLUSDT.P",
         "BINGX:XRPUSDT.P"
     ]
