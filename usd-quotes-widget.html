@@ -3,95 +3,198 @@
   <div class="updated" id="updated">Cargando…</div>
 
   <script>
-    const ENDPOINT = 'https://dolarapi.com/v1/dolares';
-    const REFRESH_MS = 60000;
-    const ORDER = ['oficial', 'mayorista', 'blue', 'bolsa', 'contadoconliqui', 'cripto', 'tarjeta'];
-    const NAME = {
-      oficial: 'Dólar oficial', blue: 'Dólar blue', bolsa: 'Dólar MEP',
-      contadoconliqui: 'Dólar CCL', mayorista: 'Dólar mayorista',
-      tarjeta: 'Dólar tarjeta', cripto: 'Dólar cripto'
+    // ==== Config ====
+    const CURRENTVALUE_ENDPOINT = (tipo) => `https://dolarapi.com/v1/dolares/${tipo}`;
+    // ArgentinaDatos: fecha con SLASHES YYYY/MM/DD
+    const PREVIOUSVALUE_ENDPOINT = (tipo, ymdSlash) => `https://api.argentinadatos.com/v1/cotizaciones/dolares/${tipo}/${ymdSlash}`;
+
+    // 5 minutes
+    const REFRESH_MS = 300000;
+    const MAX_LOOKBACK_DAYS = 10;
+
+    const USD_TYPE = ['oficial', 'mayorista', 'blue', 'bolsa', 'contadoconliqui', 'cripto', 'tarjeta'];
+
+    const USD_DISPLAY_NAME = {
+      oficial: 'Dólar oficial',
+      blue: 'Dólar blue',
+      bolsa: 'Dólar MEP',
+      contadoconliqui: 'Dólar CCL',
+      mayorista: 'Dólar mayorista',
+      tarjeta: 'Dólar tarjeta',
+      cripto: 'Dólar cripto'
     };
 
     const $cards = document.getElementById('cards');
     const $upd = document.getElementById('updated');
     const refs = new Map();
 
-    function fmtARS(n) {
-      const x = Number(n);
-      return isFinite(x) ? '$' + x.toLocaleString('es-AR', { maximumFractionDigits: 2 }) : '—';
-    }
-    function fmtDate24(d) {
-      return new Date(d).toLocaleString('es-AR', { hour12: false, timeZone: 'America/Argentina/Buenos_Aires' });
+    // ==== Utils ====
+    const n = (x) => {
+      const v = parseFloat(x);
+      return Number.isFinite(v) ? v : null;
+    };
+
+    const fmtARS = (v) => Number.isFinite(v) ? '$ ' + v.toLocaleString('es-AR', { maximumFractionDigits: 2 }) : '—';
+
+    const fmtDate24 = (d) =>
+      new Date(d).toLocaleString('es-AR', { hour12: false, timeZone: 'America/Argentina/Buenos_Aires' });
+
+    // Argentinadatos requiere YYYY/MM/DD
+    const toYMD_slash = (date) => {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, '0');
+      const d = String(date.getDate()).padStart(2, '0');
+      return `${y}/${m}/${d}`;
+    };
+
+    async function fetchJSON(url) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+      } catch (e) {
+        console.error('fetchJSON error:', url, e);
+        return null;
+      }
     }
 
-    function createCard(casa) {
+    async function getPreviousQuote(tipo, baseDate) {
+      for (let i = 1; i <= MAX_LOOKBACK_DAYS; i++) {
+        const dt = new Date(baseDate);
+        dt.setDate(dt.getDate() - i);
+        const ymdSlash = toYMD_slash(dt);
+        const data = await fetchJSON(PREVIOUSVALUE_ENDPOINT(tipo, ymdSlash));
+        // Esperamos objeto: { moneda, casa, fecha, compra, venta }
+        if (data) {
+          const compra = n(data.compra);
+          const venta = n(data.venta);
+          if (compra !== null || venta !== null) {
+            return { compra, venta, date: data.fecha || ymdSlash };
+          }
+        }
+      }
+      return null;
+    }
+
+    // ==== UI ====
+    function createCard(tipo) {
       const el = document.createElement('article');
       el.className = 'card';
       el.innerHTML = `
-        <h3 class="title" id="${casa}-title">${NAME[casa] || casa}</h3>
-        <div class="row">
-          <div>
-            <span class="label">Compra</span>
-            <span class="value" id="${casa}-buy">—</span>
-          </div>
-          <div>
-            <span class="label">Venta</span>
-            <span class="value" id="${casa}-sell">—</span>
-          </div>
+      <h3 class="title" id="${tipo}-title">${USD_DISPLAY_NAME[tipo] || tipo}</h3>
+      <div class="row">
+        <div>
+          <span class="label">Compra</span>
+          <span class="value" id="${tipo}-buy">—</span>
         </div>
-        <div class="gap" id="${casa}-gap">Brecha con oficial: —</div>
-      `;
+        <div>
+          <span class="label">Venta</span>
+          <span class="value" id="${tipo}-sell">—</span>
+          <span class="change" id="${tipo}-sell-change">—</span>
+        </div>
+      </div>
+      <div class="gap" id="${tipo}-gap">Brecha con oficial: —</div>
+    `;
       $cards.appendChild(el);
-      refs.set(casa, {
-        buy: el.querySelector(`#${casa}-buy`),
-        sell: el.querySelector(`#${casa}-sell`),
-        gap: el.querySelector(`#${casa}-gap`),
-        title: el.querySelector(`#${casa}-title`)
+      refs.set(tipo, {
+        buy: el.querySelector(`#${tipo}-buy`),
+        sell: el.querySelector(`#${tipo}-sell`),
+        sellChange: el.querySelector(`#${tipo}-sell-change`),
+        gap: el.querySelector(`#${tipo}-gap`),
+        title: el.querySelector(`#${tipo}-title`)
       });
     }
 
-    function ensureCards(data) {
-      const casas = [...data].sort((a, b) => {
-        const ia = ORDER.indexOf(a.casa), ib = ORDER.indexOf(b.casa);
-        return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib);
-      }).map(x => x.casa);
-
+    function ensureCards() {
       $cards.innerHTML = '';
       refs.clear();
-      casas.forEach(createCard);
+      USD_TYPE.forEach(createCard);
     }
 
+    function setTrend(el, diff) {
+      el.classList.toggle('up', diff > 0);
+      el.classList.toggle('down', diff < 0);
+      el.classList.toggle('flat', diff === 0);
+    }
+
+    function isObject(x) { return x && typeof x === 'object' && !Array.isArray(x); }
+
+    // ==== Lógica principal ====
     async function load() {
-      const res = await fetch(ENDPOINT, { cache: 'no-store' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
+      ensureCards();
 
-      if (refs.size === 0) ensureCards(data);
+      const baseDate = new Date();
 
-      const oficial = data.find(x => x.casa === 'oficial');
-      const oficialVenta = oficial?.venta ?? null;
+      // Oficial primero para brecha
+      const oficialNow = await fetchJSON(CURRENTVALUE_ENDPOINT('oficial'));
+      const oficialVenta = isObject(oficialNow) ? n(oficialNow.venta) : null;
 
-      for (const d of data) {
-        const r = refs.get(d.casa);
-        if (!r) continue;
-        r.buy.textContent = fmtARS(d.compra);
-        r.sell.textContent = fmtARS(d.venta);
-        if (oficialVenta && d.casa !== 'oficial') {
-          const g = ((d.venta - oficialVenta) / oficialVenta) * 100;
+      await Promise.all(USD_TYPE.map(async (tipo) => {
+        const r = refs.get(tipo);
+        if (!r) return;
+
+        // Actual
+        const now = await fetchJSON(CURRENTVALUE_ENDPOINT(tipo));
+        if (!isObject(now)) {
+          console.warn('Sin datos actuales para', tipo, now);
+          r.buy.textContent = '—';
+          r.sell.textContent = '—';
+          r.sellChange.textContent = '—';
+          r.buy.className = 'value'; r.sell.className = 'value'; r.sellChange.className = 'change';
+          return;
+        }
+
+        const nowCompra = n(now.compra);
+        const nowVenta = n(now.venta);
+
+        r.buy.textContent = fmtARS(nowCompra);
+        r.sell.textContent = fmtARS(nowVenta);
+
+        // Brecha vs oficial
+        if (Number.isFinite(oficialVenta) && tipo !== 'oficial' && Number.isFinite(nowVenta)) {
+          const g = ((nowVenta - oficialVenta) / oficialVenta) * 100;
           r.gap.textContent = `Brecha con oficial: ${g >= 0 ? '+' : ''}${g.toFixed(2)}%`;
         } else {
-          r.gap.textContent = `Brecha con oficial: -`;
+          r.gap.textContent = 'Brecha con oficial: —';
         }
-      }
+
+        // Previo con fallback
+        const prev = await getPreviousQuote(tipo, baseDate);
+        const prevVenta = n(prev?.venta);
+
+        // Variación por VENTA -> mostrar debajo del precio de venta
+        if (Number.isFinite(nowVenta) && Number.isFinite(prevVenta)) {
+          const diff = nowVenta - prevVenta;
+          const pct = (diff / prevVenta) * 100;
+          const arrow = diff > 0 ? '▲' : diff < 0 ? '▼' : '=';
+
+          if (diff === 0) r.sellChange.textContent = `= 0.00%`;
+          else r.sellChange.textContent = `${arrow} ${pct > 0 ? '+' : ''}${pct.toFixed(2)}%`;
+
+          // Pintar compra/venta y el % según Δ de venta
+          setTrend(r.buy, diff);
+          setTrend(r.sell, diff);
+          r.sellChange.classList.toggle('up', diff > 0);
+          r.sellChange.classList.toggle('down', diff < 0);
+          r.sellChange.classList.toggle('flat', diff === 0);
+        } else {
+          r.sellChange.textContent = '—';
+          r.sellChange.removeAttribute('title');
+          r.buy.classList.remove('up', 'down', 'flat');
+          r.sell.classList.remove('up', 'down', 'flat');
+          r.sellChange.classList.remove('up', 'down', 'flat');
+        }
+      }));
 
       $upd.textContent = `Última actualización: ${fmtDate24(new Date())}`;
     }
 
     (async () => {
-      try { await load(); } catch { }
-      setInterval(() => load().catch(() => { }), REFRESH_MS);
+      try { await load(); } catch (e) { console.error('load error', e); }
+      setInterval(() => load().catch((e) => console.error('refresh error', e)), REFRESH_MS);
     })();
   </script>
+
 </div>
 
 <style>
@@ -126,37 +229,72 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 40px;
+    gap: 30px;
   }
 
   .title {
     font-weight: 700;
     font-size: 1.0rem;
     margin: 0;
+    color: #bdbdbd;
   }
 
   .row {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .row>div {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 50px;
+    min-width: 90px;
   }
 
   .label {
     display: block;
-    font-size: .85rem;
+    font-size: .8rem;
     color: #bdbdbd;
   }
 
   .value {
     color: #ffffff;
     display: block;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     margin-top: 15px;
+    line-height: 1.2;
+  }
+
+  .change {
+    display: block;
+    font-size: .8rem;
+    margin-top: 15px;
+    line-height: 1;
+    color: #bdbdbd;
+  }
+
+  .value.up,
+  .change.up {
+    color: #4caf50;
+  }
+
+  .value.down,
+  .change.down {
+    color: #ef5350;
+  }
+
+  .value.flat {
+  color: #ffffff;
+  }
+
+  .change.flat {
+    color: #707070;
   }
 
   .gap {
-    font-size: .9rem;
+    font-size: .85rem;
     color: #bdbdbd;
   }
 </style>
