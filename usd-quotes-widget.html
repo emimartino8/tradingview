@@ -33,7 +33,7 @@
     const PREVIOUSVALUE_ENDPOINT = (tipo, ymdSlash) => `https://api.argentinadatos.com/v1/cotizaciones/dolares/${tipo}/${ymdSlash}`;
 
     // 5 minutes
-    const REFRESH_MS = 300000;
+    const REFRESH_MS = 10000;
     const MAX_LOOKBACK_DAYS = 10;
 
     const USD_TYPE = ['oficial', 'mayorista', 'blue', 'bolsa', 'contadoconliqui', 'cripto', 'tarjeta'];
@@ -142,6 +142,8 @@
 
     // ==== Lógica principal ====
     async function load() {
+      console.log("Updating quotes")
+
       // Mini-charts TV: se crean una sola vez
       initUsdMiniChartsOnce();
 
