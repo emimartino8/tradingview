@@ -402,7 +402,7 @@
             document.getElementById('crypto-heatmap-container').appendChild(s);
         }
 
-        function createSymbolCard(symbol) {
+        function createSymbolCard(symbol, interval = "5") {
             const card = document.createElement('div');
             card.className = 'symbol-card';
 
@@ -422,7 +422,7 @@
                 hide_legend: false,
                 hide_volume: true,
                 hotlist: false,
-                interval: "5",
+                interval: interval,
                 locale: "es",
                 save_image: false,
                 style: "1",

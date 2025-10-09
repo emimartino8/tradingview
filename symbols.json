@@ -1,31 +1,6 @@
 {
     "symbolsGroups": [
         {
-            "name": "Cotizaciones",
-            "symbols": [
-                {
-                    "name": "USDARS",
-                    "displayName": "USD/ARS – Dólar oficial",
-                    "shortName": "Dólar oficial"
-                },
-                {
-                    "name": "BCBA:AL30/BCBA:AL30D",
-                    "displayName": "USD/ARS – Dólar MEP (AL30)",
-                    "shortName": "Dólar MEP"
-                },
-                {
-                    "name": "BCBA:AL30/BCBA:AL30C",
-                    "displayName": "USD/ARS – Dólar CCL (AL30)",
-                    "shortName": "Dólar CCL"
-                },
-                {
-                    "name": "BINANCE:USDTARS",
-                    "displayName": "USDT/ARS – Dólar cripto",
-                    "shortName": "Dólar cripto"
-                }
-            ]
-        },
-        {
             "name": "Acciones Argentina",
             "symbols": [
                 {
