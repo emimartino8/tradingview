@@ -322,6 +322,11 @@
                     "name": "AMEX:XLE",
                     "displayName": "XLE – Energy Select Sector SPDR: ETF energético",
                     "shortName": "XLE"
+                },
+                {
+                    "name": "NYSE:NLR",
+                    "displayName": "NLR – Uranium and Nuclear Energy ETF",
+                    "shortName": "NLR"
                 }
             ]
         },
@@ -392,6 +397,11 @@
                     "name": "AMEX:GLD",
                     "displayName": "GLD – SPDR Gold Shares: ETF oro",
                     "shortName": "GLD"
+                },
+                {
+                    "name": "NYSE:PPA",
+                    "displayName": "PPA – Invesco Aerospace & Defense ETF",
+                    "shortName": "PPA"
                 },
                 {
                     "name": "AMEX:SPY",
@@ -572,6 +582,11 @@
                     "name": "AMEX:ARKK",
                     "displayName": "ARKK – ARK Innovation: ETF activo tecnología",
                     "shortName": "ARKK"
+                },
+                {
+                    "name": "NASDAQ:DTCR",
+                    "displayName": "DTCR – Global X Data Center And Digital Infrastructure ETF",
+                    "shortName": "DTCR"
                 },
                 {
                     "name": "AMEX:XLC",
