@@ -324,7 +324,7 @@
                     "shortName": "XLE"
                 },
                 {
-                    "name": "NYSE:NLR",
+                    "name": "AMEX:NLR",
                     "displayName": "NLR – Uranium and Nuclear Energy ETF",
                     "shortName": "NLR"
                 }
@@ -399,7 +399,7 @@
                     "shortName": "GLD"
                 },
                 {
-                    "name": "NYSE:PPA",
+                    "name": "AMEX:PPA",
                     "displayName": "PPA – Invesco Aerospace & Defense ETF",
                     "shortName": "PPA"
                 },
