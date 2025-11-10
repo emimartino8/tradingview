@@ -209,6 +209,11 @@
                     "shortName": "AMZN"
                 },
                 {
+                    "name": "NYSE:AS",
+                    "displayName": "AS – Amer Sports: Fabricante global de ropa y equipamiento deportivo premium",
+                    "shortName": "AS"
+                },
+                {
                     "name": "NYSE:CMG",
                     "displayName": "CMG – Chipotle Mexican Grill: Cadena de restaurantes de comida rápida estilo mexicano",
                     "shortName": "CMG"
@@ -739,6 +744,16 @@
                     "shortName": "ADBE"
                 },
                 {
+                    "name": "NYSE:APH",
+                    "displayName": "APH – Amphenol Corporation: Conectores eléctricos y fibra óptica para industria, automotriz y tecnología",
+                    "shortName": "APH"
+                },
+                {
+                    "name": "NASDAQ:APP",
+                    "displayName": "APP – Applovin Corporation: Plataforma de publicidad móvil con alto crecimiento",
+                    "shortName": "APP"
+                },
+                {
                     "name": "NYSE:CRM",
                     "displayName": "CRM – Salesforce: CRM líder en la nube para ventas, servicio y marketing",
                     "shortName": "CRM"
@@ -792,6 +807,11 @@
                     "name": "NYSE:S",
                     "displayName": "S – SentinelOne: Ciberseguridad en la nube usando IA",
                     "shortName": "S"
+                },
+                {
+                    "name": "NYSE:SE",
+                    "displayName": "SE – Sea Limited: E-commerce, fintech y gaming líder en Asia y LatAm",
+                    "shortName": "SE"
                 },
                 {
                     "name": "NASDAQ:SHOP",
