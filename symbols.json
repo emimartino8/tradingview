@@ -139,6 +139,11 @@
                     "shortName": "PBR"
                 },
                 {
+                    "name": "NASDAQ:STNE",
+                    "displayName": "STNE – StoneCo: Fintech brasileña de pagos y servicios financieros",
+                    "shortName": "STNE"
+                },
+                {
                     "name": "NYSE:VALE",
                     "displayName": "VALE – Vale: Multinacional minera líder en hierro y níquel",
                     "shortName": "VALE"
