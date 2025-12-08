@@ -219,6 +219,11 @@
                     "shortName": "AS"
                 },
                 {
+                    "name": "NASDAQ:CAKE",
+                    "displayName": "CAKE – The Cheesecake Factory Incorporated: Opera restaurantes y fabrica cheesecakes.",
+                    "shortName": "CAKE"
+                },
+                {
                     "name": "NYSE:CMG",
                     "displayName": "CMG – Chipotle Mexican Grill: Cadena de restaurantes de comida rápida estilo mexicano",
                     "shortName": "CMG"
@@ -559,6 +564,11 @@
                     "shortName": "JNJ"
                 },
                 {
+                    "name": "NYSE:MRK",
+                    "displayName": "MRK – Merck & Co: Produce medicamentos, vacunas y tratamientos de alta complejidad en salud humana y animal",
+                    "shortName": "MRK"
+                },
+                {
                     "name": "NYSE:NVO",
                     "displayName": "NVO – Novo Nordisk: Farmacéutica danesa líder en diabetes y obesidad",
                     "shortName": "NVO"
@@ -654,9 +664,19 @@
                     "shortName": "ALAB"
                 },
                 {
+                    "name": "NASDAQ:AMAT",
+                    "displayName": "AMAT – Applied Materials: Fabrica máquinas esenciales para producir chips semiconductores",
+                    "shortName": "AMAT"
+                },
+                {
                     "name": "NASDAQ:AMD",
                     "displayName": "AMD – Advanced Micro Devices: Procesadores y GPUs",
                     "shortName": "AMD"
+                },
+                {
+                    "name": "NYSE:ANET",
+                    "displayName": "ANET – Arista Networks: Empresa líder en redes para centros de datos y AI",
+                    "shortName": "ANET"
                 },
                 {
                     "name": "NASDAQ:ASML",
@@ -772,6 +792,11 @@
                     "name": "NASDAQ:DDOG",
                     "displayName": "DDOG – Datadog: Ofrece una plataforma de monitoreo y seguridad en la nube",
                     "shortName": "DDOG"
+                },
+                {
+                    "name": "NYSE:DELL",
+                    "displayName": "DELL – Dell: Vende computadoras y equipos de infraestructura para empresas.",
+                    "shortName": "DELL"
                 },
                 {
                     "name": "NYSE:GE",
