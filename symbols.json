@@ -494,11 +494,6 @@
                     "shortName": "DLO"
                 },
                 {
-                    "name": "NYSE:FI",
-                    "displayName": "FI – Fiserv: Provee soluciones globales de pagos digitales, banca y procesamiento financiero para empresas e instituciones",
-                    "shortName": "FI"
-                },
-                {
                     "name": "NYSE:JPM",
                     "displayName": "JPM – JPMorgan Chase: Banca de inversión",
                     "shortName": "JPM"
