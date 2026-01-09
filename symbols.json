@@ -24,6 +24,11 @@
                     "shortName": "BYMA"
                 },
                 {
+                    "name": "BCBA:CEPU",
+                    "displayName": "CEPU – Central Puerto: Generación de energía eléctrica",
+                    "shortName": "CEPU"
+                },
+                {
                     "name": "BCBA:CRES",
                     "displayName": "CRES – Cresud: Inversiones agroindustriales e inmobiliarias",
                     "shortName": "CRES"
