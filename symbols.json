@@ -574,6 +574,11 @@
                     "shortName": "NVO"
                 },
                 {
+                    "name": "NYSE:OSCR",
+                    "displayName": "OSCR – Oscar Health: aseguradora de salud digital enfocada en planes médicos simples y tecnología",
+                    "shortName": "OSCR"
+                },
+                {
                     "name": "NASDAQ:REGN",
                     "displayName": "REGN – Regeneron: Biotecnológica enfocada en terapias innovadoras para enfermedades graves",
                     "shortName": "REGN"
