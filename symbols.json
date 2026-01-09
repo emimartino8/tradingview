@@ -254,6 +254,11 @@
                     "shortName": "NKE"
                 },
                 {
+                    "name": "NASDAQ:RIVN",
+                    "displayName": "RIVN – Rivian Automotive: Fabricante de pickups y SUVs eléctricos premium, aún no rentable.",
+                    "shortName": "RIVN"
+                },
+                {
                     "name": "NASDAQ:TSLA",
                     "displayName": "TSLA – Tesla: Vehículos eléctricos",
                     "shortName": "TSLA"
@@ -699,6 +704,11 @@
                     "shortName": "INTC"
                 },
                 {
+                    "name": "NASDAQ:IREN",
+                    "displayName": "IREN – Iren Limited: Desarrolla centros de datos de bajo costo impulsados por energías renovables (costos bajos para minería de Bitcoin)",
+                    "shortName": "IREN"
+                },
+                {
                     "name": "NASDAQ:MRVL",
                     "displayName": "MRVL – Marvell Technology: Chips para conectividad y data centers",
                     "shortName": "MRVL"
@@ -784,6 +794,11 @@
                     "shortName": "APP"
                 },
                 {
+                    "name": "NASDAQ:ASTS",
+                    "displayName": "ASTS – AST SpaceMobile: Brinda internet y telefonía móvil directa desde satélites a celulares comunes, sin infraestructura terrestre",
+                    "shortName": "ASTS"
+                },
+                {
                     "name": "NYSE:CRM",
                     "displayName": "CRM – Salesforce: CRM líder en la nube para ventas, servicio y marketing",
                     "shortName": "CRM"
@@ -802,11 +817,6 @@
                     "name": "NYSE:DELL",
                     "displayName": "DELL – Dell: Vende computadoras y equipos de infraestructura para empresas.",
                     "shortName": "DELL"
-                },
-                {
-                    "name": "NYSE:GE",
-                    "displayName": "GE – GE Aerospace: Motores aeronáuticos, servicios para aviación y defensa",
-                    "shortName": "GE"
                 },
                 {
                     "name": "NASDAQ:GOOGL",
@@ -871,8 +881,23 @@
             ]
         },
         {
+            "name": "Tecnología - Aeroespacial y defensa",
+            "symbols": [
+                {
+                    "name": "NYSE:GE",
+                    "displayName": "GE – GE Aerospace: Motores aeronáuticos, servicios para aviación y defensa",
+                    "shortName": "GE"
+                },
+                {
+                    "name": "NASDAQ:RKLB",
+                    "displayName": "RKLB – Rocket Lab: Lanza pequeños satélites y fabrica hardware espacial para clientes comerciales y gobiernos",
+                    "shortName": "RKLB"
+                }
+            ]
+        },
+        {
             "name": "Cripto",
-            "symbols": [ 
+            "symbols": [
                 {
                     "name": "BINGX:BTCUSDT.P",
                     "displayName": "BTC/USDT – Bitcoin (BingX Futuros Perpetuo)",
