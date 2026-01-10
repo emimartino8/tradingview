@@ -439,9 +439,9 @@
                     "shortName": "GLD"
                 },
                 {
-                    "name": "AMEX:PPA",
-                    "displayName": "PPA – Invesco Aerospace & Defense ETF",
-                    "shortName": "PPA"
+                    "name": "AMEX:SLV",
+                    "displayName": "SLV – iShares Silver Trust: ETF plata",
+                    "shortName": "SLV"
                 },
                 {
                     "name": "AMEX:SPY",
