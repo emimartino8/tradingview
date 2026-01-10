@@ -225,13 +225,18 @@
                 },
                 {
                     "name": "NASDAQ:CAKE",
-                    "displayName": "CAKE – The Cheesecake Factory Incorporated: Opera restaurantes y fabrica cheesecakes.",
+                    "displayName": "CAKE – The Cheesecake Factory Incorporated: Opera restaurantes y fabrica cheesecakes",
                     "shortName": "CAKE"
                 },
                 {
                     "name": "NYSE:CMG",
                     "displayName": "CMG – Chipotle Mexican Grill: Cadena de restaurantes de comida rápida estilo mexicano",
                     "shortName": "CMG"
+                },
+                {
+                    "name": "NASDAQ:DASH",
+                    "displayName": "DASH – DoorDash: App de delivery de comida y retail",
+                    "shortName": "DASH"
                 },
                 {
                     "name": "NASDAQ:LULU",
@@ -252,6 +257,11 @@
                     "name": "NYSE:NKE",
                     "displayName": "NKE – Nike: Calzado y ropa deportiva",
                     "shortName": "NKE"
+                },
+                {
+                    "name": "NYSE:ONON",
+                    "displayName": "ONON – On Holding: Marca global de calzado deportivo premium, especializada en running",
+                    "shortName": "ONON"
                 },
                 {
                     "name": "NASDAQ:RIVN",
@@ -509,6 +519,11 @@
                     "shortName": "JPM"
                 },
                 {
+                    "name": "NYSE:LMND",
+                    "displayName": "LMND – Lemonade: Aseguradora digital que usa IA para ofrecer seguros de forma 100% online y directa al cliente",
+                    "shortName": "LMND"
+                },
+                {
                     "name": "NYSE:MA",
                     "displayName": "MA – Mastercard: Pagos electrónicos",
                     "shortName": "MA"
@@ -559,14 +574,24 @@
                     "shortName": "ELV"
                 },
                 {
+                    "name": "NASDAQ:HROW",
+                    "displayName": "HROW – Harrow Health: Farmacéutica especializada en oftalmología que desarrolla y comercializa tratamientos oculares de nicho en EE. UU.",
+                    "shortName": "HROW"
+                },
+                {
                     "name": "NYSE:IQV",
-                    "displayName": "IQV – IQVIA Holdings: Ofrece datos y servicios clínicos para farmacéuticas.",
+                    "displayName": "IQV – IQVIA Holdings: Ofrece datos y servicios clínicos para farmacéuticas",
                     "shortName": "IQV"
                 },
                 {
                     "name": "NYSE:JNJ",
                     "displayName": "JNJ – Johnson & Johnson: Pharma y cuidado personal",
                     "shortName": "JNJ"
+                },
+                {
+                    "name": "NYSE:LLY",
+                    "displayName": "LLY – Eli Lilly & Company: Farmacéutica enfocada en diabetes, obesidad y oncología",
+                    "shortName": "LLY"
                 },
                 {
                     "name": "NYSE:MRK",
@@ -580,13 +605,23 @@
                 },
                 {
                     "name": "NYSE:OSCR",
-                    "displayName": "OSCR – Oscar Health: aseguradora de salud digital enfocada en planes médicos simples y tecnología",
+                    "displayName": "OSCR – Oscar Health: Aseguradora de salud digital enfocada en planes médicos simples y tecnología",
                     "shortName": "OSCR"
+                },
+                {
+                    "name": "NYSE:PRME",
+                    "displayName": "PRME – Prime Medicine: Biotech de edición genética avanzada",
+                    "shortName": "PRME"
                 },
                 {
                     "name": "NASDAQ:REGN",
                     "displayName": "REGN – Regeneron: Biotecnológica enfocada en terapias innovadoras para enfermedades graves",
                     "shortName": "REGN"
+                },
+                {
+                    "name": "NASDAQ:RVMD",
+                    "displayName": "RVMD – Revolution Medicines: Biotecnológica enfocada en terapias oncológicas de precisión",
+                    "shortName": "RVMD"
                 },
                 {
                     "name": "NYSE:TMO",
@@ -689,6 +724,16 @@
                     "shortName": "ANET"
                 },
                 {
+                    "name": "NASDAQ:APLD",
+                    "displayName": "APLD – Applied Digital Corporation: Desarrolla y opera centros de datos de alta potencia para IA, HPC y cloud",
+                    "shortName": "APLD"
+                },
+                {
+                    "name": "NASDAQ:ARM",
+                    "displayName": "ARM – Arm Holdings: Diseña y licencia arquitectura de CPUs para móviles, data centers e IA",
+                    "shortName": "ARM"
+                },
+                {
                     "name": "NASDAQ:ASML",
                     "displayName": "ASML – ASML Holding: Equipos de litografía",
                     "shortName": "ASML"
@@ -697,6 +742,26 @@
                     "name": "NASDAQ:AVGO",
                     "displayName": "AVGO – Broadcom: Semiconductores y conectividad",
                     "shortName": "AVGO"
+                },
+                {
+                    "name": "NASDAQ:CRDO",
+                    "displayName": "CRDO – Credo Technology Group: Diseña chips y soluciones de conectividad de alta velocidad para data centers, IA y redes cloud",
+                    "shortName": "CRDO"
+                },
+                 {
+                    "name": "NASDAQ:CRWV",
+                    "displayName": "CRWV – CoreWeave: ofrece cloud de alto rendimiento con GPUs para entrenamiento y ejecución de modelos de IA",
+                    "shortName": "CRWV"
+                },
+                {
+                    "name": "NASDAQ:FSLR",
+                    "displayName": "FSLR – First Solar: Fabrica paneles solares para grandes parques solares, principalmente en EE.UU.",
+                    "shortName": "FSLR"
+                },
+                {
+                    "name": "NASDAQ:GLXY",
+                    "displayName": "GLXY – Galaxy Digital: Servicios financieros e infraestructura para cripto",
+                    "shortName": "GLXY"
                 },
                 {
                     "name": "NASDAQ:INTC",
@@ -734,9 +799,19 @@
                     "shortName": "NVDA"
                 },
                 {
+                    "name": "NYSE:VRT",
+                    "displayName": "VRT – Vertiv Holdings: Infraestructura de energía y refrigeración para data centers",
+                    "shortName": "VRT"
+                },
+                {
                     "name": "NYSE:PATH",
                     "displayName": "PATH – UiPath: Plataforma líder en RPA (Robotic Process Automation)",
                     "shortName": "PATH"
+                },
+                {
+                    "name": "NYSE:PSTG",
+                    "displayName": "PSTG – Pure Storage: Almacenamiento de datos flash para empresas y data centers",
+                    "shortName": "PSTG"
                 },
                 {
                     "name": "NASDAQ:PLTR",
@@ -747,6 +822,11 @@
                     "name": "NYSE:TSM",
                     "displayName": "TSM – Taiwan Semiconductor: Fundición de semiconductores",
                     "shortName": "TSM"
+                },
+                {
+                    "name": "NASDAQ:WULF",
+                    "displayName": "WULF – TeraWulf: Minera de Bitcoin en EE. UU., con foco en energía de bajo costo y baja huella de carbono",
+                    "shortName": "WULF"
                 },
                 {
                     "name": "NYSE:ZETA",
@@ -799,6 +879,11 @@
                     "shortName": "ASTS"
                 },
                 {
+                    "name": "NASDAQ:CLSK",
+                    "displayName": "CLSK – Clean Spark: Minería de Bitcoin con foco en energía eficiente.",
+                    "shortName": "CLSK"
+                },
+                {
                     "name": "NYSE:CRM",
                     "displayName": "CRM – Salesforce: CRM líder en la nube para ventas, servicio y marketing",
                     "shortName": "CRM"
@@ -822,6 +907,11 @@
                     "name": "NASDAQ:GOOGL",
                     "displayName": "GOOGL – Alphabet: Buscador y servicios de internet; publicidad y nube",
                     "shortName": "GOOGL"
+                },
+                {
+                    "name": "NYSE:GWRE",
+                    "displayName": "GWRE – Guidewire Software: Desarrolla software core y cloud para aseguradoras. Es un jugador líder en su nicho.",
+                    "shortName": "GWRE"
                 },
                 {
                     "name": "NASDAQ:META",
