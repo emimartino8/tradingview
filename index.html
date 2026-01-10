@@ -139,7 +139,7 @@
     <div class="tabs">
         <button class="tab-button active" data-tab="watchlist">Watchlist</button>
         <button class="tab-button" data-tab="advanced-chart">Advanced Chart</button>
-        <button class="tab-button" data-tab="index-chart-grid">Index Charts</button>
+        <button class="tab-button" data-tab="etf-chart-grid">ETF Charts</button>
         <button class="tab-button" data-tab="crypto-chart-grid">Crypto Charts</button>
         <button class="tab-button" data-tab="stock-heatmap">Stock Heatmap</button>
         <button class="tab-button" data-tab="etf-heatmap">ETF Heatmap</button>
@@ -163,8 +163,8 @@
         </div>
 
         <!-- === Index Chart Grid === -->
-        <div id="index-chart-grid" class="tab-content">
-            <div id="index-chart-grid-scroll" class="grid-scroll">
+        <div id="etf-chart-grid" class="tab-content">
+            <div id="etf-chart-grid-scroll" class="grid-scroll">
                 <!-- Cards -->
             </div>
         </div>
@@ -228,9 +228,9 @@
                     initAdvancedChart(APP_DATA.symbolsGroups);
                     break;
 
-                case 'index-chart-grid':
+                case 'etf-chart-grid':
                     if (!APP_DATA) return;
-                    initIndexChartGrid(APP_DATA.indexSymbols);
+                    initEtfChartGrid(APP_DATA.indexSymbols);
                     break;
 
                 case 'crypto-chart-grid':
@@ -448,8 +448,8 @@
             return card;
         }
 
-        function initIndexChartGrid(indexSymbols) {
-            const host = document.getElementById('index-chart-grid-scroll');
+        function initEtfChartGrid(indexSymbols) {
+            const host = document.getElementById('etf-chart-grid-scroll');
             host.innerHTML = '';
 
             indexSymbols.forEach(item => {
