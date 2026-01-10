@@ -279,11 +279,6 @@
                     "shortName": "UBER"
                 },
                 {
-                    "name": "NASDAQ:WMT",
-                    "displayName": "WMT – Walmart: Gigante minorista global",
-                    "shortName": "WMT"
-                },
-                {
                     "name": "AMEX:XLY",
                     "displayName": "XLY – Consumer Discretionary Select Sector SPDR: ETF bienes de consumo no esenciales",
                     "shortName": "XLY"
@@ -322,6 +317,11 @@
                     "name": "NYSE:PM",
                     "displayName": "PM – Philip Morris: Tabacalera global",
                     "shortName": "PM"
+                },
+                {
+                    "name": "NASDAQ:WMT",
+                    "displayName": "WMT – Walmart: Gigante minorista global",
+                    "shortName": "WMT"
                 },
                 {
                     "name": "AMEX:XLP",
@@ -681,38 +681,8 @@
             ]
         },
         {
-            "name": "Tecnología - Computación cuántica",
+            "name": "Tecnologia: Semiconductores y chips",
             "symbols": [
-                {
-                    "name": "NYSE:QBTS",
-                    "displayName": "QBTS – D-Wave Quantum: Hardware, software y servicios de computación cuántica",
-                    "shortName": "QBTS"
-                },
-                {
-                    "name": "NYSE:IONQ",
-                    "displayName": "IONQ – IonQ: Computación cuántica basada en iones",
-                    "shortName": "IONQ"
-                },
-                {
-                    "name": "NASDAQ:RGTI",
-                    "displayName": "RGTI – Rigetti Computing: Computación cuántica superconductora",
-                    "shortName": "RGTI"
-                },
-                {
-                    "name": "NASDAQ:QTUM",
-                    "displayName": "QTUM – Defiance Quantum ETF: ETF de computación cuántica/IA",
-                    "shortName": "QTUM"
-                }
-            ]
-        },
-        {
-            "name": "Tecnología - IA y semiconductores",
-            "symbols": [
-                {
-                    "name": "NASDAQ:ALAB",
-                    "displayName": "ALAB – Astera Labs: Desarrolla conectividad de alta velocidad para data centers e IA",
-                    "shortName": "ALAB"
-                },
                 {
                     "name": "NASDAQ:AMAT",
                     "displayName": "AMAT – Applied Materials: Fabrica máquinas esenciales para producir chips semiconductores",
@@ -722,16 +692,6 @@
                     "name": "NASDAQ:AMD",
                     "displayName": "AMD – Advanced Micro Devices: Procesadores y GPUs",
                     "shortName": "AMD"
-                },
-                {
-                    "name": "NYSE:ANET",
-                    "displayName": "ANET – Arista Networks: Empresa líder en redes para centros de datos y AI",
-                    "shortName": "ANET"
-                },
-                {
-                    "name": "NASDAQ:APLD",
-                    "displayName": "APLD – Applied Digital Corporation: Desarrolla y opera centros de datos de alta potencia para IA, HPC y cloud",
-                    "shortName": "APLD"
                 },
                 {
                     "name": "NASDAQ:ARM",
@@ -749,29 +709,9 @@
                     "shortName": "AVGO"
                 },
                 {
-                    "name": "NASDAQ:CRDO",
-                    "displayName": "CRDO – Credo Technology Group: Diseña chips y soluciones de conectividad de alta velocidad para data centers, IA y redes cloud",
-                    "shortName": "CRDO"
-                },
-                {
-                    "name": "NASDAQ:CRWV",
-                    "displayName": "CRWV – CoreWeave: ofrece cloud de alto rendimiento con GPUs para entrenamiento y ejecución de modelos de IA",
-                    "shortName": "CRWV"
-                },
-                {
-                    "name": "NASDAQ:GLXY",
-                    "displayName": "GLXY – Galaxy Digital: Servicios financieros e infraestructura para cripto",
-                    "shortName": "GLXY"
-                },
-                {
                     "name": "NASDAQ:INTC",
                     "displayName": "INTC – Intel Corp: Fabricante histórico de microprocesadores y soluciones de computación",
                     "shortName": "INTC"
-                },
-                {
-                    "name": "NASDAQ:IREN",
-                    "displayName": "IREN – Iren Limited: Desarrolla centros de datos de bajo costo impulsados por energías renovables (costos bajos para minería de Bitcoin)",
-                    "shortName": "IREN"
                 },
                 {
                     "name": "NASDAQ:MRVL",
@@ -789,54 +729,14 @@
                     "shortName": "MU"
                 },
                 {
-                    "name": "NASDAQ:NBIS",
-                    "displayName": "NBIS – Nebius Group N.V.: Infraestructura cloud para IA",
-                    "shortName": "NBIS"
-                },
-                {
                     "name": "NASDAQ:NVDA",
                     "displayName": "NVDA – NVIDIA: GPUs e IA",
                     "shortName": "NVDA"
                 },
                 {
-                    "name": "NYSE:VRT",
-                    "displayName": "VRT – Vertiv Holdings: Infraestructura de energía y refrigeración para data centers",
-                    "shortName": "VRT"
-                },
-                {
-                    "name": "NYSE:PATH",
-                    "displayName": "PATH – UiPath: Plataforma líder en RPA (Robotic Process Automation)",
-                    "shortName": "PATH"
-                },
-                {
-                    "name": "NYSE:PSTG",
-                    "displayName": "PSTG – Pure Storage: Almacenamiento de datos flash para empresas y data centers",
-                    "shortName": "PSTG"
-                },
-                {
-                    "name": "NASDAQ:PLTR",
-                    "displayName": "PLTR – Palantir Technologies: Software de análisis de datos e IA para gobiernos y empresas",
-                    "shortName": "PLTR"
-                },
-                {
                     "name": "NYSE:TSM",
                     "displayName": "TSM – Taiwan Semiconductor: Fundición de semiconductores",
                     "shortName": "TSM"
-                },
-                {
-                    "name": "NASDAQ:WULF",
-                    "displayName": "WULF – TeraWulf: Minera de Bitcoin en EE. UU., con foco en energía de bajo costo y baja huella de carbono",
-                    "shortName": "WULF"
-                },
-                {
-                    "name": "NYSE:ZETA",
-                    "displayName": "ZETA – Zeta Global Holdings: Marketing digital basado en IA",
-                    "shortName": "ZETA"
-                },
-                {
-                    "name": "NASDAQ:BOTZ",
-                    "displayName": "BOTZ – Global X Robotics & AI: ETF de IA/robótica",
-                    "shortName": "BOTZ"
                 },
                 {
                     "name": "NASDAQ:SMH",
@@ -851,7 +751,57 @@
             ]
         },
         {
-            "name": "Tecnología - Servicios y electrónica",
+            "name": "Tecnologia: Redes e infraestructura de data centers",
+            "symbols": [
+                {
+                    "name": "NASDAQ:ALAB",
+                    "displayName": "ALAB – Astera Labs: Desarrolla conectividad de alta velocidad para data centers e IA",
+                    "shortName": "ALAB"
+                },
+                {
+                    "name": "NYSE:ANET",
+                    "displayName": "ANET – Arista Networks: Empresa líder en redes para centros de datos y AI",
+                    "shortName": "ANET"
+                },
+                {
+                    "name": "NASDAQ:APLD",
+                    "displayName": "APLD – Applied Digital Corporation: Desarrolla y opera centros de datos de alta potencia para IA, HPC y cloud",
+                    "shortName": "APLD"
+                },
+                {
+                    "name": "NASDAQ:CRDO",
+                    "displayName": "CRDO – Credo Technology Group: Diseña chips y soluciones de conectividad de alta velocidad para data centers, IA y redes cloud",
+                    "shortName": "CRDO"
+                },
+                {
+                    "name": "NASDAQ:CRWV",
+                    "displayName": "CRWV – CoreWeave: ofrece cloud de alto rendimiento con GPUs para entrenamiento y ejecución de modelos de IA",
+                    "shortName": "CRWV"
+                },
+                {
+                    "name": "NASDAQ:NBIS",
+                    "displayName": "NBIS – Nebius Group N.V.: Infraestructura cloud para IA",
+                    "shortName": "NBIS"
+                },
+                {
+                    "name": "NYSE:PSTG",
+                    "displayName": "PSTG – Pure Storage: Almacenamiento de datos flash para empresas y data centers",
+                    "shortName": "PSTG"
+                },
+                {
+                    "name": "NYSE:VRT",
+                    "displayName": "VRT – Vertiv Holdings: Infraestructura de energía y refrigeración para data centers",
+                    "shortName": "VRT"
+                },
+                {
+                    "name": "NASDAQ:DTCR",
+                    "displayName": "DTCR – Global X Data Center And Digital Infrastructure ETF",
+                    "shortName": "DTCR"
+                }
+            ]
+        },
+        {
+            "name": "Tecnologia: Servicios y software",
             "symbols": [
                 {
                     "name": "NASDAQ:AAPL",
@@ -872,16 +822,6 @@
                     "name": "NASDAQ:APP",
                     "displayName": "APP – Applovin Corporation: Plataforma de publicidad móvil con alto crecimiento",
                     "shortName": "APP"
-                },
-                {
-                    "name": "NASDAQ:ASTS",
-                    "displayName": "ASTS – AST SpaceMobile: Brinda internet y telefonía móvil directa desde satélites a celulares comunes, sin infraestructura terrestre",
-                    "shortName": "ASTS"
-                },
-                {
-                    "name": "NASDAQ:CLSK",
-                    "displayName": "CLSK – Clean Spark: Minería de Bitcoin con foco en energía eficiente.",
-                    "shortName": "CLSK"
                 },
                 {
                     "name": "NYSE:CRM",
@@ -964,6 +904,21 @@
                     "shortName": "TEAM"
                 },
                 {
+                    "name": "NYSE:PATH",
+                    "displayName": "PATH – UiPath: Plataforma líder en RPA (Robotic Process Automation)",
+                    "shortName": "PATH"
+                },
+                {
+                    "name": "NASDAQ:PLTR",
+                    "displayName": "PLTR – Palantir Technologies: Software de análisis de datos e IA para gobiernos y empresas",
+                    "shortName": "PLTR"
+                },
+                {
+                    "name": "NYSE:ZETA",
+                    "displayName": "ZETA – Zeta Global Holdings: Marketing digital basado en IA",
+                    "shortName": "ZETA"
+                },
+                {
                     "name": "AMEX:IGV",
                     "displayName": "IGV – iShares Tech-Software: ETF de software/servicios",
                     "shortName": "IGV"
@@ -982,6 +937,11 @@
                     "name": "NASDAQ:RKLB",
                     "displayName": "RKLB – Rocket Lab: Lanza pequeños satélites y fabrica hardware espacial para clientes comerciales y gobiernos",
                     "shortName": "RKLB"
+                },
+                {
+                    "name": "NASDAQ:ASTS",
+                    "displayName": "ASTS – AST SpaceMobile: Brinda internet y telefonía móvil directa desde satélites a celulares comunes, sin infraestructura terrestre",
+                    "shortName": "ASTS"
                 }
             ]
         },
