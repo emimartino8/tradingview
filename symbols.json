@@ -90,7 +90,7 @@
                 },
                 {
                     "name": "BCBA:TECO2",
-                    "displayName": "TECO2 – Telecom: Transmisión eléctrica",
+                    "displayName": "TECO2 – Telecom: Telecomunicaciones",
                     "shortName": "TECO2"
                 },
                 {
@@ -342,6 +342,11 @@
                     "name": "NYSE:EQT",
                     "displayName": "EQT – EQT Corporation: mayor productor de gas natural en EE.UU.",
                     "shortName": "EQT"
+                },
+                {
+                    "name": "NASDAQ:FSLR",
+                    "displayName": "FSLR – First Solar: Fabrica paneles solares para grandes parques solares, principalmente en EE.UU.",
+                    "shortName": "FSLR"
                 },
                 {
                     "name": "NYSE:OXY",
@@ -752,11 +757,6 @@
                     "name": "NASDAQ:CRWV",
                     "displayName": "CRWV – CoreWeave: ofrece cloud de alto rendimiento con GPUs para entrenamiento y ejecución de modelos de IA",
                     "shortName": "CRWV"
-                },
-                {
-                    "name": "NASDAQ:FSLR",
-                    "displayName": "FSLR – First Solar: Fabrica paneles solares para grandes parques solares, principalmente en EE.UU.",
-                    "shortName": "FSLR"
                 },
                 {
                     "name": "NASDAQ:GLXY",
