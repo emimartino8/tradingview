@@ -654,11 +654,6 @@
                     "shortName": "ARKK"
                 },
                 {
-                    "name": "NASDAQ:DTCR",
-                    "displayName": "DTCR – Global X Data Center And Digital Infrastructure ETF",
-                    "shortName": "DTCR"
-                },
-                {
                     "name": "AMEX:XLC",
                     "displayName": "XLC – Communication Services Select Sector SPDR: ETF telecomunicaciones",
                     "shortName": "XLC"
@@ -919,9 +914,64 @@
                     "shortName": "ZETA"
                 },
                 {
+                    "name": "NASDAQ:BOTZ",
+                    "displayName": "BOTZ – Global X Robotics & AI: ETF de IA/robótica",
+                    "shortName": "BOTZ"
+                },
+                {
                     "name": "AMEX:IGV",
                     "displayName": "IGV – iShares Tech-Software: ETF de software/servicios",
                     "shortName": "IGV"
+                }
+            ]
+        },
+        {
+            "name": "Tecnologia: Computacion cuantica",
+            "symbols": [
+                {
+                    "name": "NYSE:QBTS",
+                    "displayName": "QBTS – D-Wave Quantum: Hardware, software y servicios de computación cuántica",
+                    "shortName": "QBTS"
+                },
+                {
+                    "name": "NYSE:IONQ",
+                    "displayName": "IONQ – IonQ: Computación cuántica basada en iones",
+                    "shortName": "IONQ"
+                },
+                {
+                    "name": "NASDAQ:RGTI",
+                    "displayName": "RGTI – Rigetti Computing: Computación cuántica superconductora",
+                    "shortName": "RGTI"
+                },
+                {
+                    "name": "NASDAQ:QTUM",
+                    "displayName": "QTUM – Defiance Quantum ETF: ETF de computación cuántica/IA",
+                    "shortName": "QTUM"
+                }
+            ]
+        },
+        {
+            "name": "Tecnologia: Cripto y minera",
+            "symbols": [
+                {
+                    "name": "NASDAQ:GLXY",
+                    "displayName": "GLXY – Galaxy Digital: Servicios financieros e infraestructura para cripto",
+                    "shortName": "GLXY"
+                },
+                {
+                    "name": "NASDAQ:IREN",
+                    "displayName": "IREN – Iren Limited: Desarrolla centros de datos de bajo costo impulsados por energías renovables (costos bajos para minería de Bitcoin)",
+                    "shortName": "IREN"
+                },
+                {
+                    "name": "NASDAQ:WULF",
+                    "displayName": "WULF – TeraWulf: Minera de Bitcoin en EE. UU., con foco en energía de bajo costo y baja huella de carbono",
+                    "shortName": "WULF"
+                },
+                {
+                    "name": "NASDAQ:CLSK",
+                    "displayName": "CLSK – Clean Spark: Minería de Bitcoin con foco en energía eficiente.",
+                    "shortName": "CLSK"
                 }
             ]
         },
