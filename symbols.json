@@ -970,8 +970,13 @@
                 },
                 {
                     "name": "NASDAQ:CLSK",
-                    "displayName": "CLSK – Clean Spark: Minería de Bitcoin con foco en energía eficiente.",
+                    "displayName": "CLSK – Clean Spark: Minería de Bitcoin con foco en energía eficiente",
                     "shortName": "CLSK"
+                },
+                {
+                    "name": "NASDAQ:WGMI",
+                    "displayName": "WGMI – CoinShares Bitcoin Mining ETF: ETF de minería de Bitcoin",
+                    "shortName": "WGMI"
                 }
             ]
         },
@@ -992,6 +997,11 @@
                     "name": "NASDAQ:ASTS",
                     "displayName": "ASTS – AST SpaceMobile: Brinda internet y telefonía móvil directa desde satélites a celulares comunes, sin infraestructura terrestre",
                     "shortName": "ASTS"
+                },
+                {
+                    "name": "NYSE:PPA",
+                    "displayName": "PPA – Invesco Aerospace & Defense ETF: ETF de aeroespacial y defensa",
+                    "shortName": "PPA"
                 }
             ]
         },
