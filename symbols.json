@@ -494,6 +494,11 @@
             "name": "Finanzas",
             "symbols": [
                 {
+                    "name": "NYSE:ALL",
+                    "displayName": "ALL – Allstate: Aseguradora de autos, hogar y seguros personales",
+                    "shortName": "ALL"
+                },
+                {
                     "name": "NYSE:BAC",
                     "displayName": "BAC – Bank of America: Banco y servicios financieros",
                     "shortName": "BAC"
@@ -767,6 +772,11 @@
                     "name": "NASDAQ:APLD",
                     "displayName": "APLD – Applied Digital: Data centers para IA/HPC",
                     "shortName": "APLD"
+                },
+                {
+                    "name": "NYSE:CLS",
+                    "displayName": "CLS – Celestica: Hardware y soluciones electrónicas para data centers y redes",
+                    "shortName": "CLS"
                 },
                 {
                     "name": "NASDAQ:CRDO",
