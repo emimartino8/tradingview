@@ -729,6 +729,11 @@
                     "shortName": "NVDA"
                 },
                 {
+                    "name": "NASDAQ:QCOM",
+                    "displayName": "QCOM – Qualcomm: Chips y plataformas de conectividad",
+                    "shortName": "QCOM"
+                },
+                {
                     "name": "NYSE:TSM",
                     "displayName": "TSM – TSMC: Foundry de semiconductores",
                     "shortName": "TSM"
