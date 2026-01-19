@@ -29,6 +29,11 @@
                     "shortName": "CEPU"
                 },
                 {
+                    "name": "BCBA:COME",
+                    "displayName": "COME – Sociedad Comercial del Plata: Holding argentino diversificado",
+                    "shortName": "COME"
+                },
+                {
                     "name": "BCBA:CRES",
                     "displayName": "CRES – Cresud: Agro e inversiones inmobiliarias",
                     "shortName": "CRES"
