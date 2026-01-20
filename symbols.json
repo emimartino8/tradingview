@@ -589,6 +589,11 @@
                     "shortName": "ELV"
                 },
                 {
+                    "name": "NYSE:HIMS",
+                    "displayName": "HIMS – Hims & Hers Health: Plataforma digital de salud directa al consumidor",
+                    "shortName": "HIMS"
+                },
+                {
                     "name": "NASDAQ:HROW",
                     "displayName": "HROW – Harrow: Farmacéutica oftalmológica",
                     "shortName": "HROW"
