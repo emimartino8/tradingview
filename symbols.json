@@ -569,6 +569,11 @@
             "name": "Salud",
             "symbols": [
                 {
+                    "name": "NASDAQ:BEAM",
+                    "displayName": "BEAM – Beam Therapeutics: Biotecnológica de edición genética de precisión",
+                    "shortName": "BEAM"
+                },
+                {
                     "name": "NYSE:BSX",
                     "displayName": "BSX – Boston Scientific: Dispositivos médicos",
                     "shortName": "BSX"
