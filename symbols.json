@@ -127,6 +127,11 @@
                     "name": "BCBA:IMV",
                     "displayName": "IMV – S&P Merval: Índice de acciones argentinas",
                     "shortName": "IMV"
+                },
+                {
+                    "name": "AMEX:ARGT",
+                    "displayName": "ARGT – Global X MSCI Argentina ETF: Acciones argentinas + MELI",
+                    "shortName": "ARGT"
                 }
             ]
         },
