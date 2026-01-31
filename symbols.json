@@ -809,6 +809,11 @@
                     "shortName": "CRWV"
                 },
                 {
+                    "name": "NASDAQ:EQIX",
+                    "displayName": "EQIX – Equinix: Data centers de interconexión para cloud y redes",
+                    "shortName": "EQIX"
+                }
+                {
                     "name": "NASDAQ:NBIS",
                     "displayName": "NBIS – Nebius: Infraestructura cloud para IA",
                     "shortName": "NBIS"
