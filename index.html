@@ -2,6 +2,11 @@
 <html lang="es">
 
 <head>
+    <link rel="manifest" href="/tradingview/manifest.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/tradingview/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/tradingview/icons/favicon-16.png">
+    <meta name="theme-color" content="#121212">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta charset="UTF-8">
     <title>My Trading View</title>
     <style>
@@ -636,6 +641,10 @@
                 e.preventDefault();
                 tabs.scrollLeft += (Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY);
             }, { passive: false });
+
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/tradingview/sw.js', { scope: '/tradingview/' });
+            }
         });
     </script>
 
