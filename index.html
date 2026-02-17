@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>My Trading View</title>
     <style>
-        /* ==== Reset y layout general ==== */
         html,
         body {
             margin: 0;
@@ -17,21 +16,25 @@
             font-family: sans-serif;
         }
 
-        /* ==== Ticker Tape arriba ==== */
         #ticker-container {
             position: fixed;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            height: 30px;
+            height: 60px !important;
+            max-height: 60px !important;
             z-index: 1001;
-            background: #ffffff;
+            background: #1f1f1f;
+            overflow: hidden !important;
         }
 
-        /* ==== Barra de pestañas fija ==== */
+        #ticker-container iframe {
+            display: block;
+        }
+
         .tabs {
             position: fixed;
-            top: 50px;
+            top: 0;
             left: 0;
             right: 0;
             height: 50px;
@@ -39,6 +42,21 @@
             background: #1f1f1f;
             border-bottom: 1px solid #333;
             z-index: 1000;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tabs:active {
+            cursor: grabbing;
         }
 
         .tabs button {
@@ -53,6 +71,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            flex: 0 0 auto;
         }
 
         .tabs button:hover {
@@ -66,11 +85,10 @@
             font-weight: bold;
         }
 
-        /* ==== Área de contenido ==== */
         #tab-contents {
             position: absolute;
-            top: 100px;
-            bottom: 0;
+            top: 50px;
+            bottom: 60px;
             left: 0;
             right: 0;
             overflow: hidden;
@@ -89,7 +107,6 @@
             display: block;
         }
 
-        /* ==== Estilo del widget ==== */
         .tradingview-widget-container {
             width: 100%;
             height: 100%;
@@ -104,7 +121,6 @@
             background: #2a2a2a;
             position: absolute;
             inset: 0;
-            /* top:0; right:0; bottom:0; left:0 */
             overflow: auto;
             padding: 12px;
         }
@@ -155,8 +171,10 @@
         }
 
         .symbol-chart-area {
-            flex: 1 1 auto;
-            min-height: 0;
+            height: 360px;
+            flex: none;
+            position: relative;
+            overflow: hidden;
         }
 
         .symbol-chart-area .tradingview-widget-container,
@@ -188,56 +206,46 @@
     </div>
 
     <div id="tab-contents">
-        <!-- === Watchlist === -->
         <div id="watchlist" class="tab-content active">
             <div id="watchlist-container" class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
             </div>
         </div>
 
-        <!-- === Advance Chart === -->
         <div id="advanced-chart" class="tab-content">
             <div id="advanced-chart-container" class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
             </div>
         </div>
 
-        <!-- === Index Chart Grid === -->
         <div id="etf-chart-grid" class="tab-content">
             <div id="etf-chart-grid-scroll" class="grid-scroll">
-                <!-- Cards -->
             </div>
         </div>
 
-        <!-- === Crypto Chart Grid === -->
         <div id="crypto-chart-grid" class="tab-content">
             <div id="crypto-chart-grid-scroll" class="grid-scroll">
-                <!-- Cards -->
             </div>
         </div>
 
-        <!-- === Stock Heatmap === -->
         <div id="stock-heatmap" class="tab-content">
             <div id="stock-heatmap-container" class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
             </div>
         </div>
 
-        <!-- === ETF Heatmap === -->
         <div id="etf-heatmap" class="tab-content">
             <div id="etf-heatmap-container" class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
             </div>
         </div>
 
-        <!-- === Crypto Heatmap === -->
         <div id="crypto-heatmap" class="tab-content">
             <div id="crypto-heatmap-container" class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
             </div>
         </div>
 
-        <!-- === USD Quotes === -->
         <div id="usd-quotes" class="tab-content"></div>
     </div>
 
@@ -299,23 +307,26 @@
         }
 
         function initTickerTape(symbolsGroups) {
-            const tapeSymbols = symbolsGroups.flatMap(g =>
-                g.symbols.map(s => ({ proName: s.name, title: s.shortName || s.displayName }))
-            );
+            const symbols = symbolsGroups
+                .flatMap(g => g.symbols.map(s => s.name))
+                .join(',');
 
-            const cfg = {
-                symbols: tapeSymbols,
-                colorTheme: "dark",
-                locale: "es",
-                displayMode: "adaptive",
-                isTransparent: false,
-                showSymbolLogo: true
-            };
-            const t = document.createElement('script');
-            t.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js';
-            t.async = true;
-            t.innerHTML = JSON.stringify(cfg, null, 2);
-            document.getElementById('ticker-container').appendChild(t);
+            const container = document.getElementById('ticker-container');
+            container.innerHTML = '';
+
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = 'https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js';
+            container.appendChild(script);
+
+            const ticker = document.createElement('tv-ticker-tape');
+            ticker.setAttribute('symbols', symbols);
+            ticker.setAttribute('item-size', 'compact');
+            ticker.setAttribute('theme', 'dark');
+            ticker.setAttribute('show-hover', '');
+            ticker.setAttribute('hide-chart', '');
+
+            container.appendChild(ticker);
         }
 
         function initWatchlist(symbolsGroups) {
@@ -591,6 +602,40 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             initSymbols();
+
+            const tabs = document.querySelector('.tabs');
+            let isDown = false;
+            let startX = 0;
+            let scrollLeft = 0;
+
+            tabs.addEventListener('mousedown', (e) => {
+                if (e.button !== 0) return;
+                isDown = true;
+                startX = e.pageX - tabs.offsetLeft;
+                scrollLeft = tabs.scrollLeft;
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+
+            tabs.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            tabs.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - tabs.offsetLeft;
+                const walk = x - startX;
+                tabs.scrollLeft = scrollLeft - walk;
+            });
+
+            tabs.addEventListener('wheel', (e) => {
+                if (!e.deltaY && !e.deltaX) return;
+                e.preventDefault();
+                tabs.scrollLeft += (Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY);
+            }, { passive: false });
         });
     </script>
 
