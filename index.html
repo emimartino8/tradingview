@@ -112,7 +112,7 @@
         .grid-scroll {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-            grid-auto-rows: 380px;
+            grid-auto-rows: 450px;
             gap: 10px;
         }
 
@@ -127,6 +127,46 @@
         .symbol-card .tradingview-widget-container__widget {
             width: 100%;
             height: 100%;
+        }
+
+        .symbol-card {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background: #121212;
+        }
+
+        .symbol-quote-bar {
+            flex: none;
+            height: 90px;
+            display: flex;
+            align-items: stretch;
+            background: #1a1a1a;
+            border-bottom: 1px solid #333;
+        }
+
+        .symbol-quote-bar .tradingview-widget-container,
+        .symbol-quote-bar .tradingview-widget-container__widget {
+            width: 100%;
+            height: 100%;
+        }
+
+        .symbol-chart-area {
+            flex: 1 1 auto;
+            min-height: 0;
+        }
+
+        .symbol-chart-area .tradingview-widget-container,
+        .symbol-chart-area .tradingview-widget-container__widget {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tradingview-widget-copyright {
+            display: none !important;
         }
     </style>
 </head>
@@ -406,20 +446,54 @@
             const card = document.createElement('div');
             card.className = 'symbol-card';
 
+            const quoteBar = document.createElement('div');
+            quoteBar.className = 'symbol-quote-bar';
+
+            const quoteContainer = document.createElement('div');
+            quoteContainer.className = 'tradingview-widget-container';
+
+            const quoteWidget = document.createElement('div');
+            quoteWidget.className = 'tradingview-widget-container__widget';
+
+            quoteContainer.appendChild(quoteWidget);
+            quoteBar.appendChild(quoteContainer);
+            card.appendChild(quoteBar);
+
+            const quoteCfg = {
+                symbol: symbol,
+                colorTheme: "dark",
+                isTransparent: true,
+                locale: "es",
+                width: "100%"
+            };
+
+            const quoteScript = document.createElement('script');
+            quoteScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js';
+            quoteScript.async = true;
+            quoteScript.type = 'text/javascript';
+            quoteScript.innerHTML = JSON.stringify(quoteCfg, null, 2);
+            quoteContainer.appendChild(quoteScript);
+
+            const chartArea = document.createElement('div');
+            chartArea.className = 'symbol-chart-area';
+
             const wContainer = document.createElement('div');
             wContainer.className = 'tradingview-widget-container';
+
             const w = document.createElement('div');
             w.className = 'tradingview-widget-container__widget';
-            wContainer.appendChild(w);
-            card.appendChild(wContainer);
 
-            const cfg = {
+            wContainer.appendChild(w);
+            chartArea.appendChild(wContainer);
+            card.appendChild(chartArea);
+
+            const chartCfg = {
                 allow_symbol_change: false,
                 calendar: false,
                 details: false,
                 hide_side_toolbar: true,
                 hide_top_toolbar: true,
-                hide_legend: false,
+                hide_legend: true,
                 hide_volume: true,
                 hotlist: false,
                 interval: interval,
@@ -438,12 +512,12 @@
                 autosize: true
             };
 
-            const s = document.createElement('script');
-            s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
-            s.async = true;
-            s.type = 'text/javascript';
-            s.innerHTML = JSON.stringify(cfg, null, 2);
-            wContainer.appendChild(s);
+            const chartScript = document.createElement('script');
+            chartScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+            chartScript.async = true;
+            chartScript.type = 'text/javascript';
+            chartScript.innerHTML = JSON.stringify(chartCfg, null, 2);
+            wContainer.appendChild(chartScript);
 
             return card;
         }
