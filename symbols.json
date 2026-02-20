@@ -1034,9 +1034,29 @@
                     "shortName": "GE"
                 },
                 {
+                    "name": "NASDAQ:IRDM",
+                    "displayName": "IRDM – Iridium Communications: Servicios de comunicación satelital global",
+                    "shortName": "IRDM"
+                },
+                {
+                    "name": "NYSE:LMT",
+                    "displayName": "LMT – Lockheed Martin: Contratista militar y sistemas de defensa",
+                    "shortName": "LMT"
+                },
+                {
+                    "name": "NYSE:NOC",
+                    "displayName": "NOC – Northrop Grumman: Sistemas aeroespaciales y defensa avanzada",
+                    "shortName": "NOC"
+                },
+                {
                     "name": "NASDAQ:RKLB",
                     "displayName": "RKLB – Rocket Lab: Lanzamientos y hardware espacial",
                     "shortName": "RKLB"
+                },
+                {
+                    "name": "NYSE:RTX",
+                    "displayName": "RTX – RTX Corporation: Defensa y aeroespacial (misiles, radares, motores)",
+                    "shortName": "RTX"
                 },
                 {
                     "name": "AMEX:ARKX",
