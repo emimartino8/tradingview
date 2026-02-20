@@ -1024,6 +1024,11 @@
             "name": "Tecnología - Aeroespacial y defensa",
             "symbols": [
                 {
+                    "name": "NASDAQ:ASTS",
+                    "displayName": "ASTS – AST SpaceMobile: Conectividad satelital directa a celulares",
+                    "shortName": "ASTS"
+                },
+                {
                     "name": "NYSE:GE",
                     "displayName": "GE – GE Aerospace: Motores aeronáuticos y servicios",
                     "shortName": "GE"
@@ -1034,14 +1039,19 @@
                     "shortName": "RKLB"
                 },
                 {
-                    "name": "NASDAQ:ASTS",
-                    "displayName": "ASTS – AST SpaceMobile: Conectividad satelital directa a celulares",
-                    "shortName": "ASTS"
+                    "name": "AMEX:ARKX",
+                    "displayName": "ARKX – ARK Space Exploration & Innovation ETF: ETF enfocado en espacio y satélites (New Space)",
+                    "shortName": "ARKX"
                 },
                 {
                     "name": "AMEX:PPA",
-                    "displayName": "PPA – Aerospace & Defense: ETF aeroespacial y defensa",
+                    "displayName": "PPA – Invesco Aerospace & Defense ETF: ETF aeroespacial y defensa tradicional diversificado",
                     "shortName": "PPA"
+                },
+                {
+                    "name": "AMEX:XAR",
+                    "displayName": "XAR – SPDR S&P Aerospace & Defense ETF: ETF defensa equiponderado con mayor peso en mid caps",
+                    "shortName": "XAR"
                 }
             ]
         },
@@ -1095,7 +1105,8 @@
         "AMEX:XLE",
         "AMEX:XLP",
         "AMEX:XLY",
-        "AMEX:XLV"
+        "AMEX:XLV",
+        "AMEX:XAR"
     ],
     "cryptoSymbols": [
         "BINGX:BTCUSDT.P",

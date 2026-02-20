@@ -632,7 +632,7 @@
             host.innerHTML = '';
 
             indexSymbols.forEach(item => {
-                const card = createSymbolCard(item);
+                const card = createSymbolCard(item, "1D");
                 host.appendChild(card);
             });
         }
@@ -642,7 +642,7 @@
             host.innerHTML = '';
 
             cryptoSymbols.forEach(item => {
-                const card = createSymbolCard(item);
+                const card = createSymbolCard(item, "1D");
                 host.appendChild(card);
             });
         }
