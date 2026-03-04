@@ -554,6 +554,11 @@
                     "shortName": "OPEN"
                 },
                 {
+                    "name": "NASDAQ:SOFI",
+                    "displayName": "SOFI – SoFi Technologies: Fintech y banco digital en EE.UU",
+                    "shortName": "SOFI"
+                },
+                {
                     "name": "NASDAQ:PYPL",
                     "displayName": "PYPL – PayPal: Pagos digitales",
                     "shortName": "PYPL"
@@ -993,6 +998,11 @@
         {
             "name": "Tecnologia: Cripto y minera",
             "symbols": [
+                {
+                    "name": "NASDAQ:CIFR",
+                    "displayName": "CIFR – Cipher Digital: Minería de Bitcoin",
+                    "shortName": "CIFR"
+                },
                 {
                     "name": "NASDAQ:GLXY",
                     "displayName": "GLXY – Galaxy Digital: Servicios financieros e infraestructura cripto",
