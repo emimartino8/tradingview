@@ -899,6 +899,11 @@
                     "shortName": "GWRE"
                 },
                 {
+                    "name": "NASDAQ:INTU",
+                    "displayName": "INTU – Intuit: Software para contabilidad, impuestos y finanzas personales",
+                    "shortName": "INTU"
+                },
+                {
                     "name": "NASDAQ:META",
                     "displayName": "META – Meta: Redes sociales y publicidad digital",
                     "shortName": "META"
