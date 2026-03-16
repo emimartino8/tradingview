@@ -824,6 +824,11 @@
                     "shortName": "TSM"
                 },
                 {
+                    "name": "NASDAQ:WDC",
+                    "displayName": "WDC – Western Digital: Memorias NAND flash y discos duros",
+                    "shortName": "WDC"
+                },
+                {
                     "name": "NASDAQ:SMH",
                     "displayName": "SMH – Semiconductors: ETF de semiconductores",
                     "shortName": "SMH"
