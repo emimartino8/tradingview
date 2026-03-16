@@ -344,6 +344,11 @@
             "name": "Energía",
             "symbols": [
                 {
+                    "name": "NYSE:CTRA",
+                    "displayName": "CTRA – Coterra Energy: Petróleo y gas",
+                    "shortName": "CTRA"
+                },
+                {
                     "name": "NYSE:CVX",
                     "displayName": "CVX – Chevron: Petróleo y gas",
                     "shortName": "CVX"
@@ -357,6 +362,11 @@
                     "name": "NASDAQ:FSLR",
                     "displayName": "FSLR – First Solar: Paneles solares (utility-scale)",
                     "shortName": "FSLR"
+                },
+                {
+                    "name": "NYSE:OKE",
+                    "displayName": "OKE – ONEOK: Midstream de gas natural y NGLs",
+                    "shortName": "OKE"
                 },
                 {
                     "name": "NYSE:OXY",
@@ -681,6 +691,31 @@
             ]
         },
         {
+            "name": "Materiales e insumos básicos",
+            "symbols": [
+                {
+                    "name": "NYSE:AA",
+                    "displayName": "AA – Alcoa: Producción de aluminio y alúmina",
+                    "shortName": "AA"
+                }
+            ]
+        },
+        {
+            "name": "Industriales y electrificación",
+            "symbols": [
+                {
+                    "name": "NYSE:ETN",
+                    "displayName": "ETN – Eaton: Gestión eléctrica, industrial y energía",
+                    "shortName": "ETN"
+                },
+                {
+                    "name": "NYSE:GEV",
+                    "displayName": "GEV – GE Vernova: Equipos y servicios para generación eléctrica",
+                    "shortName": "GEV"
+                }
+            ]
+        },
+        {
             "name": "Tecnología - ETFs",
             "symbols": [
                 {
@@ -744,6 +779,11 @@
                     "shortName": "INTC"
                 },
                 {
+                    "name": "NASDAQ:KLAC",
+                    "displayName": "KLAC – KLA: Equipos de inspección y metrología para chips",
+                    "shortName": "KLAC"
+                },
+                {
                     "name": "NASDAQ:MRVL",
                     "displayName": "MRVL – Marvell: Chips para redes y data centers",
                     "shortName": "MRVL"
@@ -767,6 +807,11 @@
                     "name": "NASDAQ:QCOM",
                     "displayName": "QCOM – Qualcomm: Chips y plataformas de conectividad",
                     "shortName": "QCOM"
+                },
+                {
+                    "name": "NASDAQ:SNDK",
+                    "displayName": "SNDK – Sandisk: Memorias flash y almacenamiento NAND",
+                    "shortName": "SNDK"
                 },
                 {
                     "name": "NYSE:TSM",
@@ -819,9 +864,24 @@
                     "shortName": "CRWV"
                 },
                 {
+                    "name": "NYSE:DLR",
+                    "displayName": "DLR – Digital Realty Trust: REIT de data centers",
+                    "shortName": "DLR"
+                },
+                {
+                    "name": "NYSE:DOCN",
+                    "displayName": "DOCN – DigitalOcean: Cloud para desarrolladores y pymes",
+                    "shortName": "DOCN"
+                },
+                {
                     "name": "NASDAQ:EQIX",
                     "displayName": "EQIX – Equinix: Data centers de interconexión para cloud y redes",
                     "shortName": "EQIX"
+                },
+                {
+                    "name": "NYSE:IRM",
+                    "displayName": "IRM – Iron Mountain: REIT de almacenamiento e infraestructura digital",
+                    "shortName": "IRM"
                 },
                 {
                     "name": "NASDAQ:NBIS",
@@ -964,6 +1024,11 @@
                     "shortName": "TEAM"
                 },
                 {
+                    "name": "NASDAQ:TMUS",
+                    "displayName": "TMUS – T-Mobile US: Telecomunicaciones inalámbricas",
+                    "shortName": "TMUS"
+                },
+                {
                     "name": "NYSE:PATH",
                     "displayName": "PATH – UiPath: Automatización RPA (Robotic Process Automation)",
                     "shortName": "PATH"
@@ -1082,6 +1147,16 @@
                     "name": "NYSE:NOC",
                     "displayName": "NOC – Northrop Grumman: Sistemas aeroespaciales y defensa avanzada",
                     "shortName": "NOC"
+                },
+                {
+                    "name": "NASDAQ:ONDS",
+                    "displayName": "ONDS – Ondas: Drones autónomos y redes inalámbricas críticas",
+                    "shortName": "ONDS"
+                },
+                {
+                    "name": "NYSE:PL",
+                    "displayName": "PL – Planet Labs: Imágenes satelitales y datos geoespaciales",
+                    "shortName": "PL"
                 },
                 {
                     "name": "NASDAQ:RKLB",
