@@ -494,16 +494,6 @@
                     "shortName": "TLT"
                 },
                 {
-                    "name": "AMEX:XLB",
-                    "displayName": "XLB – Materials: ETF de materiales",
-                    "shortName": "XLB"
-                },
-                {
-                    "name": "AMEX:XLI",
-                    "displayName": "XLI – Industrials: ETF industrial",
-                    "shortName": "XLI"
-                },
-                {
                     "name": "AMEX:XLRE",
                     "displayName": "XLRE – Real Estate: ETF real estate",
                     "shortName": "XLRE"
@@ -697,6 +687,16 @@
                     "name": "NYSE:AA",
                     "displayName": "AA – Alcoa: Producción de aluminio y alúmina",
                     "shortName": "AA"
+                },
+                {
+                    "name": "AMEX:XLB",
+                    "displayName": "XLB – Materials: ETF de materiales industriales",
+                    "shortName": "XLB"
+                },
+                {
+                    "name": "AMEX:XME",
+                    "displayName": "XME – Metals & Mining: ETF sector metales y míneria",
+                    "shortName": "XME"
                 }
             ]
         },
@@ -712,6 +712,11 @@
                     "name": "NYSE:GEV",
                     "displayName": "GEV – GE Vernova: Equipos y servicios para generación eléctrica",
                     "shortName": "GEV"
+                },
+                {
+                    "name": "AMEX:XLI",
+                    "displayName": "XLI – Industrials: ETF industrial",
+                    "shortName": "XLI"
                 }
             ]
         },
