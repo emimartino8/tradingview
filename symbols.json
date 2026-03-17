@@ -705,7 +705,7 @@
                 },
                 {
                     "name": "AMEX:XME",
-                    "displayName": "XME – Metals & Mining: ETF sector metales y míneria",
+                    "displayName": "XME – Metals & Mining: ETF sector metales y minería",
                     "shortName": "XME"
                 }
             ]
@@ -825,7 +825,7 @@
                 },
                 {
                     "name": "NASDAQ:SNDK",
-                    "displayName": "SNDK – Sandisk: Memorias flash y almacenamiento NAND",
+                    "displayName": "SNDK – SanDisk: Memorias flash y almacenamiento NAND",
                     "shortName": "SNDK"
                 },
                 {
