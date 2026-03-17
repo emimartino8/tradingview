@@ -239,6 +239,11 @@
                     "shortName": "CAKE"
                 },
                 {
+                    "name": "NYSE:CAVA",
+                    "displayName": "CAVA – CAVA Group: Restaurantes fast-casual mediterráneos",
+                    "shortName": "CAVA"
+                },
+                {
                     "name": "NYSE:CMG",
                     "displayName": "CMG – Chipotle: Restaurantes fast-casual",
                     "shortName": "CMG"
@@ -362,6 +367,11 @@
                     "name": "NASDAQ:FSLR",
                     "displayName": "FSLR – First Solar: Paneles solares (utility-scale)",
                     "shortName": "FSLR"
+                },
+                {
+                    "name": "NYSE:NE",
+                    "displayName": "NE – Noble: Perforación offshore para petróleo y gas",
+                    "shortName": "NE"
                 },
                 {
                     "name": "NYSE:OKE",
@@ -929,6 +939,11 @@
                     "shortName": "AAPL"
                 },
                 {
+                    "name": "NASDAQ:ADEA",
+                    "displayName": "ADEA – Adeia: Licencias de propiedad intelectual y tecnología multimedia/semiconductores",
+                    "shortName": "ADEA"
+                },
+                {
                     "name": "NASDAQ:ADBE",
                     "displayName": "ADBE – Adobe: Software creativo y nube",
                     "shortName": "ADBE"
@@ -977,6 +992,11 @@
                     "name": "NASDAQ:INTU",
                     "displayName": "INTU – Intuit: Software para contabilidad, impuestos y finanzas personales",
                     "shortName": "INTU"
+                },
+                {
+                    "name": "NYSE:IOT",
+                    "displayName": "IOT – Samsara: Plataforma IoT y software operativo para flotas e industria",
+                    "shortName": "IOT"
                 },
                 {
                     "name": "NASDAQ:META",
@@ -1162,6 +1182,11 @@
                     "name": "NYSE:LMT",
                     "displayName": "LMT – Lockheed Martin: Contratista militar y sistemas de defensa",
                     "shortName": "LMT"
+                },
+                {
+                    "name": "NASDAQ:LUNR",
+                    "displayName": "LUNR – Intuitive Machines: Servicios lunares, espacio y exploración",
+                    "shortName": "LUNR"
                 },
                 {
                     "name": "NYSE:NOC",
