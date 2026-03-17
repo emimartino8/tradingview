@@ -644,6 +644,11 @@
                     "shortName": "LLY"
                 },
                 {
+                    "name": "NASDAQ:MRNA",
+                    "displayName": "MRNA – Moderna: Biotecnología y vacunas basadas en mRNA",
+                    "shortName": "MRNA"
+                },
+                {
                     "name": "NYSE:MRK",
                     "displayName": "MRK – Merck: Farmacéutica y vacunas",
                     "shortName": "MRK"
