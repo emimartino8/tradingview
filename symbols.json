@@ -729,6 +729,11 @@
                     "shortName": "GEV"
                 },
                 {
+                    "name": "NYSE:GLW",
+                    "displayName": "GLW – Corning: Vidrio avanzado, fibra óptica y materiales para telecom e industria",
+                    "shortName": "GLW"
+                },
+                {
                     "name": "AMEX:XLI",
                     "displayName": "XLI – Industrials: ETF industrial",
                     "shortName": "XLI"
@@ -839,6 +844,11 @@
                     "shortName": "TSM"
                 },
                 {
+                    "name": "NYSE:VICR",
+                    "displayName": "VICR – Vicor: Soluciones de energía para chips y data centers (power modules)",
+                    "shortName": "VICR"
+                },
+                {
                     "name": "NASDAQ:WDC",
                     "displayName": "WDC – Western Digital: Memorias NAND flash y discos duros",
                     "shortName": "WDC"
@@ -859,6 +869,11 @@
             "name": "Tecnologia: Redes e infraestructura de data centers",
             "symbols": [
                 {
+                    "name": "NASDAQ:AAOI",
+                    "displayName": "AAOI – Applied Optoelectronics: Transceptores ópticos para data centers y telecom",
+                    "shortName": "AAOI"
+                },
+                {
                     "name": "NASDAQ:ALAB",
                     "displayName": "ALAB – Astera Labs: Conectividad de alta velocidad para data centers",
                     "shortName": "ALAB"
@@ -874,6 +889,11 @@
                     "shortName": "APLD"
                 },
                 {
+                    "name": "NASDAQ:AXTI",
+                    "displayName": "AXTI – AXT: Materiales semiconductores (sustratos) para comunicaciones y chips",
+                    "shortName": "AXTI"
+                },
+                {
                     "name": "NYSE:CIEN",
                     "displayName": "CIEN – Ciena: Infraestructura de redes ópticas y telecom de alta capacidad",
                     "shortName": "CIEN"
@@ -882,6 +902,11 @@
                     "name": "NYSE:CLS",
                     "displayName": "CLS – Celestica: Hardware y soluciones electrónicas para data centers y redes",
                     "shortName": "CLS"
+                },
+                {
+                    "name": "NYSE:COHR",
+                    "displayName": "COHR – Coherent: Láseres y componentes fotónicos para industria y data centers",
+                    "shortName": "COHR"
                 },
                 {
                     "name": "NASDAQ:CRDO",
@@ -912,6 +937,11 @@
                     "name": "NYSE:IRM",
                     "displayName": "IRM – Iron Mountain: REIT de almacenamiento e infraestructura digital",
                     "shortName": "IRM"
+                },
+                {
+                    "name": "NASDAQ:LITE",
+                    "displayName": "LITE – Lumentum: Componentes ópticos y láseres para telecom y data centers",
+                    "shortName": "LITE"
                 },
                 {
                     "name": "NASDAQ:NBIS",
