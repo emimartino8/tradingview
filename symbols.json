@@ -369,6 +369,11 @@
                     "shortName": "FSLR"
                 },
                 {
+                    "name": "NYSE:HP",
+                    "displayName": "HP – Helmerich & Payne: Perforación y servicios para petróleo y gas",
+                    "shortName": "HP"
+                },
+                {
                     "name": "NYSE:NE",
                     "displayName": "NE – Noble: Perforación offshore para petróleo y gas",
                     "shortName": "NE"
@@ -844,7 +849,7 @@
                     "shortName": "TSM"
                 },
                 {
-                    "name": "NYSE:VICR",
+                    "name": "NASDAQ:VICR",
                     "displayName": "VICR – Vicor: Soluciones de energía para chips y data centers (power modules)",
                     "shortName": "VICR"
                 },
@@ -954,6 +959,11 @@
                     "shortName": "PSTG"
                 },
                 {
+                    "name": "NASDAQ:VIAV",
+                    "displayName": "VIAV – VIAVI Solutions: Testeo, monitoreo y tecnologías ópticas para redes y data centers",
+                    "shortName": "VIAV"
+                },
+                {
                     "name": "NYSE:VRT",
                     "displayName": "VRT – Vertiv: Energía y refrigeración para data centers",
                     "shortName": "VRT"
@@ -1014,6 +1024,11 @@
                     "shortName": "DELL"
                 },
                 {
+                    "name": "NASDAQ:FSLY",
+                    "displayName": "FSLY – Fastly: Edge cloud, CDN y seguridad",
+                    "shortName": "FSLY"
+                },
+                {
                     "name": "NASDAQ:GOOGL",
                     "displayName": "GOOGL – Alphabet: Publicidad, búsqueda y cloud",
                     "shortName": "GOOGL"
@@ -1034,6 +1049,11 @@
                     "shortName": "IOT"
                 },
                 {
+                    "name": "NASDAQ:MDB",
+                    "displayName": "MDB – MongoDB: Base de datos NoSQL",
+                    "shortName": "MDB"
+                },
+                {
                     "name": "NASDAQ:META",
                     "displayName": "META – Meta: Redes sociales y publicidad digital",
                     "shortName": "META"
@@ -1044,9 +1064,9 @@
                     "shortName": "MSFT"
                 },
                 {
-                    "name": "NASDAQ:MDB",
-                    "displayName": "MDB – MongoDB: Base de datos NoSQL",
-                    "shortName": "MDB"
+                    "name": "NYSE:NOW",
+                    "displayName": "NOW – ServiceNow: Líder en software de automatización empresarial",
+                    "shortName": "NOW"
                 },
                 {
                     "name": "NASDAQ:NFLX",
@@ -1054,9 +1074,14 @@
                     "shortName": "NFLX"
                 },
                 {
-                    "name": "NYSE:NOW",
-                    "displayName": "NOW – ServiceNow: Líder en software de automatización empresarial",
-                    "shortName": "NOW"
+                    "name": "NYSE:PATH",
+                    "displayName": "PATH – UiPath: Automatización RPA (Robotic Process Automation)",
+                    "shortName": "PATH"
+                },
+                {
+                    "name": "NASDAQ:PLTR",
+                    "displayName": "PLTR – Palantir: Analítica de datos e IA",
+                    "shortName": "PLTR"
                 },
                 {
                     "name": "NYSE:RBRK",
@@ -1099,14 +1124,9 @@
                     "shortName": "TMUS"
                 },
                 {
-                    "name": "NYSE:PATH",
-                    "displayName": "PATH – UiPath: Automatización RPA (Robotic Process Automation)",
-                    "shortName": "PATH"
-                },
-                {
-                    "name": "NASDAQ:PLTR",
-                    "displayName": "PLTR – Palantir: Analítica de datos e IA",
-                    "shortName": "PLTR"
+                    "name": "NYSE:YOU",
+                    "displayName": "YOU – Clear Secure: Identidad digital y verificación segura",
+                    "shortName": "YOU"
                 },
                 {
                     "name": "NYSE:ZETA",
@@ -1129,14 +1149,14 @@
             "name": "Tecnologia: Computacion cuantica",
             "symbols": [
                 {
-                    "name": "NYSE:QBTS",
-                    "displayName": "QBTS – D-Wave: Computación cuántica (annealing) y servicios",
-                    "shortName": "QBTS"
-                },
-                {
                     "name": "NYSE:IONQ",
                     "displayName": "IONQ – IonQ: Computación cuántica (iones atrapados)",
                     "shortName": "IONQ"
+                },
+                {
+                    "name": "NYSE:QBTS",
+                    "displayName": "QBTS – D-Wave: Computación cuántica (annealing) y servicios",
+                    "shortName": "QBTS"
                 },
                 {
                     "name": "NASDAQ:RGTI",
@@ -1159,6 +1179,16 @@
                     "shortName": "CIFR"
                 },
                 {
+                    "name": "NASDAQ:CLSK",
+                    "displayName": "CLSK – CleanSpark: Minería de Bitcoin",
+                    "shortName": "CLSK"
+                },
+                {
+                    "name": "NYSE:CRCL",
+                    "displayName": "CRCL – Circle Internet Group: Infraestructura financiera cripto y emisora de USDC",
+                    "shortName": "CRCL"
+                },
+                {
                     "name": "NASDAQ:GLXY",
                     "displayName": "GLXY – Galaxy Digital: Servicios financieros e infraestructura cripto",
                     "shortName": "GLXY"
@@ -1169,19 +1199,14 @@
                     "shortName": "IREN"
                 },
                 {
-                    "name": "NASDAQ:WULF",
-                    "displayName": "WULF – TeraWulf: Minería de Bitcoin",
-                    "shortName": "WULF"
-                },
-                {
-                    "name": "NASDAQ:CLSK",
-                    "displayName": "CLSK – CleanSpark: Minería de Bitcoin",
-                    "shortName": "CLSK"
-                },
-                {
                     "name": "NASDAQ:WGMI",
                     "displayName": "WGMI – Bitcoin Miners: ETF de mineras de Bitcoin",
                     "shortName": "WGMI"
+                },
+                {
+                    "name": "NASDAQ:WULF",
+                    "displayName": "WULF – TeraWulf: Minería de Bitcoin",
+                    "shortName": "WULF"
                 }
             ]
         },
