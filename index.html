@@ -2,11 +2,11 @@
 <html lang="es">
 
 <head>
-    <link rel="manifest" href="/tradingview/manifest.webmanifest">
-    <link rel="icon" href="/tradingview/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" sizes="180x180" href="/tradingview/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/tradingview/icons/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/tradingview/icons/favicon-16.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
     <meta name="theme-color" content="#121212">
     <meta name="mobile-web-app-capable" content="yes">
     <meta charset="UTF-8">
@@ -194,6 +194,156 @@
             display: none !important;
         }
 
+        .watchlist-view {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            background: #121212;
+            overflow: hidden;
+        }
+
+        .watchlist-toolbar {
+            flex: none;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-bottom: 1px solid #333;
+            background: #1a1a1a;
+        }
+
+        .watchlist-title {
+            min-width: 0;
+            flex: 1;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .watchlist-subtitle {
+            font-size: 0.8rem;
+            color: #9f9f9f;
+            white-space: nowrap;
+        }
+
+        .watchlist-back {
+            flex: none;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #444;
+            border-radius: 6px;
+            background: #222;
+            color: #eee;
+            cursor: pointer;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .watchlist-back:hover {
+            background: #2d2d2d;
+        }
+
+        .category-grid {
+            flex: 1;
+            overflow: auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-content: start;
+            gap: 10px;
+            padding: 12px;
+            background: #202020;
+        }
+
+        .category-card {
+            position: relative;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid #333;
+            background: #121212;
+            color: #e8e8e8;
+            cursor: pointer;
+            text-align: left;
+            font: inherit;
+        }
+
+        .category-card:hover {
+            border-color: #4b6ea9;
+            background: #171b22;
+        }
+
+        .category-card-title {
+            flex: none;
+            height: 20px;
+            min-width: 0;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.25;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            color: #bdbdbd;
+        }
+
+        .category-card-header {
+            flex: none;
+            height: 25px;
+            display: flex;
+            align-items: flex-start;
+            padding-right: 145px;
+        }
+
+        .category-ticker-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            width: 140px;
+            min-height: 28px;
+            overflow: hidden;
+            pointer-events: none;
+            text-align: right;
+            color-scheme: dark;
+        }
+
+        .category-ticker-tag tv-ticker-tag {
+            max-width: 140px;
+            color-scheme: dark;
+        }
+
+        .category-chart {
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            background: #0f0f0f;
+            pointer-events: none;
+            color-scheme: dark;
+            --tv-widget-background-color: #0f0f0f;
+            --tv-widget-text-color: #e0e0e0;
+            --tv-widget-hover-background-color: #1b1f2a;
+        }
+
+        .category-chart .tradingview-widget-container,
+        .category-chart .tradingview-widget-container__widget {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .watchlist-detail {
+            flex: 1;
+            min-height: 0;
+        }
+
         @media (pointer: coarse) {
             #ticker-container {
                 display: none !important;
@@ -234,11 +384,37 @@
             .symbol-chart-area {
                 height: 510px;
             }
+
+            .watchlist-toolbar {
+                min-height: 64px;
+            }
+
+            .watchlist-subtitle {
+                display: none;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 1200px) and (pointer: fine) {
+            .category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) and (pointer: fine) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
+    <script type="module" src="https://widgets.tradingview-widget.com/w/es/tv-ticker-tag.js"></script>
+
     <div id="ticker-container" class="tradingview-widget-container">
         <div class="tradingview-widget-container__widget"></div>
     </div>
@@ -256,8 +432,7 @@
 
     <div id="tab-contents">
         <div id="watchlist" class="tab-content active">
-            <div id="watchlist-container" class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
+            <div id="watchlist-container" class="watchlist-view">
             </div>
         </div>
 
@@ -395,8 +570,8 @@
                 .then(data => {
                     APP_DATA = data;
 
-                    initTickerTape(data.symbolsGroups)
-                    initWatchlist(data.symbolsGroups);
+                    initTickerTape(data.indexSymbols);
+                    initWatchlistSummary(data.symbolsGroups);
 
                     initializedTabs.add('watchlist');
                 })
@@ -442,9 +617,119 @@
             initializedTabs.add(tab);
         }
 
-        function initTickerTape(symbolsGroups) {
-            const symbols = symbolsGroups
-                .flatMap(g => g.symbols.map(s => s.name))
+        function isIndexOrEtf(symbol) {
+            const displayName = symbol.displayName || '';
+            const normalized = displayName
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
+
+            return /\bETF\b/.test(displayName) || normalized.includes('indice');
+        }
+
+        function getRepresentativeSymbols(group) {
+            if (group.representativeSymbol) {
+                const configured = group.symbols.find(symbol => symbol.name === group.representativeSymbol);
+
+                if (configured) {
+                    return [configured];
+                }
+            }
+
+            const representatives = group.symbols.filter(isIndexOrEtf);
+
+            if (representatives.length) {
+                return representatives;
+            }
+
+            if (group.name === 'Real Estate' && APP_DATA) {
+                const realEstateEtfs = new Set(['AMEX:VNQ', 'AMEX:XLRE']);
+                return APP_DATA.symbolsGroups
+                    .flatMap(item => item.symbols)
+                    .filter(symbol => realEstateEtfs.has(symbol.name));
+            }
+
+            return group.symbols.slice(0, 1);
+        }
+
+        function createSymbolOverview(symbolName, title) {
+            const container = document.createElement('div');
+            container.className = 'tradingview-widget-container';
+
+            const widget = document.createElement('div');
+            widget.className = 'tradingview-widget-container__widget';
+            container.appendChild(widget);
+
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true;
+            script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js';
+            script.innerHTML = JSON.stringify({
+                lineWidth: 2,
+                lineType: 0,
+                chartType: "candlesticks",
+                showVolume: true,
+                fontColor: "rgb(106, 109, 120)",
+                gridLineColor: "rgba(242, 242, 242, 0.06)",
+                volumeUpColor: "rgba(34, 171, 148, 0.5)",
+                volumeDownColor: "rgba(247, 82, 95, 0.5)",
+                backgroundColor: "#0F0F0F",
+                widgetFontColor: "#DBDBDB",
+                upColor: "#22ab94",
+                downColor: "#f7525f",
+                borderUpColor: "#22ab94",
+                borderDownColor: "#f7525f",
+                wickUpColor: "#22ab94",
+                wickDownColor: "#f7525f",
+                colorTheme: "dark",
+                isTransparent: false,
+                locale: "es",
+                chartOnly: true,
+                scalePosition: "right",
+                scaleMode: "Normal",
+                fontFamily: "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                valuesTracking: "1",
+                changeMode: "price-and-percent",
+                symbols: [
+                    [
+                        title,
+                        `${symbolName}|3M`
+                    ]
+                ],
+                dateRanges: [
+                    "3m|1D"
+                ],
+                fontSize: "10",
+                headerFontSize: "medium",
+                autosize: true,
+                dateFormat: "qq 'yy",
+                width: "100%",
+                height: "100%",
+                noTimeScale: false,
+                hideDateRanges: false,
+                showMA: true,
+                maLength: "20",
+                maLineColor: "rgba(255, 241, 118, 0.5)",
+                maLineWidth: 1
+            }, null, 2);
+
+            container.appendChild(script);
+            return container;
+        }
+
+        function createTickerTag(symbolName) {
+            const tag = document.createElement('tv-ticker-tag');
+            tag.setAttribute('symbol', symbolName);
+            tag.setAttribute('hide-background', '');
+            tag.setAttribute('size', 'medium');
+            tag.textContent = symbolName;
+            tag.style.display = 'inline-block';
+            tag.style.colorScheme = 'dark';
+            return tag;
+        }
+
+        function initTickerTape(symbolNames) {
+            const symbols = symbolNames
                 .join(',');
 
             const container = document.getElementById('ticker-container');
@@ -465,7 +750,7 @@
             container.appendChild(ticker);
         }
 
-        function initWatchlist(symbolsGroups) {
+        function mountMarketQuotes(container, symbolsGroups) {
             const cfg = {
                 colorTheme: "dark",
                 locale: "es",
@@ -475,15 +760,105 @@
                 height: "100%",
                 symbolsGroups: symbolsGroups
             };
+
+            container.innerHTML = '<div class="tradingview-widget-container__widget"></div>';
             const s = document.createElement('script');
             s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js';
             s.async = true;
             s.innerHTML = JSON.stringify(cfg, null, 2);
-            document.getElementById('watchlist-container').appendChild(s);
+            container.appendChild(s);
+        }
+
+        function initWatchlistSummary(symbolsGroups) {
+            const container = document.getElementById('watchlist-container');
+            container.innerHTML = '';
+
+            const grid = document.createElement('div');
+            grid.className = 'category-grid';
+
+            symbolsGroups.forEach((group, index) => {
+                const card = document.createElement('div');
+                card.className = 'category-card';
+                card.tabIndex = 0;
+                card.setAttribute('role', 'button');
+                card.addEventListener('click', () => showCategoryDetail(index));
+                card.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        showCategoryDetail(index);
+                    }
+                });
+
+                const header = document.createElement('div');
+                header.className = 'category-card-header';
+
+                const cardTitle = document.createElement('div');
+                cardTitle.className = 'category-card-title';
+                cardTitle.textContent = group.name;
+
+                header.appendChild(cardTitle);
+
+                if (group.representativeSymbol) {
+                    const tagHost = document.createElement('div');
+                    tagHost.className = 'category-ticker-tag';
+                    tagHost.appendChild(createTickerTag(group.representativeSymbol));
+                    card.appendChild(tagHost);
+                }
+
+                card.appendChild(header);
+
+                if (group.representativeSymbol) {
+                    const chart = document.createElement('div');
+                    chart.className = 'category-chart';
+                    chart.appendChild(createSymbolOverview(group.representativeSymbol, group.name));
+                    card.appendChild(chart);
+                }
+
+                grid.appendChild(card);
+            });
+
+            container.appendChild(grid);
+        }
+
+        function showCategoryDetail(groupIndex) {
+            const group = APP_DATA.symbolsGroups[groupIndex];
+            if (!group) return;
+
+            const container = document.getElementById('watchlist-container');
+            container.innerHTML = '';
+
+            const toolbar = document.createElement('div');
+            toolbar.className = 'watchlist-toolbar';
+
+            const back = document.createElement('button');
+            back.className = 'watchlist-back';
+            back.type = 'button';
+            back.textContent = '‹';
+            back.title = 'Volver a categorías';
+            back.addEventListener('click', () => initWatchlistSummary(APP_DATA.symbolsGroups));
+
+            const title = document.createElement('div');
+            title.className = 'watchlist-title';
+            title.textContent = group.name;
+
+            const subtitle = document.createElement('div');
+            subtitle.className = 'watchlist-subtitle';
+            subtitle.textContent = `${group.symbols.length} símbolos`;
+
+            const detail = document.createElement('div');
+            detail.className = 'watchlist-detail tradingview-widget-container';
+
+            toolbar.appendChild(back);
+            toolbar.appendChild(title);
+            toolbar.appendChild(subtitle);
+            container.appendChild(toolbar);
+            container.appendChild(detail);
+
+            mountMarketQuotes(detail, [group]);
         }
 
         function initAdvancedChart(symbolsGroups) {
-            symbolsList = symbolsGroups.flatMap(group => group.symbols.map(s => s.name));
+            const symbolsList = symbolsGroups.flatMap(group => group.symbols.map(s => s.name));
             const cfg = {
                 allow_symbol_change: true,
                 calendar: false,
@@ -732,7 +1107,13 @@
             }, { passive: false });
 
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/tradingview/sw.js', { scope: '/tradingview/' });
+                fetch('sw.js', { method: 'HEAD' })
+                    .then(res => {
+                        if (res.ok) {
+                            navigator.serviceWorker.register('sw.js', { scope: './' });
+                        }
+                    })
+                    .catch(() => { });
             }
         });
     </script>
