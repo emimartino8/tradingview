@@ -1339,6 +1339,62 @@
             "representativeSymbol": "AMEX:XLI"
         },
         {
+            "name": "Servicios públicos",
+            "representativeSymbol": "AMEX:XLU",
+            "symbols": [
+                {
+                    "name": "NYSE:NEE",
+                    "displayName": "NEE – NextEra Energy: Utility eléctrica y energías renovables",
+                    "shortName": "NEE"
+                },
+                {
+                    "name": "NYSE:SO",
+                    "displayName": "SO – Southern Company: Utility eléctrica y gas",
+                    "shortName": "SO"
+                },
+                {
+                    "name": "NYSE:DUK",
+                    "displayName": "DUK – Duke Energy: Utility eléctrica y gas",
+                    "shortName": "DUK"
+                },
+                {
+                    "name": "NASDAQ:CEG",
+                    "displayName": "CEG – Constellation Energy: Generación eléctrica y nuclear",
+                    "shortName": "CEG"
+                },
+                {
+                    "name": "NYSE:SRE",
+                    "displayName": "SRE – Sempra Energy: Infraestructura energética y utilities",
+                    "shortName": "SRE"
+                },
+                {
+                    "name": "NASDAQ:AEP",
+                    "displayName": "AEP – American Electric Power: Utility eléctrica",
+                    "shortName": "AEP"
+                },
+                {
+                    "name": "NYSE:PEG",
+                    "displayName": "PEG – Public Service Enterprise Group: Utility eléctrica y gas",
+                    "shortName": "PEG"
+                },
+                {
+                    "name": "NASDAQ:XEL",
+                    "displayName": "XEL – Xcel Energy: Utility eléctrica y renovables",
+                    "shortName": "XEL"
+                },
+                {
+                    "name": "NYSE:PCG",
+                    "displayName": "PCG – PG&E: Utility eléctrica y gas",
+                    "shortName": "PCG"
+                },
+                {
+                    "name": "AMEX:XLU",
+                    "displayName": "XLU – Utilities Select Sector SPDR Fund: ETF utilities",
+                    "shortName": "XLU"
+                }
+            ]
+        },
+        {
             "name": "Tecnología - ETFs",
             "symbols": [
                 {
@@ -1368,6 +1424,263 @@
                 }
             ],
             "representativeSymbol": "NASDAQ:QQQ"
+        },
+        {
+            "name": "Tecnología: Software y Cloud",
+            "symbols": [
+                {
+                    "name": "NASDAQ:ADBE",
+                    "displayName": "ADBE – Adobe: Software creativo y nube",
+                    "shortName": "ADBE"
+                },
+                {
+                    "name": "NASDAQ:ADP",
+                    "displayName": "ADP – ADP: Payroll, RR.HH. y software empresarial",
+                    "shortName": "ADP"
+                },
+                {
+                    "name": "NASDAQ:ADSK",
+                    "displayName": "ADSK – Autodesk: Software de diseño, ingeniería y arquitectura",
+                    "shortName": "ADSK"
+                },
+                {
+                    "name": "NASDAQ:CDNS",
+                    "displayName": "CDNS – Cadence Design Systems: Software EDA para semiconductores",
+                    "shortName": "CDNS"
+                },
+                {
+                    "name": "NYSE:CRM",
+                    "displayName": "CRM – Salesforce: Software CRM en la nube",
+                    "shortName": "CRM"
+                },
+                {
+                    "name": "NASDAQ:DDOG",
+                    "displayName": "DDOG – Datadog: Observabilidad y monitoreo cloud",
+                    "shortName": "DDOG"
+                },
+                {
+                    "name": "NASDAQ:FSLY",
+                    "displayName": "FSLY – Fastly: Edge cloud, CDN y seguridad",
+                    "shortName": "FSLY"
+                },
+                {
+                    "name": "NYSE:GWRE",
+                    "displayName": "GWRE – Guidewire: Software para aseguradoras",
+                    "shortName": "GWRE"
+                },
+                {
+                    "name": "NASDAQ:INTU",
+                    "displayName": "INTU – Intuit: Software para contabilidad, impuestos y finanzas personales",
+                    "shortName": "INTU"
+                },
+                {
+                    "name": "NASDAQ:MDB",
+                    "displayName": "MDB – MongoDB: Base de datos NoSQL",
+                    "shortName": "MDB"
+                },
+                {
+                    "name": "NYSE:NOW",
+                    "displayName": "NOW – ServiceNow: Líder en software de automatización empresarial",
+                    "shortName": "NOW"
+                },
+                {
+                    "name": "NYSE:ORCL",
+                    "displayName": "ORCL – Oracle: Base de datos, software empresarial y cloud",
+                    "shortName": "ORCL"
+                },
+                {
+                    "name": "NYSE:PATH",
+                    "displayName": "PATH – UiPath: Automatización RPA (Robotic Process Automation)",
+                    "shortName": "PATH"
+                },
+                {
+                    "name": "NASDAQ:PLTR",
+                    "displayName": "PLTR – Palantir: Analítica de datos e IA",
+                    "shortName": "PLTR"
+                },
+                {
+                    "name": "NYSE:SAP",
+                    "displayName": "SAP – SAP: Software empresarial y ERP",
+                    "shortName": "SAP"
+                },
+                {
+                    "name": "NYSE:SNOW",
+                    "displayName": "SNOW – Snowflake: Plataforma de datos cloud",
+                    "shortName": "SNOW"
+                },
+                {
+                    "name": "NASDAQ:TEAM",
+                    "displayName": "TEAM – Atlassian: Herramientas de colaboración (Jira)",
+                    "shortName": "TEAM"
+                },
+                {
+                    "name": "NASDAQ:WDAY",
+                    "displayName": "WDAY – Workday: Software de recursos humanos y finanzas",
+                    "shortName": "WDAY"
+                },
+                {
+                    "name": "NYSE:ZETA",
+                    "displayName": "ZETA – Zeta Global: Marketing y datos (IA)",
+                    "shortName": "ZETA"
+                },
+                {
+                    "name": "AMEX:IGV",
+                    "displayName": "IGV – Tech-Software: ETF de software",
+                    "shortName": "IGV"
+                }
+            ],
+            "representativeSymbol": "AMEX:IGV"
+        },
+        {
+            "name": "Tecnología: Plataformas e Infraestructura",
+            "symbols": [
+                {
+                    "name": "NASDAQ:AAPL",
+                    "displayName": "AAPL – Apple: Dispositivos y servicios",
+                    "shortName": "AAPL"
+                },
+                {
+                    "name": "NASDAQ:ADEA",
+                    "displayName": "ADEA – Adeia: Licencias de propiedad intelectual y tecnología multimedia/semiconductores",
+                    "shortName": "ADEA"
+                },
+                {
+                    "name": "NYSE:APH",
+                    "displayName": "APH – Amphenol: Conectores y cableado",
+                    "shortName": "APH"
+                },
+                {
+                    "name": "NASDAQ:APP",
+                    "displayName": "APP – AppLovin: Publicidad y monetización móvil",
+                    "shortName": "APP"
+                },
+                {
+                    "name": "NYSE:DELL",
+                    "displayName": "DELL – Dell: PCs y hardware para empresas",
+                    "shortName": "DELL"
+                },
+                {
+                    "name": "NYSE:DIS",
+                    "displayName": "DIS – Disney: Entretenimiento, streaming y medios",
+                    "shortName": "DIS"
+                },
+                {
+                    "name": "NASDAQ:EA",
+                    "displayName": "EA – Electronic Arts: Videojuegos",
+                    "shortName": "EA"
+                },
+                {
+                    "name": "NASDAQ:GOOGL",
+                    "displayName": "GOOGL – Alphabet: Publicidad, búsqueda y cloud",
+                    "shortName": "GOOGL"
+                },
+                {
+                    "name": "NYSE:IBM",
+                    "displayName": "IBM – IBM: Software empresarial, consultoría e infraestructura",
+                    "shortName": "IBM"
+                },
+                {
+                    "name": "NYSE:IOT",
+                    "displayName": "IOT – Samsara: Plataforma IoT y software operativo para flotas e industria",
+                    "shortName": "IOT"
+                },
+                {
+                    "name": "NYSE:LYV",
+                    "displayName": "LYV – Live Nation: Eventos en vivo y ticketing",
+                    "shortName": "LYV"
+                },
+                {
+                    "name": "NASDAQ:META",
+                    "displayName": "META – Meta: Redes sociales y publicidad digital",
+                    "shortName": "META"
+                },
+                {
+                    "name": "NASDAQ:MSFT",
+                    "displayName": "MSFT – Microsoft: Software y cloud",
+                    "shortName": "MSFT"
+                },
+                {
+                    "name": "NASDAQ:NFLX",
+                    "displayName": "NFLX – Netflix: Streaming de video",
+                    "shortName": "NFLX"
+                },
+                {
+                    "name": "NYSE:NOK",
+                    "displayName": "NOK – Nokia: Redes de telecomunicaciones",
+                    "shortName": "NOK"
+                },
+                {
+                    "name": "NYSE:OMC",
+                    "displayName": "OMC – Omnicom: Publicidad y marketing",
+                    "shortName": "OMC"
+                },
+                {
+                    "name": "NYSE:RDDT",
+                    "displayName": "RDDT – Reddit: Plataforma de comunidades",
+                    "shortName": "RDDT"
+                },
+                {
+                    "name": "NASDAQ:ROKU",
+                    "displayName": "ROKU – Roku: Plataforma de streaming y TV conectada",
+                    "shortName": "ROKU"
+                },
+                {
+                    "name": "NASDAQ:SATS",
+                    "displayName": "SATS – EchoStar: Comunicaciones satelitales y telecom",
+                    "shortName": "SATS"
+                },
+                {
+                    "name": "NYSE:SE",
+                    "displayName": "SE – Sea: E-commerce, fintech y gaming",
+                    "shortName": "SE"
+                },
+                {
+                    "name": "NASDAQ:SHOP",
+                    "displayName": "SHOP – Shopify: Plataforma de e-commerce",
+                    "shortName": "SHOP"
+                },
+                {
+                    "name": "NASDAQ:SNPS",
+                    "displayName": "SNPS – Synopsys: Software EDA y propiedad intelectual para semiconductores",
+                    "shortName": "SNPS"
+                },
+                {
+                    "name": "NYSE:SPOT",
+                    "displayName": "SPOT – Spotify: Streaming de música",
+                    "shortName": "SPOT"
+                },
+                {
+                    "name": "NASDAQ:TMUS",
+                    "displayName": "TMUS – T-Mobile US: Telecomunicaciones inalámbricas",
+                    "shortName": "TMUS"
+                },
+                {
+                    "name": "NASDAQ:TTWO",
+                    "displayName": "TTWO – Take-Two Interactive: Videojuegos",
+                    "shortName": "TTWO"
+                },
+                {
+                    "name": "NYSE:VZ",
+                    "displayName": "VZ – Verizon: Telecomunicaciones",
+                    "shortName": "VZ"
+                },
+                {
+                    "name": "NASDAQ:WBD",
+                    "displayName": "WBD – Warner Bros. Discovery: Medios y streaming",
+                    "shortName": "WBD"
+                },
+                {
+                    "name": "NYSE:YOU",
+                    "displayName": "YOU – Clear Secure: Identidad digital y verificación segura",
+                    "shortName": "YOU"
+                },
+                {
+                    "name": "NASDAQ:BOTZ",
+                    "displayName": "BOTZ – Robotics & AI: ETF de robótica e IA",
+                    "shortName": "BOTZ"
+                }
+            ],
+            "representativeSymbol": "AMEX:XLK"
         },
         {
             "name": "Tecnología: Semiconductores y chips",
@@ -1640,257 +1953,6 @@
                 }
             ],
             "representativeSymbol": "NASDAQ:DTCR"
-        },
-        {
-            "name": "Tecnología: Servicios y software",
-            "symbols": [
-                {
-                    "name": "NASDAQ:AAPL",
-                    "displayName": "AAPL – Apple: Dispositivos y servicios",
-                    "shortName": "AAPL"
-                },
-                {
-                    "name": "NASDAQ:ADBE",
-                    "displayName": "ADBE – Adobe: Software creativo y nube",
-                    "shortName": "ADBE"
-                },
-                {
-                    "name": "NASDAQ:ADEA",
-                    "displayName": "ADEA – Adeia: Licencias de propiedad intelectual y tecnología multimedia/semiconductores",
-                    "shortName": "ADEA"
-                },
-                {
-                    "name": "NASDAQ:ADP",
-                    "displayName": "ADP – ADP: Payroll, RR.HH. y software empresarial",
-                    "shortName": "ADP"
-                },
-                {
-                    "name": "NASDAQ:ADSK",
-                    "displayName": "ADSK – Autodesk: Software de diseño, ingeniería y arquitectura",
-                    "shortName": "ADSK"
-                },
-                {
-                    "name": "NYSE:APH",
-                    "displayName": "APH – Amphenol: Conectores y cableado",
-                    "shortName": "APH"
-                },
-                {
-                    "name": "NASDAQ:APP",
-                    "displayName": "APP – AppLovin: Publicidad y monetización móvil",
-                    "shortName": "APP"
-                },
-                {
-                    "name": "NASDAQ:CDNS",
-                    "displayName": "CDNS – Cadence Design Systems: Software EDA para semiconductores",
-                    "shortName": "CDNS"
-                },
-                {
-                    "name": "NYSE:CRM",
-                    "displayName": "CRM – Salesforce: Software CRM en la nube",
-                    "shortName": "CRM"
-                },
-                {
-                    "name": "NASDAQ:DDOG",
-                    "displayName": "DDOG – Datadog: Observabilidad y monitoreo cloud",
-                    "shortName": "DDOG"
-                },
-                {
-                    "name": "NYSE:DELL",
-                    "displayName": "DELL – Dell: PCs y hardware para empresas",
-                    "shortName": "DELL"
-                },
-                {
-                    "name": "NYSE:DIS",
-                    "displayName": "DIS – Disney: Entretenimiento, streaming y medios",
-                    "shortName": "DIS"
-                },
-                {
-                    "name": "NASDAQ:EA",
-                    "displayName": "EA – Electronic Arts: Videojuegos",
-                    "shortName": "EA"
-                },
-                {
-                    "name": "NASDAQ:FSLY",
-                    "displayName": "FSLY – Fastly: Edge cloud, CDN y seguridad",
-                    "shortName": "FSLY"
-                },
-                {
-                    "name": "NASDAQ:GOOGL",
-                    "displayName": "GOOGL – Alphabet: Publicidad, búsqueda y cloud",
-                    "shortName": "GOOGL"
-                },
-                {
-                    "name": "NYSE:GWRE",
-                    "displayName": "GWRE – Guidewire: Software para aseguradoras",
-                    "shortName": "GWRE"
-                },
-                {
-                    "name": "NYSE:IBM",
-                    "displayName": "IBM – IBM: Software empresarial, consultoría e infraestructura",
-                    "shortName": "IBM"
-                },
-                {
-                    "name": "NASDAQ:INTU",
-                    "displayName": "INTU – Intuit: Software para contabilidad, impuestos y finanzas personales",
-                    "shortName": "INTU"
-                },
-                {
-                    "name": "NYSE:IOT",
-                    "displayName": "IOT – Samsara: Plataforma IoT y software operativo para flotas e industria",
-                    "shortName": "IOT"
-                },
-                {
-                    "name": "NYSE:LYV",
-                    "displayName": "LYV – Live Nation: Eventos en vivo y ticketing",
-                    "shortName": "LYV"
-                },
-                {
-                    "name": "NASDAQ:MDB",
-                    "displayName": "MDB – MongoDB: Base de datos NoSQL",
-                    "shortName": "MDB"
-                },
-                {
-                    "name": "NASDAQ:META",
-                    "displayName": "META – Meta: Redes sociales y publicidad digital",
-                    "shortName": "META"
-                },
-                {
-                    "name": "NASDAQ:MSFT",
-                    "displayName": "MSFT – Microsoft: Software y cloud",
-                    "shortName": "MSFT"
-                },
-                {
-                    "name": "NASDAQ:NFLX",
-                    "displayName": "NFLX – Netflix: Streaming de video",
-                    "shortName": "NFLX"
-                },
-                {
-                    "name": "NYSE:NOK",
-                    "displayName": "NOK – Nokia: Redes de telecomunicaciones",
-                    "shortName": "NOK"
-                },
-                {
-                    "name": "NYSE:NOW",
-                    "displayName": "NOW – ServiceNow: Líder en software de automatización empresarial",
-                    "shortName": "NOW"
-                },
-                {
-                    "name": "NYSE:OMC",
-                    "displayName": "OMC – Omnicom: Publicidad y marketing",
-                    "shortName": "OMC"
-                },
-                {
-                    "name": "NYSE:ORCL",
-                    "displayName": "ORCL – Oracle: Base de datos, software empresarial y cloud",
-                    "shortName": "ORCL"
-                },
-                {
-                    "name": "NYSE:PATH",
-                    "displayName": "PATH – UiPath: Automatización RPA (Robotic Process Automation)",
-                    "shortName": "PATH"
-                },
-                {
-                    "name": "NASDAQ:PLTR",
-                    "displayName": "PLTR – Palantir: Analítica de datos e IA",
-                    "shortName": "PLTR"
-                },
-                {
-                    "name": "NYSE:RDDT",
-                    "displayName": "RDDT – Reddit: Plataforma de comunidades",
-                    "shortName": "RDDT"
-                },
-                {
-                    "name": "NASDAQ:ROKU",
-                    "displayName": "ROKU – Roku: Plataforma de streaming y TV conectada",
-                    "shortName": "ROKU"
-                },
-                {
-                    "name": "NYSE:SAP",
-                    "displayName": "SAP – SAP: Software empresarial y ERP",
-                    "shortName": "SAP"
-                },
-                {
-                    "name": "NASDAQ:SATS",
-                    "displayName": "SATS – EchoStar: Comunicaciones satelitales y telecom",
-                    "shortName": "SATS"
-                },
-                {
-                    "name": "NYSE:SE",
-                    "displayName": "SE – Sea: E-commerce, fintech y gaming",
-                    "shortName": "SE"
-                },
-                {
-                    "name": "NASDAQ:SHOP",
-                    "displayName": "SHOP – Shopify: Plataforma de e-commerce",
-                    "shortName": "SHOP"
-                },
-                {
-                    "name": "NYSE:SNOW",
-                    "displayName": "SNOW – Snowflake: Plataforma de datos cloud",
-                    "shortName": "SNOW"
-                },
-                {
-                    "name": "NASDAQ:SNPS",
-                    "displayName": "SNPS – Synopsys: Software EDA y propiedad intelectual para semiconductores",
-                    "shortName": "SNPS"
-                },
-                {
-                    "name": "NYSE:SPOT",
-                    "displayName": "SPOT – Spotify: Streaming de música",
-                    "shortName": "SPOT"
-                },
-                {
-                    "name": "NASDAQ:TEAM",
-                    "displayName": "TEAM – Atlassian: Herramientas de colaboración (Jira)",
-                    "shortName": "TEAM"
-                },
-                {
-                    "name": "NASDAQ:TMUS",
-                    "displayName": "TMUS – T-Mobile US: Telecomunicaciones inalámbricas",
-                    "shortName": "TMUS"
-                },
-                {
-                    "name": "NASDAQ:TTWO",
-                    "displayName": "TTWO – Take-Two Interactive: Videojuegos",
-                    "shortName": "TTWO"
-                },
-                {
-                    "name": "NYSE:VZ",
-                    "displayName": "VZ – Verizon: Telecomunicaciones",
-                    "shortName": "VZ"
-                },
-                {
-                    "name": "NASDAQ:WBD",
-                    "displayName": "WBD – Warner Bros. Discovery: Medios y streaming",
-                    "shortName": "WBD"
-                },
-                {
-                    "name": "NASDAQ:WDAY",
-                    "displayName": "WDAY – Workday: Software de recursos humanos y finanzas",
-                    "shortName": "WDAY"
-                },
-                {
-                    "name": "NYSE:YOU",
-                    "displayName": "YOU – Clear Secure: Identidad digital y verificación segura",
-                    "shortName": "YOU"
-                },
-                {
-                    "name": "NYSE:ZETA",
-                    "displayName": "ZETA – Zeta Global: Marketing y datos (IA)",
-                    "shortName": "ZETA"
-                },
-                {
-                    "name": "NASDAQ:BOTZ",
-                    "displayName": "BOTZ – Robotics & AI: ETF de robótica e IA",
-                    "shortName": "BOTZ"
-                },
-                {
-                    "name": "AMEX:IGV",
-                    "displayName": "IGV – Tech-Software: ETF de software",
-                    "shortName": "IGV"
-                }
-            ],
-            "representativeSymbol": "AMEX:IGV"
         },
         {
             "name": "Tecnología: Ciberseguridad",
