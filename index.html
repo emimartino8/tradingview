@@ -61,20 +61,36 @@
             right: 0;
             height: 50px;
             display: flex;
-            background: #1f1f1f;
-            border-bottom: 1px solid #333;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            background: rgba(13, 17, 24, 0.98);
+            border-bottom: 1px solid rgba(82, 96, 122, 0.28);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(10px);
             z-index: 1000;
             overflow-x: auto;
             overflow-y: hidden;
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
+            scrollbar-width: thin;
+            scrollbar-color: #354052 transparent;
             cursor: grab;
             user-select: none;
         }
 
         .tabs::-webkit-scrollbar {
-            display: none;
+            height: 4px;
+        }
+
+        .tabs::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .tabs::-webkit-scrollbar-thumb {
+            background: #354052;
+            border-radius: 999px;
+            border: 0;
         }
 
         .tabs:active {
@@ -83,13 +99,18 @@
 
         .tabs button {
             flex: none;
-            width: 150px;
-            border: none;
-            background: none;
+            width: auto;
+            min-width: 112px;
+            height: 36px;
+            border: 1px solid transparent;
+            border-radius: 7px;
+            background: transparent;
             cursor: pointer;
-            color: #bbb;
-            font-size: 1rem;
-            transition: background .2s, color .2s;
+            color: #b8c1d1;
+            font: inherit;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -97,14 +118,17 @@
         }
 
         .tabs button:hover {
-            background: #2a2a2a;
+            border-color: rgba(142, 197, 255, 0.18);
+            background: rgba(142, 197, 255, 0.06);
+            color: #e6eefb;
         }
 
         .tabs button.active {
-            border-bottom: 3px solid #2979ff;
-            color: #fff;
-            background: #121212;
-            font-weight: bold;
+            border-color: rgba(142, 197, 255, 0.24);
+            color: #8ec5ff;
+            background: #20304a;
+            box-shadow: inset 0 0 0 1px rgba(142, 197, 255, 0.05);
+            font-weight: 800;
         }
 
         #tab-contents {
@@ -574,18 +598,19 @@
 
         @media (pointer: coarse) {
             #tab-contents {
-                top: 90px !important;
+                top: 64px !important;
                 bottom: 0 !important;
             }
 
             .tabs {
-                height: 90px !important;
+                height: 64px !important;
+                padding: 8px 10px;
             }
 
             .tabs button {
-                height: 90px;
-                width: 180px;
-                font-size: 1.25rem;
+                height: 38px;
+                min-width: 110px;
+                font-size: 0.9rem;
             }
 
             .tabs button[data-tab="advanced-chart"],
@@ -775,7 +800,11 @@
             : null;
 
         function syncMarketMapCompactMode() {
-            document.documentElement.classList.toggle('is-compact-market-map', window.innerWidth < 900);
+            const effectiveWidth = Math.min(
+                window.innerWidth || Infinity,
+                window.visualViewport?.width || Infinity
+            );
+            document.documentElement.classList.toggle('is-compact-market-map', effectiveWidth < 900);
         }
 
         syncMarketMapCompactMode();
