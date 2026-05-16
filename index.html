@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
-    <meta name="theme-color" content="#121212">
+    <meta name="theme-color" content="#34343e">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -732,6 +732,511 @@
                 overflow-x: auto;
             }
         }
+
+        :root {
+            --neo-page: #393a42;
+            --neo-page-deep: #292a31;
+            --neo-shell: rgba(12, 13, 18, 0.92);
+            --neo-panel: rgba(16, 17, 23, 0.9);
+            --neo-control: rgba(36, 38, 48, 0.78);
+            --neo-control-hover: rgba(50, 53, 66, 0.86);
+            --neo-border: rgba(255, 255, 255, 0.075);
+            --neo-border-strong: rgba(255, 255, 255, 0.14);
+            --neo-text: #f5f6fb;
+            --neo-text-soft: #c9ccd7;
+            --neo-muted: #7d8291;
+            --neo-purple: #7477ff;
+            --neo-cyan: #24d6c6;
+            --neo-green: #19c792;
+            --neo-red: #ff4b67;
+            --neo-shadow: 0 26px 80px rgba(0, 0, 0, 0.46);
+        }
+
+        html,
+        body {
+            background:
+                radial-gradient(circle at 50% -10%, rgba(126, 129, 255, 0.18), transparent 34%),
+                radial-gradient(circle at 86% 22%, rgba(36, 214, 198, 0.08), transparent 28%),
+                linear-gradient(145deg, var(--neo-page), var(--neo-page-deep));
+            color: var(--neo-text-soft);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Trebuchet MS", Roboto, Ubuntu, sans-serif;
+            font-size: 13px;
+            line-height: 1.38;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(120deg, rgba(255, 255, 255, 0.055), transparent 38%),
+                radial-gradient(circle at 34% 72%, rgba(0, 0, 0, 0.2), transparent 34%);
+        }
+
+        * {
+            scrollbar-color: rgba(255, 255, 255, 0.2) rgba(8, 9, 13, 0.8);
+        }
+
+        *::-webkit-scrollbar-track {
+            background: rgba(8, 9, 13, 0.78);
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.22);
+            border: 2px solid rgba(8, 9, 13, 0.78);
+        }
+
+        .tabs {
+            height: 58px;
+            gap: 8px;
+            padding: 10px clamp(10px, 1.4vw, 20px);
+            background: rgba(12, 13, 18, 0.78);
+            border-bottom: 1px solid var(--neo-border);
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(18px);
+        }
+
+        .tabs button {
+            height: 36px;
+            min-width: auto;
+            padding: 0 14px;
+            border: 1px solid transparent;
+            border-radius: 9px;
+            background: transparent;
+            color: var(--neo-text-soft);
+            font-size: 13px;
+            font-weight: 650;
+            letter-spacing: 0;
+        }
+
+        .tabs button:hover {
+            border-color: var(--neo-border);
+            background: var(--neo-control);
+            color: var(--neo-text);
+        }
+
+        .tabs button.active {
+            border-color: rgba(255, 255, 255, 0.16);
+            background: linear-gradient(180deg, rgba(52, 55, 68, 0.94), rgba(29, 31, 40, 0.94));
+            color: #ffffff;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.08),
+                0 10px 26px rgba(0, 0, 0, 0.22);
+        }
+
+        #tab-contents {
+            top: 58px;
+            padding: clamp(12px, 2vw, 28px);
+            background:
+                radial-gradient(circle at 52% 8%, rgba(116, 119, 255, 0.18), transparent 34%),
+                linear-gradient(145deg, rgba(57, 58, 66, 0.96), rgba(41, 42, 49, 0.98));
+        }
+
+        .tab-content,
+        .watchlist-view,
+        .watchlist-detail,
+        .category-grid {
+            background: transparent;
+        }
+
+        .watchlist-view {
+            min-height: 100%;
+            border: 1px solid var(--neo-border);
+            border-radius: 22px;
+            overflow: hidden;
+            background: var(--neo-shell);
+            box-shadow: var(--neo-shadow);
+            backdrop-filter: blur(22px);
+        }
+
+        .watchlist-toolbar {
+            min-height: 68px;
+            grid-template-columns: auto minmax(0, 1fr) auto auto;
+            gap: 10px 14px;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--neo-border);
+            background: linear-gradient(180deg, rgba(18, 19, 26, 0.96), rgba(13, 14, 20, 0.88));
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(18px);
+        }
+
+        .watchlist-back {
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--neo-border);
+            border-radius: 11px;
+            background: var(--neo-control);
+            color: var(--neo-text);
+            font-size: 24px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        .watchlist-back:hover {
+            border-color: var(--neo-border-strong);
+            background: var(--neo-control-hover);
+        }
+
+        .watchlist-title {
+            color: var(--neo-text);
+            font-size: 18px;
+            font-weight: 760;
+            line-height: 1.12;
+        }
+
+        .watchlist-breadcrumb {
+            gap: 6px;
+            color: var(--neo-muted);
+            font-size: 12px;
+            font-weight: 620;
+        }
+
+        .watchlist-breadcrumb-segment:hover,
+        .watchlist-breadcrumb-current {
+            color: var(--neo-text-soft);
+        }
+
+        .watchlist-view-toggle {
+            height: 38px;
+            gap: 3px;
+            padding: 3px;
+            border: 1px solid var(--neo-border);
+            border-radius: 12px;
+            background: rgba(7, 8, 12, 0.72);
+        }
+
+        .watchlist-view-button {
+            min-width: 86px;
+            height: 30px;
+            padding: 0 12px;
+            border-radius: 9px;
+            color: var(--neo-muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .watchlist-view-button:hover {
+            background: var(--neo-control-hover);
+            color: var(--neo-text);
+        }
+
+        .watchlist-view-button.active {
+            background: linear-gradient(135deg, rgba(116, 119, 255, 0.98), rgba(133, 117, 255, 0.92));
+            color: #ffffff;
+            box-shadow: 0 10px 22px rgba(116, 119, 255, 0.28);
+        }
+
+        .watchlist-subtitle {
+            min-height: 36px;
+            padding: 0 12px;
+            border: 1px solid var(--neo-border);
+            border-radius: 12px;
+            background: rgba(7, 8, 12, 0.66);
+            color: var(--neo-muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .category-grid {
+            grid-auto-rows: minmax(370px, 43vh);
+            gap: 12px;
+            padding: 12px;
+        }
+
+        .category-card {
+            gap: 12px;
+            padding: 14px;
+            border: 1px solid var(--neo-border);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(21, 22, 30, 0.96), rgba(12, 13, 18, 0.93));
+            color: var(--neo-text-soft);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.04),
+                0 16px 34px rgba(0, 0, 0, 0.24);
+        }
+
+        .category-card.is-navigable:hover,
+        .category-card.is-navigable:focus-visible {
+            border-color: rgba(116, 119, 255, 0.42);
+            background: linear-gradient(180deg, rgba(25, 27, 36, 0.98), rgba(14, 15, 21, 0.95));
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.06),
+                0 22px 44px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(116, 119, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .category-card-header {
+            height: 42px;
+            align-items: center;
+            padding-right: 132px;
+        }
+
+        .category-card-title {
+            color: var(--neo-text);
+            font-size: 15px;
+            font-weight: 760;
+            line-height: 1.18;
+        }
+
+        .category-card-meta {
+            color: var(--neo-muted);
+            font-size: 11px;
+            font-weight: 650;
+        }
+
+        .category-ticker-tag {
+            top: 12px;
+            right: 14px;
+            width: 116px;
+            min-height: 30px;
+        }
+
+        .category-ticker-tag tv-ticker-tag,
+        .category-ticker-link {
+            max-width: 116px;
+        }
+
+        .category-ticker-link {
+            min-height: 30px;
+            padding: 2px 8px;
+            border: 1px solid var(--neo-border);
+            border-radius: 11px;
+            background: rgba(35, 37, 48, 0.78);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .category-ticker-link:hover,
+        .category-ticker-link:focus-visible {
+            border-color: var(--neo-border-strong);
+            background: rgba(48, 51, 64, 0.9);
+            filter: none;
+        }
+
+        .category-chart {
+            border: 1px solid rgba(255, 255, 255, 0.055);
+            border-radius: 13px;
+            background: #0d0f14;
+            overflow: hidden;
+            --tv-widget-background-color: #0d0f14;
+            --tv-widget-text-color: #c9ccd7;
+            --tv-widget-hover-background-color: #222633;
+        }
+
+        .category-chart.is-loading::before {
+            border-radius: 13px;
+            background:
+                linear-gradient(90deg, transparent, rgba(116, 119, 255, 0.12), transparent),
+                #0d0f14;
+            background-size: 240px 100%, auto;
+        }
+
+        .category-chart.is-error::after {
+            color: var(--neo-muted);
+            background: #0d0f14;
+            font-size: 12px;
+        }
+
+        .watchlist-detail {
+            padding: 12px;
+        }
+
+        .watchlist-detail>.tradingview-widget-container {
+            min-width: 0;
+            border: 1px solid var(--neo-border);
+            border-radius: 16px;
+            background: #0d0f14;
+            box-shadow: 0 18px 42px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        .watchlist-empty {
+            margin: 12px;
+            border: 1px solid var(--neo-border);
+            border-radius: 16px;
+            background: var(--neo-panel);
+            color: var(--neo-muted);
+            font-size: 13px;
+        }
+
+        @media (min-width: 900px) {
+            .category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-auto-rows: minmax(370px, 43vh);
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .category-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-auto-rows: minmax(360px, calc((100vh - 58px - 68px - 76px) / 2));
+            }
+        }
+
+        @media (pointer: coarse) {
+            #tab-contents {
+                top: 62px !important;
+                padding: 10px;
+            }
+
+            .tabs {
+                height: 62px !important;
+                padding: 12px 10px;
+            }
+
+            .tabs button {
+                height: 38px;
+                min-width: auto;
+                font-size: 13px;
+            }
+
+            .tabs button[data-tab="advanced-chart"],
+            .tabs button[data-tab="stock-heatmap"],
+            .tabs button[data-tab="etf-heatmap"],
+            .tabs button[data-tab="crypto-heatmap"] {
+                display: inline-flex !important;
+            }
+        }
+
+        @media (max-width: 899px) {
+            .watchlist-view {
+                border-radius: 18px;
+            }
+
+            .watchlist-toolbar,
+            .is-compact-market-map .watchlist-toolbar {
+                min-height: 78px;
+                grid-template-columns: 38px minmax(0, 1fr) auto;
+                gap: 9px;
+                padding: 10px;
+            }
+
+            .watchlist-view-toggle,
+            .is-compact-market-map .watchlist-view-toggle {
+                position: static;
+                transform: none;
+                width: auto;
+            }
+
+            .watchlist-title {
+                font-size: 16px;
+            }
+
+            .watchlist-subtitle {
+                display: none;
+            }
+
+            .category-grid,
+            .is-compact-market-map .category-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: minmax(336px, 60vh) !important;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .watchlist-detail {
+                padding: 10px;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .tabs {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            .tabs button {
+                padding: 0 12px;
+                font-size: 12px;
+            }
+
+            .watchlist-toolbar,
+            .is-compact-market-map .watchlist-toolbar {
+                grid-template-columns: 38px minmax(0, 1fr);
+                padding-right: 122px;
+                position: relative;
+            }
+
+            .watchlist-view-toggle,
+            .is-compact-market-map .watchlist-view-toggle {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+            }
+
+            .watchlist-view-button {
+                min-width: 52px;
+                height: 30px;
+                padding: 0 8px;
+                font-size: 12px;
+            }
+
+            .category-card {
+                padding: 12px;
+                border-radius: 15px;
+            }
+
+            .category-card-header {
+                height: 42px;
+                padding-right: 108px;
+            }
+
+            .category-card-title {
+                font-size: 14px;
+            }
+
+            .category-ticker-tag,
+            .category-ticker-tag tv-ticker-tag,
+            .category-ticker-link {
+                max-width: 96px;
+                width: 96px;
+            }
+        }
+
+        .category-card-header {
+            padding-right: clamp(154px, 25%, 210px);
+        }
+
+        .category-ticker-tag {
+            width: clamp(142px, 22%, 190px);
+            max-width: calc(100% - 28px);
+        }
+
+        .category-ticker-tag tv-ticker-tag,
+        .category-ticker-link {
+            width: 100%;
+            max-width: none;
+        }
+
+        .category-ticker-link {
+            justify-content: flex-end;
+            overflow: visible;
+        }
+
+        @media (max-width: 899px) {
+            .category-card-header {
+                padding-right: clamp(136px, 34%, 180px);
+            }
+
+            .category-ticker-tag {
+                width: clamp(126px, 32%, 164px);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .category-card-header {
+                padding-right: 126px;
+            }
+
+            .category-ticker-tag,
+            .category-ticker-tag tv-ticker-tag,
+            .category-ticker-link {
+                width: 116px;
+                max-width: 116px;
+            }
+        }
     </style>
 </head>
 
@@ -998,18 +1503,18 @@
                 lineType: 0,
                 chartType: "candlesticks",
                 showVolume: true,
-                fontColor: "rgb(106, 109, 120)",
-                gridLineColor: "rgba(242, 242, 242, 0.06)",
-                volumeUpColor: "rgba(34, 171, 148, 0.5)",
-                volumeDownColor: "rgba(247, 82, 95, 0.5)",
-                backgroundColor: "#0F0F0F",
-                widgetFontColor: "#DBDBDB",
-                upColor: "#22ab94",
-                downColor: "#f7525f",
-                borderUpColor: "#22ab94",
-                borderDownColor: "#f7525f",
-                wickUpColor: "#22ab94",
-                wickDownColor: "#f7525f",
+                fontColor: "#9598a1",
+                gridLineColor: "rgba(42, 46, 57, 0.72)",
+                volumeUpColor: "rgba(8, 153, 129, 0.42)",
+                volumeDownColor: "rgba(242, 54, 69, 0.42)",
+                backgroundColor: "#0d0f14",
+                widgetFontColor: "#d1d4dc",
+                upColor: "#089981",
+                downColor: "#f23645",
+                borderUpColor: "#089981",
+                borderDownColor: "#f23645",
+                wickUpColor: "#089981",
+                wickDownColor: "#f23645",
                 colorTheme: "dark",
                 isTransparent: false,
                 locale: "es",
@@ -1038,7 +1543,7 @@
                 hideDateRanges: false,
                 showMA: true,
                 maLength: "20",
-                maLineColor: "rgba(255, 241, 118, 0.5)",
+                maLineColor: "rgba(255, 183, 77, 0.72)",
                 maLineWidth: 1
                 }
             );
@@ -1240,11 +1745,24 @@
             const header = document.createElement('div');
             header.className = 'category-card-header';
 
+            const heading = document.createElement('div');
+            heading.className = 'category-card-heading';
+
             const cardTitle = document.createElement('div');
             cardTitle.className = 'category-card-title';
             cardTitle.textContent = node.name;
 
-            header.appendChild(cardTitle);
+            const childCount = (node.childNodeIds || []).length;
+            const symbolCount = (node.symbolIds || []).length;
+            const meta = document.createElement('div');
+            meta.className = 'category-card-meta';
+            meta.textContent = childCount
+                ? `${childCount} sectores`
+                : `${symbolCount} simbolos`;
+
+            heading.appendChild(cardTitle);
+            heading.appendChild(meta);
+            header.appendChild(heading);
 
             if (representative) {
                 const tagHost = document.createElement('div');
@@ -1272,12 +1790,21 @@
             const header = document.createElement('div');
             header.className = 'category-card-header';
 
+            const heading = document.createElement('div');
+            heading.className = 'category-card-heading';
+
             const cardTitle = document.createElement('div');
             cardTitle.className = 'category-card-title';
             cardTitle.textContent = symbol.shortName || symbol.name;
             cardTitle.title = symbol.displayName || symbol.name;
 
-            header.appendChild(cardTitle);
+            const meta = document.createElement('div');
+            meta.className = 'category-card-meta';
+            meta.textContent = symbol.displayName || symbol.name;
+
+            heading.appendChild(cardTitle);
+            heading.appendChild(meta);
+            header.appendChild(heading);
 
             const tagHost = document.createElement('div');
             tagHost.className = 'category-ticker-tag';
@@ -1391,8 +1918,8 @@
                 symbol: "BCBA:IMV",
                 theme: "dark",
                 timezone: "America/Argentina/Buenos_Aires",
-                backgroundColor: "#0F0F0F",
-                gridColor: "rgba(242, 242, 242, 0.06)",
+                backgroundColor: "#0d0f14",
+                gridColor: "rgba(42, 46, 57, 0.72)",
                 watchlist: symbolsList,
                 withdateranges: true,
                 range: "12M",
