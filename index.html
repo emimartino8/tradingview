@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
     <meta name="theme-color" content="#121212">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>My Trading View</title>
     <style>
@@ -16,6 +17,8 @@
         body {
             margin: 0;
             padding: 0;
+            width: 100%;
+            max-width: 100%;
             height: 100%;
             overflow: hidden;
             background: #121212;
@@ -23,20 +26,32 @@
             font-family: sans-serif;
         }
 
-        #ticker-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 60px !important;
-            max-height: 60px !important;
-            z-index: 1001;
-            background: #1f1f1f;
-            overflow: hidden !important;
+        * {
+            box-sizing: border-box;
         }
 
-        #ticker-container iframe {
-            display: block;
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #354052 #0c0f14;
+        }
+
+        *::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #0c0f14;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: #354052;
+            border-radius: 999px;
+            border: 2px solid #0c0f14;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: #4a5870;
         }
 
         .tabs {
@@ -95,7 +110,7 @@
         #tab-contents {
             position: absolute;
             top: 50px;
-            bottom: 60px;
+            bottom: 0;
             left: 0;
             right: 0;
             overflow: hidden;
@@ -124,72 +139,6 @@
             height: 100%;
         }
 
-        .grid-scroll {
-            background: #2a2a2a;
-            position: absolute;
-            inset: 0;
-            overflow: auto;
-            padding: 12px;
-        }
-
-        .grid-scroll {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-            grid-auto-rows: 450px;
-            gap: 10px;
-        }
-
-        .symbol-card {
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .symbol-card .tradingview-widget-container,
-        .symbol-card .tradingview-widget-container__widget {
-            width: 100%;
-            height: 100%;
-        }
-
-        .symbol-card {
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            border: 1px solid #333;
-            border-radius: 8px;
-            background: #121212;
-        }
-
-        .symbol-quote-bar {
-            flex: none;
-            height: 90px;
-            display: flex;
-            align-items: stretch;
-            background: #1a1a1a;
-            border-bottom: 1px solid #333;
-        }
-
-        .symbol-quote-bar .tradingview-widget-container,
-        .symbol-quote-bar .tradingview-widget-container__widget {
-            width: 100%;
-            height: 100%;
-        }
-
-        .symbol-chart-area {
-            height: 360px;
-            flex: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .symbol-chart-area .tradingview-widget-container,
-        .symbol-chart-area .tradingview-widget-container__widget {
-            width: 100%;
-            height: 100%;
-        }
-
         .tradingview-widget-copyright {
             display: none !important;
         }
@@ -199,25 +148,33 @@
             inset: 0;
             display: flex;
             flex-direction: column;
-            background: #121212;
+            background: #0f1115;
             overflow: hidden;
         }
 
         .watchlist-toolbar {
             flex: none;
-            min-height: 52px;
-            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            width: 100%;
+            max-width: 100vw;
+            min-height: 64px;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto auto;
             align-items: center;
-            gap: 10px;
-            padding: 10px 14px;
-            border-bottom: 1px solid #333;
-            background: #1a1a1a;
+            gap: 10px 14px;
+            padding: 9px 16px;
+            border-bottom: 1px solid rgba(82, 96, 122, 0.28);
+            background: rgba(13, 17, 24, 0.96);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
         }
 
         .watchlist-title {
             min-width: 0;
-            flex: 1;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: #fff;
             white-space: nowrap;
@@ -225,65 +182,163 @@
             text-overflow: ellipsis;
         }
 
+        .watchlist-heading {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .watchlist-breadcrumb {
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #78b8ff;
+            font-size: 0.74rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .watchlist-breadcrumb-segment {
+            border: 0;
+            padding: 0;
+            background: none;
+            color: inherit;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .watchlist-breadcrumb-segment:hover {
+            color: #c7ddff;
+        }
+
+        .watchlist-breadcrumb-current {
+            color: #dbe8ff;
+            cursor: default;
+        }
+
+        .watchlist-view-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 3px;
+            border: 1px solid #313743;
+            border-radius: 7px;
+            background: #171a20;
+        }
+
+        .watchlist-view-button {
+            min-width: 88px;
+            height: 30px;
+            border: 0;
+            border-radius: 5px;
+            background: transparent;
+            color: #b8bec8;
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.78rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: background .18s ease, color .18s ease;
+        }
+
+        .watchlist-view-button.active {
+            background: #20304a;
+            color: #8ec5ff;
+            font-weight: 700;
+        }
+
         .watchlist-subtitle {
-            font-size: 0.8rem;
-            color: #9f9f9f;
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            padding: 0 10px;
+            border: 1px solid #2d3442;
+            border-radius: 999px;
+            background: #151922;
+            font-size: 0.75rem;
+            color: #b8c1d1;
             white-space: nowrap;
         }
 
         .watchlist-back {
             flex: none;
-            width: 36px;
-            height: 36px;
-            border: 1px solid #444;
+            width: 34px;
+            height: 34px;
+            border: 1px solid #303743;
             border-radius: 6px;
-            background: #222;
+            background: #11161e;
             color: #eee;
             cursor: pointer;
             font-size: 1.2rem;
             line-height: 1;
+            transition: background .18s ease, border-color .18s ease, transform .18s ease;
+        }
+
+        .watchlist-back:disabled {
+            opacity: 0.4;
+            cursor: default;
         }
 
         .watchlist-back:hover {
             background: #2d2d2d;
+            border-color: #4f7bb8;
         }
 
         .category-grid {
             flex: 1;
             overflow: auto;
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: 1fr;
+            grid-auto-rows: 330px;
             align-content: start;
-            gap: 10px;
-            padding: 12px;
-            background: #202020;
+            gap: 12px;
+            padding: 12px 12px 24px;
+            background: #0f1115;
         }
 
         .category-card {
             position: relative;
-            min-height: 350px;
+            min-height: 0;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            padding: 12px;
-            border: 1px solid #333;
-            background: #121212;
+            gap: 8px;
+            padding: 10px;
+            border: 1px solid #272d37;
+            border-radius: 8px;
+            background: linear-gradient(180deg, #171b22 0%, #11151b 100%);
             color: #e8e8e8;
-            cursor: pointer;
+            cursor: default;
             text-align: left;
             font: inherit;
+            overflow: hidden;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+            transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+            contain: content;
         }
 
-        .category-card:hover {
-            border-color: #4b6ea9;
-            background: #171b22;
+        .category-card.is-navigable {
+            cursor: pointer;
+        }
+
+        .category-card.is-navigable:hover,
+        .category-card.is-navigable:focus-visible {
+            border-color: #4f7bb8;
+            background: linear-gradient(180deg, #1a202a 0%, #121820 100%);
+            box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(142, 197, 255, 0.08);
+            transform: translateY(-2px);
+            outline: none;
         }
 
         .category-card-title {
             flex: none;
-            height: 20px;
+            height: 22px;
             min-width: 0;
-            font-size: 1rem;
+            font-size: 0.92rem;
             font-weight: 700;
             line-height: 1.25;
             overflow: hidden;
@@ -295,35 +350,59 @@
 
         .category-card-header {
             flex: none;
-            height: 25px;
+            height: 26px;
             display: flex;
             align-items: flex-start;
-            padding-right: 145px;
+            padding-right: 136px;
         }
 
         .category-ticker-tag {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 8px;
+            right: 8px;
             z-index: 2;
-            width: 140px;
-            min-height: 28px;
+            width: 132px;
+            min-height: 26px;
             overflow: hidden;
-            pointer-events: none;
             text-align: right;
             color-scheme: dark;
         }
 
         .category-ticker-tag tv-ticker-tag {
-            max-width: 140px;
+            max-width: 132px;
             color-scheme: dark;
+        }
+
+        .category-ticker-link {
+            display: inline-flex;
+            max-width: 132px;
+            min-height: 26px;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 2px 4px;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.02);
+            transition: background .18s ease, border-color .18s ease, filter .18s ease;
+        }
+
+        .category-ticker-link:hover,
+        .category-ticker-link:focus-visible {
+            border-color: rgba(142, 197, 255, 0.34);
+            background: rgba(142, 197, 255, 0.08);
+            filter: brightness(1.12);
+            outline: none;
         }
 
         .category-chart {
             flex: 1;
             min-height: 0;
             overflow: hidden;
-            border: 1px solid #2a2a2a;
+            border: 1px solid #242a33;
+            border-radius: 6px;
             background: #0f0f0f;
             pointer-events: none;
             color-scheme: dark;
@@ -332,23 +411,168 @@
             --tv-widget-hover-background-color: #1b1f2a;
         }
 
+        .category-chart.is-loading::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent),
+                linear-gradient(180deg, #111722 0%, #0c1017 100%);
+            background-size: 220px 100%, 100% 100%;
+            animation: chartSkeleton 1.25s ease-in-out infinite;
+        }
+
+        .category-chart {
+            position: relative;
+        }
+
+        .category-chart.is-error::after {
+            content: "No se pudo cargar el widget";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            padding: 16px;
+            color: #c7d0df;
+            font-size: 0.84rem;
+            text-align: center;
+            background: #10141c;
+        }
+
+        @keyframes chartSkeleton {
+            0% {
+                background-position: -220px 0, 0 0;
+            }
+
+            100% {
+                background-position: calc(100% + 220px) 0, 0 0;
+            }
+        }
+
         .category-chart .tradingview-widget-container,
         .category-chart .tradingview-widget-container__widget {
             width: 100%;
             height: 100%;
             display: block;
+            opacity: 0;
+            transition: opacity .28s ease;
+        }
+
+        .category-chart.is-ready .tradingview-widget-container,
+        .category-chart.is-ready .tradingview-widget-container__widget {
+            opacity: 1;
         }
 
         .watchlist-detail {
             flex: 1;
             min-height: 0;
+            padding: 12px 12px 24px;
+            background: #0f1115;
+            overflow: auto;
+        }
+
+        .watchlist-detail>.tradingview-widget-container {
+            min-width: 760px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #272d37;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #11151b;
+        }
+
+        .watchlist-empty {
+            flex: 1;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background: #11151b;
+            color: #aeb7c7;
+            font-size: 0.95rem;
+            border: 1px solid #272d37;
+            border-radius: 8px;
+            margin: 12px;
+        }
+
+        @media (min-width: 900px) {
+            .category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-auto-rows: 360px;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .category-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-auto-rows: calc((100vh - 50px - 64px - 38px) / 2);
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .watchlist-toolbar {
+                min-height: 74px;
+                grid-template-columns: 34px minmax(0, 1fr);
+                padding: 8px 132px 8px 10px;
+                gap: 7px;
+                overflow: hidden;
+            }
+
+            .watchlist-subtitle {
+                display: none;
+            }
+
+            .watchlist-view-toggle {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                width: 112px;
+            }
+
+            .watchlist-view-button {
+                min-width: 0;
+                width: auto;
+                font-size: 0.72rem;
+            }
+        }
+
+        .is-compact-market-map .watchlist-toolbar {
+            min-height: 74px;
+            grid-template-columns: 34px minmax(0, 1fr);
+            padding: 8px 132px 8px 10px;
+            gap: 7px;
+            overflow: hidden;
+        }
+
+        .is-compact-market-map .watchlist-subtitle {
+            display: none;
+        }
+
+        .is-compact-market-map .watchlist-view-toggle {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 112px;
+        }
+
+        .is-compact-market-map .watchlist-view-button {
+            min-width: 0;
+            width: auto;
+            font-size: 0.72rem;
+        }
+
+        .is-compact-market-map .category-grid {
+            grid-template-columns: 1fr;
+            grid-auto-rows: 320px;
+            padding-bottom: 34px;
+        }
+
+        .is-compact-market-map .watchlist-detail {
+            overflow-x: auto;
         }
 
         @media (pointer: coarse) {
-            #ticker-container {
-                display: none !important;
-            }
-
             #tab-contents {
                 top: 90px !important;
                 bottom: 0 !important;
@@ -371,42 +595,116 @@
                 display: none !important;
             }
 
-            .grid-scroll {
-                grid-template-columns: 1fr !important;
-                grid-auto-rows: 600px !important;
-            }
-
-            .symbol-card {
-                width: 100%;
-                height: auto;
-            }
-
-            .symbol-chart-area {
-                height: 510px;
-            }
-
             .watchlist-toolbar {
-                min-height: 64px;
+                min-height: 74px;
+                grid-template-columns: 34px minmax(0, 1fr) 112px;
+                align-items: center;
+                padding: 8px 10px;
+                gap: 7px;
+                overflow: hidden;
             }
 
             .watchlist-subtitle {
                 display: none;
             }
 
+            .watchlist-view-toggle {
+                grid-column: auto;
+                width: 112px;
+            }
+
+            .watchlist-view-button {
+                flex: 1;
+                min-width: 0;
+                width: auto;
+                height: 28px;
+                padding: 0 6px;
+                font-size: 0.72rem;
+            }
+
             .category-grid {
                 grid-template-columns: 1fr !important;
+                grid-auto-rows: 300px !important;
+                gap: 10px;
+                padding: 10px 10px 34px;
+            }
+
+            .category-card {
+                padding: 8px;
+                gap: 7px;
+            }
+
+            .category-card-header {
+                height: 24px;
+                padding-right: 118px;
+            }
+
+            .category-card-title {
+                font-size: 0.86rem;
+            }
+
+            .category-ticker-tag,
+            .category-ticker-tag tv-ticker-tag,
+            .category-ticker-link {
+                max-width: 116px;
+                width: 116px;
+            }
+
+            .watchlist-breadcrumb {
+                font-size: 0.68rem;
+            }
+
+            .watchlist-breadcrumb-segment:not(.watchlist-breadcrumb-current) {
+                max-width: 72px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .watchlist-title {
+                font-size: 0.92rem;
+            }
+
+            .watchlist-detail {
+                padding: 10px 10px 34px;
+                overflow-x: auto;
             }
         }
 
-        @media (max-width: 1200px) and (pointer: fine) {
-            .category-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+        @media (max-width: 899px) {
+            .watchlist-toolbar {
+                min-height: 74px;
+                grid-template-columns: 34px minmax(0, 1fr);
+                padding: 8px 132px 8px 10px;
+                gap: 7px;
+                overflow: hidden;
             }
-        }
 
-        @media (max-width: 760px) and (pointer: fine) {
+            .watchlist-subtitle {
+                display: none;
+            }
+
+            .watchlist-view-button {
+                min-width: 0;
+                width: auto;
+                font-size: 0.72rem;
+            }
+
+            .watchlist-view-toggle {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                width: 112px;
+            }
+
             .category-grid {
                 grid-template-columns: 1fr;
+                grid-auto-rows: 320px;
+                padding-bottom: 34px;
+            }
+
+            .watchlist-detail {
+                overflow-x: auto;
             }
         }
     </style>
@@ -415,15 +713,9 @@
 <body>
     <script type="module" src="https://widgets.tradingview-widget.com/w/es/tv-ticker-tag.js"></script>
 
-    <div id="ticker-container" class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-    </div>
-
     <div class="tabs">
-        <button class="tab-button active" data-tab="watchlist">Watchlist</button>
+        <button class="tab-button active" data-tab="watchlist">Market Map</button>
         <button class="tab-button" data-tab="advanced-chart">Advanced Chart</button>
-        <button class="tab-button" data-tab="etf-chart-grid">ETF Charts</button>
-        <button class="tab-button" data-tab="crypto-chart-grid">Crypto Charts</button>
         <button class="tab-button" data-tab="stock-heatmap">Stock Heatmap</button>
         <button class="tab-button" data-tab="etf-heatmap">ETF Heatmap</button>
         <button class="tab-button" data-tab="crypto-heatmap">Crypto Heatmap</button>
@@ -439,16 +731,6 @@
         <div id="advanced-chart" class="tab-content">
             <div id="advanced-chart-container" class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
-            </div>
-        </div>
-
-        <div id="etf-chart-grid" class="tab-content">
-            <div id="etf-chart-grid-scroll" class="grid-scroll">
-            </div>
-        </div>
-
-        <div id="crypto-chart-grid" class="tab-content">
-            <div id="crypto-chart-grid-scroll" class="grid-scroll">
             </div>
         </div>
 
@@ -476,93 +758,28 @@
     <script>
         let APP_DATA = null;
         const initializedTabs = new Set();
-
-        let CARD_OBSERVER = null;
-
-        function ensureCardObserver() {
-            if (CARD_OBSERVER) return;
-
-            CARD_OBSERVER = new IntersectionObserver((entries) => {
+        let WATCHLIST_STACK = [];
+        const MARKET_MAP_VIEW_BY_NODE = {};
+        const MARKET_MAP_WIDGET_OBSERVER = 'IntersectionObserver' in window
+            ? new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
-
-                    const card = entry.target;
-                    CARD_OBSERVER.unobserve(card);
-
-                    initCardWidgets(card);
+                    MARKET_MAP_WIDGET_OBSERVER.unobserve(entry.target);
+                    mountDeferredTradingViewWidget(entry.target);
                 });
             }, {
                 root: null,
-                rootMargin: '300px 0px',
+                rootMargin: '650px 0px',
                 threshold: 0.01
-            });
+            })
+            : null;
+
+        function syncMarketMapCompactMode() {
+            document.documentElement.classList.toggle('is-compact-market-map', window.innerWidth < 900);
         }
 
-        function observeCard(card) {
-            ensureCardObserver();
-            CARD_OBSERVER.observe(card);
-        }
-
-        function initCardWidgets(card) {
-            const symbol = card.dataset.symbol;
-            const interval = card.dataset.interval || "5";
-
-            const quoteContainer = card.querySelector('[data-role="quote"]');
-            const chartContainer = card.querySelector('[data-role="chart"]');
-
-            if (quoteContainer && !quoteContainer.dataset.loaded) {
-                const quoteCfg = {
-                    symbol: symbol,
-                    colorTheme: "dark",
-                    isTransparent: true,
-                    locale: "es",
-                    width: "100%"
-                };
-
-                const quoteScript = document.createElement('script');
-                quoteScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js';
-                quoteScript.async = true;
-                quoteScript.type = 'text/javascript';
-                quoteScript.innerHTML = JSON.stringify(quoteCfg, null, 2);
-                quoteContainer.appendChild(quoteScript);
-                quoteContainer.dataset.loaded = 'true';
-            }
-
-            if (chartContainer && !chartContainer.dataset.loaded) {
-                const chartCfg = {
-                    allow_symbol_change: false,
-                    calendar: false,
-                    details: false,
-                    hide_side_toolbar: true,
-                    hide_top_toolbar: true,
-                    hide_legend: true,
-                    hide_volume: true,
-                    hotlist: false,
-                    interval: interval,
-                    locale: "es",
-                    save_image: false,
-                    style: "1",
-                    symbol: symbol,
-                    theme: "dark",
-                    timezone: "America/Argentina/Buenos_Aires",
-                    backgroundColor: "#0F0F0F",
-                    gridColor: "rgba(242, 242, 242, 0.06)",
-                    watchlist: [],
-                    withdateranges: false,
-                    compareSymbols: [],
-                    studies: [],
-                    autosize: true
-                };
-
-                const chartScript = document.createElement('script');
-                chartScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
-                chartScript.async = true;
-                chartScript.type = 'text/javascript';
-                chartScript.innerHTML = JSON.stringify(chartCfg, null, 2);
-                chartContainer.appendChild(chartScript);
-                chartContainer.dataset.loaded = 'true';
-            }
-        }
+        syncMarketMapCompactMode();
+        window.addEventListener('resize', syncMarketMapCompactMode);
 
         function initSymbols() {
             fetch('symbols.json')
@@ -570,8 +787,8 @@
                 .then(data => {
                     APP_DATA = data;
 
-                    initTickerTape(data.indexSymbols);
-                    initWatchlistSummary(data.symbolsGroups);
+                    validateWatchlistGraph();
+                    initWatchlist();
 
                     initializedTabs.add('watchlist');
                 })
@@ -584,17 +801,7 @@
             switch (tab) {
                 case 'advanced-chart':
                     if (!APP_DATA) return;
-                    initAdvancedChart(APP_DATA.symbolsGroups);
-                    break;
-
-                case 'etf-chart-grid':
-                    if (!APP_DATA) return;
-                    initEtfChartGrid(APP_DATA.indexSymbols);
-                    break;
-
-                case 'crypto-chart-grid':
-                    if (!APP_DATA) return;
-                    initCryptoChartGrid(APP_DATA.cryptoSymbols);
+                    initAdvancedChart(APP_DATA);
                     break;
 
                 case 'stock-heatmap':
@@ -627,44 +834,137 @@
             return /\bETF\b/.test(displayName) || normalized.includes('indice');
         }
 
-        function getRepresentativeSymbols(group) {
-            if (group.representativeSymbol) {
-                const configured = group.symbols.find(symbol => symbol.name === group.representativeSymbol);
-
-                if (configured) {
-                    return [configured];
-                }
+        function getSymbol(id) {
+            const symbol = APP_DATA?.symbols?.[id];
+            if (!symbol) {
+                console.warn(`Símbolo no encontrado en catálogo: ${id}`);
             }
-
-            const representatives = group.symbols.filter(isIndexOrEtf);
-
-            if (representatives.length) {
-                return representatives;
-            }
-
-            if (group.name === 'Real Estate' && APP_DATA) {
-                const realEstateEtfs = new Set(['AMEX:VNQ', 'AMEX:XLRE']);
-                return APP_DATA.symbolsGroups
-                    .flatMap(item => item.symbols)
-                    .filter(symbol => realEstateEtfs.has(symbol.name));
-            }
-
-            return group.symbols.slice(0, 1);
+            return symbol || null;
         }
 
-        function createSymbolOverview(symbolName, title) {
+        function getNode(id) {
+            const node = APP_DATA?.nodes?.[id];
+            if (!node) {
+                console.warn(`Nodo no encontrado en catálogo: ${id}`);
+            }
+            return node || null;
+        }
+
+        function sortNodesByName(nodeIds = []) {
+            return [...new Set(nodeIds)]
+                .filter(id => APP_DATA?.nodes?.[id]);
+        }
+
+        function sortSymbolsByShortName(symbolIds = []) {
+            return [...new Set(symbolIds)]
+                .filter(id => APP_DATA?.symbols?.[id])
+                .sort((a, b) => {
+                    const symbolA = APP_DATA.symbols[a];
+                    const symbolB = APP_DATA.symbols[b];
+                    return (symbolA.shortName || symbolA.name).localeCompare(symbolB.shortName || symbolB.name, 'es');
+                });
+        }
+
+        function getNodeChildren(node) {
+            return sortNodesByName(node?.childNodeIds || [])
+                .map(getNode)
+                .filter(Boolean);
+        }
+
+        function getNodeSymbols(node) {
+            return sortSymbolsByShortName(node?.symbolIds || [])
+                .map(getSymbol)
+                .filter(Boolean);
+        }
+
+        function getRepresentativeSymbol(node) {
+            if (!node) return null;
+
+            if (node.representativeSymbolId) {
+                const configured = getSymbol(node.representativeSymbolId);
+                if (configured) return configured;
+            }
+
+            return getNodeSymbols(node)[0] || null;
+        }
+
+        function validateWatchlistGraph() {
+            if (!APP_DATA) return;
+
+            Object.values(APP_DATA.nodes || {}).forEach(node => {
+                if (node.representativeSymbolId && !APP_DATA.symbols?.[node.representativeSymbolId]) {
+                    console.warn(`Nodo ${node.id}: representativeSymbolId inexistente: ${node.representativeSymbolId}`);
+                }
+
+                (node.secondaryRepresentativeSymbolIds || []).forEach(symbolId => {
+                    if (!APP_DATA.symbols?.[symbolId]) {
+                        console.warn(`Nodo ${node.id}: secondaryRepresentativeSymbolId inexistente: ${symbolId}`);
+                    }
+                });
+
+                (node.symbolIds || []).forEach(symbolId => {
+                    if (!APP_DATA.symbols?.[symbolId]) {
+                        console.warn(`Nodo ${node.id}: symbolId inexistente: ${symbolId}`);
+                    }
+                });
+
+                (node.childNodeIds || []).forEach(childNodeId => {
+                    if (!APP_DATA.nodes?.[childNodeId]) {
+                        console.warn(`Nodo ${node.id}: childNodeId inexistente: ${childNodeId}`);
+                    }
+                });
+            });
+        }
+
+        function createDeferredTradingViewWidget(scriptSrc, cfg) {
             const container = document.createElement('div');
             container.className = 'tradingview-widget-container';
 
             const widget = document.createElement('div');
             widget.className = 'tradingview-widget-container__widget';
             container.appendChild(widget);
+            container.dataset.widgetSrc = scriptSrc;
+            container.dataset.widgetConfig = JSON.stringify(cfg);
+
+            if (MARKET_MAP_WIDGET_OBSERVER) {
+                MARKET_MAP_WIDGET_OBSERVER.observe(container);
+            } else {
+                window.requestAnimationFrame(() => mountDeferredTradingViewWidget(container));
+            }
+
+            return container;
+        }
+
+        function mountDeferredTradingViewWidget(container) {
+            if (!container || container.dataset.widgetMounted === 'true') return;
+
+            container.dataset.widgetMounted = 'true';
+            const chart = container.closest('.category-chart');
+            chart?.classList.add('is-loading');
 
             const script = document.createElement('script');
             script.type = 'text/javascript';
             script.async = true;
-            script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js';
-            script.innerHTML = JSON.stringify({
+            script.src = container.dataset.widgetSrc;
+            script.innerHTML = container.dataset.widgetConfig;
+            script.addEventListener('load', () => {
+                window.setTimeout(() => {
+                    chart?.classList.remove('is-loading');
+                    chart?.classList.add('is-ready');
+                }, 420);
+            });
+            script.addEventListener('error', () => {
+                chart?.classList.remove('is-loading');
+                chart?.classList.add('is-error');
+            });
+
+            container.appendChild(script);
+        }
+
+        function createSymbolOverview(symbolName, title) {
+            return createDeferredTradingViewWidget(
+                'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js',
+                {
                 lineWidth: 2,
                 lineType: 0,
                 chartType: "candlesticks",
@@ -711,10 +1011,8 @@
                 maLength: "20",
                 maLineColor: "rgba(255, 241, 118, 0.5)",
                 maLineWidth: 1
-            }, null, 2);
-
-            container.appendChild(script);
-            return container;
+                }
+            );
         }
 
         function createTickerTag(symbolName) {
@@ -728,26 +1026,24 @@
             return tag;
         }
 
-        function initTickerTape(symbolNames) {
-            const symbols = symbolNames
-                .join(',');
-
-            const container = document.getElementById('ticker-container');
-            container.innerHTML = '';
-
-            const script = document.createElement('script');
-            script.type = 'module';
-            script.src = 'https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js';
-            container.appendChild(script);
-
-            const ticker = document.createElement('tv-ticker-tape');
-            ticker.setAttribute('symbols', symbols);
-            ticker.setAttribute('item-size', 'compact');
-            ticker.setAttribute('theme', 'dark');
-            ticker.setAttribute('show-hover', '');
-            ticker.setAttribute('hide-chart', '');
-
-            container.appendChild(ticker);
+        function createTickerLink(symbolName) {
+            const link = document.createElement('a');
+            link.className = 'category-ticker-link';
+            link.href = `https://www.tradingview.com/chart/?symbol=${encodeURIComponent(symbolName)}`;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.title = 'Abrir en TradingView';
+            link.setAttribute('aria-label', `Abrir ${symbolName} en TradingView`);
+            link.appendChild(createTickerTag(symbolName));
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                event.stopPropagation();
+                window.open(link.href, '_blank', 'noopener,noreferrer');
+            });
+            link.addEventListener('keydown', event => {
+                event.stopPropagation();
+            });
+            return link;
         }
 
         function mountMarketQuotes(container, symbolsGroups) {
@@ -761,104 +1057,295 @@
                 symbolsGroups: symbolsGroups
             };
 
-            container.innerHTML = '<div class="tradingview-widget-container__widget"></div>';
+            container.innerHTML = '';
+            const widgetContainer = document.createElement('div');
+            widgetContainer.className = 'tradingview-widget-container';
+            widgetContainer.innerHTML = '<div class="tradingview-widget-container__widget"></div>';
+
             const s = document.createElement('script');
             s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js';
             s.async = true;
             s.innerHTML = JSON.stringify(cfg, null, 2);
-            container.appendChild(s);
+            widgetContainer.appendChild(s);
+            container.appendChild(widgetContainer);
         }
 
-        function initWatchlistSummary(symbolsGroups) {
-            const container = document.getElementById('watchlist-container');
-            container.innerHTML = '';
-
-            const grid = document.createElement('div');
-            grid.className = 'category-grid';
-
-            symbolsGroups.forEach((group, index) => {
-                const card = document.createElement('div');
-                card.className = 'category-card';
-                card.tabIndex = 0;
-                card.setAttribute('role', 'button');
-                card.addEventListener('click', () => showCategoryDetail(index));
-                card.addEventListener('keydown', event => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        showCategoryDetail(index);
-                    }
-                });
-
-                const header = document.createElement('div');
-                header.className = 'category-card-header';
-
-                const cardTitle = document.createElement('div');
-                cardTitle.className = 'category-card-title';
-                cardTitle.textContent = group.name;
-
-                header.appendChild(cardTitle);
-
-                if (group.representativeSymbol) {
-                    const tagHost = document.createElement('div');
-                    tagHost.className = 'category-ticker-tag';
-                    tagHost.appendChild(createTickerTag(group.representativeSymbol));
-                    card.appendChild(tagHost);
-                }
-
-                card.appendChild(header);
-
-                if (group.representativeSymbol) {
-                    const chart = document.createElement('div');
-                    chart.className = 'category-chart';
-                    chart.appendChild(createSymbolOverview(group.representativeSymbol, group.name));
-                    card.appendChild(chart);
-                }
-
-                grid.appendChild(card);
-            });
-
-            container.appendChild(grid);
+        function initWatchlist() {
+            const rootNodeId = APP_DATA?.watchlistRootNodeId;
+            WATCHLIST_STACK = rootNodeId ? [rootNodeId] : [];
+            renderWatchlistNode();
         }
 
-        function showCategoryDetail(groupIndex) {
-            const group = APP_DATA.symbolsGroups[groupIndex];
-            if (!group) return;
+        function navigateToNode(nodeId) {
+            if (!getNode(nodeId)) return;
 
+            const existingIndex = WATCHLIST_STACK.indexOf(nodeId);
+            WATCHLIST_STACK = existingIndex >= 0
+                ? WATCHLIST_STACK.slice(0, existingIndex + 1)
+                : [...WATCHLIST_STACK, nodeId];
+
+            renderWatchlistNode();
+        }
+
+        function goBack() {
+            if (WATCHLIST_STACK.length <= 1) return;
+            WATCHLIST_STACK = WATCHLIST_STACK.slice(0, -1);
+            renderWatchlistNode();
+        }
+
+        function navigateToStackIndex(index) {
+            if (index < 0 || index >= WATCHLIST_STACK.length) return;
+            WATCHLIST_STACK = WATCHLIST_STACK.slice(0, index + 1);
+            renderWatchlistNode();
+        }
+
+        function buildBreadcrumbFromNavigationStack() {
+            return WATCHLIST_STACK
+                .map((id, index) => ({ id, index, node: getNode(id) }))
+                .filter(item => item.node);
+        }
+
+        function getDefaultMarketMapView(node) {
+            return (node?.childNodeIds || []).length ? 'chart' : 'list';
+        }
+
+        function getActiveMarketMapView(node) {
+            return MARKET_MAP_VIEW_BY_NODE[node.id] || getDefaultMarketMapView(node);
+        }
+
+        function setMarketMapView(nodeId, view) {
+            MARKET_MAP_VIEW_BY_NODE[nodeId] = view;
+            renderWatchlistNode();
+        }
+
+        function createWatchlistToolbar(node, itemCount, itemType, activeView) {
             const container = document.getElementById('watchlist-container');
-            container.innerHTML = '';
-
             const toolbar = document.createElement('div');
             toolbar.className = 'watchlist-toolbar';
 
             const back = document.createElement('button');
             back.className = 'watchlist-back';
             back.type = 'button';
-            back.textContent = '‹';
-            back.title = 'Volver a categorías';
-            back.addEventListener('click', () => initWatchlistSummary(APP_DATA.symbolsGroups));
+            back.textContent = '\u2039';
+            back.title = 'Volver';
+            back.disabled = WATCHLIST_STACK.length <= 1;
+            back.addEventListener('click', goBack);
+
+            const heading = document.createElement('div');
+            heading.className = 'watchlist-heading';
+
+            const breadcrumb = document.createElement('div');
+            breadcrumb.className = 'watchlist-breadcrumb';
+
+            buildBreadcrumbFromNavigationStack().forEach((item, index, items) => {
+                if (index > 0) {
+                    const separator = document.createElement('span');
+                    separator.textContent = '>';
+                    breadcrumb.appendChild(separator);
+                }
+
+                const segment = document.createElement('button');
+                segment.type = 'button';
+                segment.className = index === items.length - 1
+                    ? 'watchlist-breadcrumb-segment watchlist-breadcrumb-current'
+                    : 'watchlist-breadcrumb-segment';
+                segment.textContent = item.node.name;
+                segment.disabled = index === items.length - 1;
+                segment.addEventListener('click', () => navigateToStackIndex(item.index));
+                breadcrumb.appendChild(segment);
+            });
 
             const title = document.createElement('div');
             title.className = 'watchlist-title';
-            title.textContent = group.name;
+            title.textContent = node.name;
+
+            heading.appendChild(breadcrumb);
+            heading.appendChild(title);
+
+            const viewToggle = document.createElement('div');
+            viewToggle.className = 'watchlist-view-toggle';
+
+            [
+                ['chart', 'Gr\u00e1fico'],
+                ['list', 'Lista']
+            ].forEach(([view, label]) => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = `watchlist-view-button${activeView === view ? ' active' : ''}`;
+                button.textContent = label;
+                button.addEventListener('click', () => setMarketMapView(node.id, view));
+                viewToggle.appendChild(button);
+            });
 
             const subtitle = document.createElement('div');
             subtitle.className = 'watchlist-subtitle';
-            subtitle.textContent = `${group.symbols.length} símbolos`;
-
-            const detail = document.createElement('div');
-            detail.className = 'watchlist-detail tradingview-widget-container';
+            subtitle.textContent = itemType === 'node'
+                ? `${itemCount} sectores`
+                : `${itemCount} s\u00edmbolos`;
 
             toolbar.appendChild(back);
-            toolbar.appendChild(title);
+            toolbar.appendChild(heading);
+            toolbar.appendChild(viewToggle);
             toolbar.appendChild(subtitle);
             container.appendChild(toolbar);
-            container.appendChild(detail);
-
-            mountMarketQuotes(detail, [group]);
         }
 
-        function initAdvancedChart(symbolsGroups) {
-            const symbolsList = symbolsGroups.flatMap(group => group.symbols.map(s => s.name));
+        function createNodeCard(node) {
+            const representative = getRepresentativeSymbol(node);
+            const card = document.createElement('div');
+            card.className = 'category-card is-navigable';
+            card.tabIndex = 0;
+            card.setAttribute('role', 'button');
+            card.addEventListener('click', event => {
+                if (event.defaultPrevented || event.target.closest('.category-ticker-link')) return;
+                navigateToNode(node.id);
+            });
+            card.addEventListener('keydown', event => {
+                if (event.target.closest('.category-ticker-link')) return;
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    navigateToNode(node.id);
+                }
+            });
+
+            const header = document.createElement('div');
+            header.className = 'category-card-header';
+
+            const cardTitle = document.createElement('div');
+            cardTitle.className = 'category-card-title';
+            cardTitle.textContent = node.name;
+
+            header.appendChild(cardTitle);
+
+            if (representative) {
+                const tagHost = document.createElement('div');
+                tagHost.className = 'category-ticker-tag';
+                tagHost.appendChild(createTickerLink(representative.name));
+                card.appendChild(tagHost);
+            }
+
+            card.appendChild(header);
+
+            if (representative) {
+                const chart = document.createElement('div');
+                chart.className = 'category-chart is-loading';
+                chart.appendChild(createSymbolOverview(representative.name, node.name));
+                card.appendChild(chart);
+            }
+
+            return card;
+        }
+
+        function createSymbolGraphCard(symbol) {
+            const card = document.createElement('div');
+            card.className = 'category-card';
+
+            const header = document.createElement('div');
+            header.className = 'category-card-header';
+
+            const cardTitle = document.createElement('div');
+            cardTitle.className = 'category-card-title';
+            cardTitle.textContent = symbol.shortName || symbol.name;
+            cardTitle.title = symbol.displayName || symbol.name;
+
+            header.appendChild(cardTitle);
+
+            const tagHost = document.createElement('div');
+            tagHost.className = 'category-ticker-tag';
+            tagHost.appendChild(createTickerLink(symbol.name));
+            card.appendChild(tagHost);
+            card.appendChild(header);
+
+            const chart = document.createElement('div');
+            chart.className = 'category-chart is-loading';
+            chart.appendChild(createSymbolOverview(symbol.name, symbol.shortName || symbol.name));
+            card.appendChild(chart);
+
+            return card;
+        }
+
+        function getChildNodeListSymbols(children) {
+            return children
+                .map(childNode => {
+                    const representative = getRepresentativeSymbol(childNode);
+                    if (!representative) return null;
+
+                    return {
+                        name: representative.name,
+                        displayName: childNode.name,
+                        shortName: representative.shortName || representative.name
+                    };
+                })
+                .filter(Boolean);
+        }
+
+        function renderWatchlistNode() {
+            const container = document.getElementById('watchlist-container');
+            container.innerHTML = '';
+
+            const currentNode = getNode(WATCHLIST_STACK[WATCHLIST_STACK.length - 1]);
+            if (!currentNode) {
+                container.innerHTML = '<div class="watchlist-empty">Sin s\u00edmbolos configurados</div>';
+                return;
+            }
+
+            const children = getNodeChildren(currentNode);
+            const symbols = getNodeSymbols(currentNode);
+            const activeView = getActiveMarketMapView(currentNode);
+            const hasChildren = children.length > 0;
+            const items = hasChildren ? children : symbols;
+            const itemType = hasChildren ? 'node' : 'symbol';
+
+            createWatchlistToolbar(currentNode, items.length, itemType, activeView);
+
+            if (!items.length) {
+                const empty = document.createElement('div');
+                empty.className = 'watchlist-empty';
+                empty.textContent = 'Sin s\u00edmbolos configurados';
+                container.appendChild(empty);
+                return;
+            }
+
+            if (activeView === 'chart') {
+                const grid = document.createElement('div');
+                grid.className = 'category-grid';
+
+                if (hasChildren) {
+                    children.forEach(childNode => grid.appendChild(createNodeCard(childNode)));
+                } else {
+                    symbols.forEach(symbol => grid.appendChild(createSymbolGraphCard(symbol)));
+                }
+
+                container.appendChild(grid);
+                return;
+            }
+
+            const detail = document.createElement('div');
+            detail.className = 'watchlist-detail';
+            container.appendChild(detail);
+
+            const listSymbols = hasChildren
+                ? getChildNodeListSymbols(children)
+                : symbols.map(symbol => ({
+                    name: symbol.name,
+                    displayName: symbol.displayName,
+                    shortName: symbol.shortName
+                }));
+
+            if (!listSymbols.length) {
+                detail.innerHTML = '<div class="watchlist-empty">Sin s\u00edmbolos configurados</div>';
+                return;
+            }
+
+            mountMarketQuotes(detail, [{
+                name: currentNode.name,
+                symbols: listSymbols
+            }]);
+        }
+
+
+        function initAdvancedChart(data) {
+            const symbolsList = Object.keys(data.symbols || {});
             const cfg = {
                 allow_symbol_change: true,
                 calendar: false,
@@ -962,64 +1449,6 @@
             s.type = 'text/javascript';
             s.innerHTML = JSON.stringify(cfg, null, 2);
             document.getElementById('crypto-heatmap-container').appendChild(s);
-        }
-
-        function createSymbolCard(symbol, interval = "5") {
-            const card = document.createElement('div');
-            card.className = 'symbol-card';
-            card.dataset.symbol = symbol;
-            card.dataset.interval = interval;
-
-            const quoteBar = document.createElement('div');
-            quoteBar.className = 'symbol-quote-bar';
-
-            const quoteContainer = document.createElement('div');
-            quoteContainer.className = 'tradingview-widget-container';
-            quoteContainer.dataset.role = 'quote';
-
-            const quoteWidget = document.createElement('div');
-            quoteWidget.className = 'tradingview-widget-container__widget';
-
-            quoteContainer.appendChild(quoteWidget);
-            quoteBar.appendChild(quoteContainer);
-            card.appendChild(quoteBar);
-
-            const chartArea = document.createElement('div');
-            chartArea.className = 'symbol-chart-area';
-
-            const chartContainer = document.createElement('div');
-            chartContainer.className = 'tradingview-widget-container';
-            chartContainer.dataset.role = 'chart';
-
-            const w = document.createElement('div');
-            w.className = 'tradingview-widget-container__widget';
-
-            chartContainer.appendChild(w);
-            chartArea.appendChild(chartContainer);
-            card.appendChild(chartArea);
-
-            observeCard(card);
-            return card;
-        }
-
-        function initEtfChartGrid(indexSymbols) {
-            const host = document.getElementById('etf-chart-grid-scroll');
-            host.innerHTML = '';
-
-            indexSymbols.forEach(item => {
-                const card = createSymbolCard(item, "1D");
-                host.appendChild(card);
-            });
-        }
-
-        function initCryptoChartGrid(cryptoSymbols) {
-            const host = document.getElementById('crypto-chart-grid-scroll');
-            host.innerHTML = '';
-
-            cryptoSymbols.forEach(item => {
-                const card = createSymbolCard(item, "1D");
-                host.appendChild(card);
-            });
         }
 
         async function initUsdQuotesTab() {
