@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
-    <meta name="theme-color" content="#34343e">
+    <meta name="theme-color" content="#1e1e1e">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -1237,6 +1237,611 @@
                 max-width: 116px;
             }
         }
+        /* VS Code inspired shell override */
+        :root {
+            --vscode-bg: #1e1e1e;
+            --vscode-side: #181818;
+            --vscode-side-active: #37373d;
+            --vscode-panel: #252526;
+            --vscode-panel-2: #2d2d30;
+            --vscode-border: #3c3c3c;
+            --vscode-border-soft: #2a2a2a;
+            --vscode-text: #d4d4d4;
+            --vscode-muted: #8b949e;
+            --vscode-blue: #007acc;
+            --vscode-blue-soft: rgba(0, 122, 204, 0.18);
+            --vscode-green: #4ec9b0;
+            --vscode-red: #f14c4c;
+            --vscode-yellow: #dcdcaa;
+            --vscode-rail: 54px;
+        }
+
+        html,
+        body {
+            background: var(--vscode-bg) !important;
+            color: var(--vscode-text) !important;
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Ubuntu, sans-serif !important;
+            font-size: 13px;
+        }
+
+        body::before {
+            display: none !important;
+        }
+
+        * {
+            scrollbar-color: #424242 #1e1e1e;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: #424242;
+            border: 2px solid #1e1e1e;
+        }
+
+        .tabs {
+            position: fixed !important;
+            inset: 0 auto 0 0 !important;
+            width: var(--vscode-rail) !important;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 6px !important;
+            padding: 10px 6px !important;
+            border-right: 1px solid var(--vscode-border-soft) !important;
+            border-bottom: 0 !important;
+            background: var(--vscode-side) !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            overflow-x: hidden !important;
+            overflow-y: auto !important;
+            cursor: default !important;
+            z-index: 1200 !important;
+        }
+
+        .tabs {
+            --icon-menu: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M4 7h16M4 12h16M4 17h16'/%3E%3C/svg%3E");
+            --icon-market: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M4 4h7v7H4V4Zm9 0h7v4h-7V4ZM4 13h4v7H4v-7Zm6 0h10v7H10v-7Zm3-3h7v1h-7v-1Z'/%3E%3C/svg%3E");
+            --icon-chart: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19V5M4 19h16'/%3E%3Cpath d='m7 15 3.2-3.2 3 2.2L19 7'/%3E%3Cpath d='M17 7h2v2'/%3E%3C/svg%3E");
+            --icon-stock-heatmap: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M3 4h8v7H3V4Zm10 0h8v4h-8V4ZM3 13h5v7H3v-7Zm7 0h5v7h-5v-7Zm7-3h4v10h-4V10Z'/%3E%3C/svg%3E");
+            --icon-etf-heatmap: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'%3E%3Cpath d='M12 3 3 8l9 5 9-5-9-5Z'/%3E%3Cpath d='m3 12 9 5 9-5M3 16l9 5 9-5'/%3E%3C/svg%3E");
+            --icon-crypto: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8'/%3E%3Cpath d='M9 8h4.2a2 2 0 0 1 0 4H9h4.8a2 2 0 0 1 0 4H9V8Zm2-2v2m2-2v2m-2 8v2m2-2v2'/%3E%3C/svg%3E");
+            --icon-usd: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 6v12M15.5 8.5C14.7 7.6 13.5 7 12 7c-2 0-3.3 1-3.3 2.4 0 3.4 6.6 1.7 6.6 5.1 0 1.5-1.4 2.5-3.3 2.5-1.7 0-3-.7-3.8-1.8'/%3E%3C/svg%3E");
+        }
+
+        .tabs::before {
+            display: none !important;
+        }
+
+        .tabs-menu-button {
+            flex: none;
+            width: 38px;
+            min-width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 10px;
+            padding: 0;
+            border: 0;
+            border-radius: 8px;
+            color: #ffffff;
+            background: var(--vscode-panel);
+            cursor: pointer;
+        }
+
+        .tabs-menu-button::before {
+            content: "";
+            width: 21px;
+            height: 21px;
+            background: currentColor;
+            -webkit-mask: var(--icon-menu) center / contain no-repeat;
+            mask: var(--icon-menu) center / contain no-repeat;
+        }
+
+        body.is-nav-expanded .tabs {
+            width: 188px !important;
+            align-items: stretch !important;
+        }
+
+        body.is-nav-expanded #tab-contents {
+            left: 188px !important;
+        }
+
+        body.is-nav-expanded .tabs-menu-button {
+            width: 100%;
+            justify-content: start;
+            padding-left: 12px;
+        }
+
+        body.is-nav-expanded .tabs-menu-button::after {
+            content: "Menu";
+            margin-left: 12px;
+            color: var(--vscode-text);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .tabs button {
+            position: relative;
+            flex: none !important;
+            width: 42px !important;
+            min-width: 42px !important;
+            height: 42px !important;
+            display: grid !important;
+            place-items: center !important;
+            padding: 0 !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            background: transparent !important;
+            color: var(--vscode-muted) !important;
+            font-size: 0 !important;
+            box-shadow: none !important;
+            overflow: visible !important;
+            cursor: pointer !important;
+        }
+
+        .tabs .tabs-menu-button {
+            font-size: 0 !important;
+            width: 42px !important;
+            min-width: 42px !important;
+            height: 42px !important;
+            margin-bottom: 10px !important;
+            border-radius: 4px !important;
+            background: var(--vscode-panel) !important;
+            color: var(--vscode-text) !important;
+        }
+
+        .tabs button::before {
+            content: "";
+            flex: none;
+            width: 21px;
+            height: 21px;
+            background: currentColor;
+            -webkit-mask: var(--tab-icon) center / contain no-repeat;
+            mask: var(--tab-icon) center / contain no-repeat;
+        }
+
+        .tabs button[data-tab="watchlist"]::before {
+            content: "▦";
+        }
+
+        .tabs button[data-tab="advanced-chart"]::before {
+            content: "⌁";
+        }
+
+        .tabs button[data-tab="stock-heatmap"]::before {
+            content: "▥";
+        }
+
+        .tabs button[data-tab="etf-heatmap"]::before {
+            content: "◫";
+        }
+
+        .tabs button[data-tab="crypto-heatmap"]::before {
+            content: "₿";
+        }
+
+        .tabs button[data-tab="usd-quotes"]::before {
+            content: "$";
+            font-weight: 800;
+        }
+
+        .tabs button[data-tab="watchlist"] {
+            --tab-icon: var(--icon-market);
+        }
+
+        .tabs button[data-tab="advanced-chart"] {
+            --tab-icon: var(--icon-chart);
+        }
+
+        .tabs button[data-tab="stock-heatmap"] {
+            --tab-icon: var(--icon-stock-heatmap);
+        }
+
+        .tabs button[data-tab="etf-heatmap"] {
+            --tab-icon: var(--icon-etf-heatmap);
+        }
+
+        .tabs button[data-tab="crypto-heatmap"] {
+            --tab-icon: var(--icon-crypto);
+        }
+
+        .tabs button[data-tab="usd-quotes"] {
+            --tab-icon: var(--icon-usd);
+        }
+
+        .tabs button[data-tab]::before {
+            content: "" !important;
+        }
+
+        body.is-nav-expanded .tabs .tab-button {
+            width: 100% !important;
+            min-width: 0 !important;
+            display: flex !important;
+            justify-content: flex-start !important;
+            align-items: center !important;
+            gap: 12px !important;
+            padding: 0 12px !important;
+            border-radius: 4px !important;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            text-align: left;
+        }
+
+        body.is-nav-expanded .tabs .tab-button::before {
+            flex: none;
+            width: 22px;
+            height: 22px;
+            text-align: center;
+        }
+
+        .tabs button::after {
+            content: attr(data-label);
+            position: absolute;
+            left: 48px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: max-content;
+            max-width: 180px;
+            padding: 5px 8px;
+            border: 1px solid var(--vscode-border);
+            border-radius: 4px;
+            background: var(--vscode-panel);
+            color: var(--vscode-text);
+            font-size: 12px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .12s ease;
+            z-index: 1300;
+        }
+
+        .tabs button:hover::after {
+            opacity: 1;
+        }
+
+        body.is-nav-expanded .tabs button::after {
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        body.is-nav-expanded .tabs .tab-button::after {
+            display: none !important;
+        }
+
+        .tabs .tabs-menu-button::after,
+        .tabs .tabs-menu-button:hover::after {
+            display: none !important;
+        }
+
+        body.is-nav-expanded .tabs .tabs-menu-button {
+            width: 100% !important;
+            min-width: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            padding: 0 12px !important;
+        }
+
+        body.is-nav-expanded .tabs .tabs-menu-button::after {
+            content: "Menu" !important;
+            display: inline !important;
+            position: static !important;
+            transform: none !important;
+            width: auto !important;
+            max-width: none !important;
+            margin-left: 12px !important;
+            padding: 0 !important;
+            border: 0 !important;
+            background: transparent !important;
+            color: var(--vscode-text) !important;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            opacity: 1 !important;
+        }
+
+        .tabs button:hover {
+            color: var(--vscode-text) !important;
+            background: var(--vscode-panel) !important;
+        }
+
+        .tabs button.active {
+            color: #ffffff !important;
+            background: var(--vscode-side-active) !important;
+        }
+
+        .tabs button.active::before {
+            color: #ffffff;
+        }
+
+        .tabs button.active::after {
+            border-left-color: var(--vscode-blue);
+        }
+
+        .tabs button.active {
+            box-shadow: inset 2px 0 0 var(--vscode-blue) !important;
+        }
+
+        #tab-contents {
+            top: 0 !important;
+            left: var(--vscode-rail) !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            padding: 0 !important;
+            background: var(--vscode-bg) !important;
+        }
+
+        .tab-content,
+        .watchlist-view,
+        .watchlist-detail,
+        .category-grid {
+            background: var(--vscode-bg) !important;
+        }
+
+        .watchlist-toolbar {
+            min-height: 58px !important;
+            padding: 8px 14px !important;
+            border-bottom: 1px solid var(--vscode-border) !important;
+            background: var(--vscode-panel) !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+        }
+
+        .watchlist-title {
+            color: var(--vscode-text) !important;
+            font-size: 17px !important;
+            font-weight: 700 !important;
+        }
+
+        .watchlist-breadcrumb,
+        .category-card-meta,
+        .watchlist-subtitle {
+            color: var(--vscode-muted) !important;
+        }
+
+        .watchlist-back,
+        .watchlist-view-toggle,
+        .watchlist-subtitle,
+        .category-ticker-link {
+            border-color: var(--vscode-border) !important;
+            background: var(--vscode-panel-2) !important;
+            color: var(--vscode-text) !important;
+            box-shadow: none !important;
+        }
+
+        .watchlist-view-button {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 7px !important;
+            color: var(--vscode-muted) !important;
+        }
+
+        .watchlist-view-button::before {
+            flex: none;
+            font-size: 13px;
+            line-height: 1;
+        }
+
+        .watchlist-view-button[data-view="chart"]::before {
+            content: "\25A6";
+        }
+
+        .watchlist-view-button[data-view="list"]::before {
+            content: "\2630";
+        }
+
+        .watchlist-view-button-label {
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .watchlist-view-button.active {
+            background: var(--vscode-blue) !important;
+            color: #ffffff !important;
+        }
+
+        .category-grid {
+            gap: 10px !important;
+            padding: 10px !important;
+        }
+
+        .category-card {
+            border: 1px solid var(--vscode-border) !important;
+            border-radius: 6px !important;
+            background: #1b1b1b !important;
+            color: var(--vscode-text) !important;
+            box-shadow: none !important;
+            transition: border-color .14s ease, background .14s ease;
+        }
+
+        .category-card:hover,
+        .category-card.is-navigable:hover,
+        .category-card.is-navigable:focus-visible {
+            border-color: #5a5a5a !important;
+            background: #202020 !important;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .category-card-title {
+            color: var(--vscode-text) !important;
+            font-weight: 700 !important;
+        }
+
+        .category-card-header {
+            min-height: 34px !important;
+            height: auto !important;
+            display: block !important;
+            align-items: start !important;
+            gap: 12px !important;
+            padding: 0 !important;
+        }
+
+        .category-card-heading {
+            min-width: 0 !important;
+        }
+
+        .category-ticker-tag {
+            position: static !important;
+            inset: auto !important;
+            width: 100% !important;
+            max-width: none !important;
+            height: 86px !important;
+            min-height: 86px !important;
+            border: 1px solid var(--vscode-border) !important;
+            border-radius: 4px !important;
+            background: #1b1b1b !important;
+            overflow: hidden !important;
+            box-shadow: none !important;
+        }
+
+        .category-ticker-tag>.tradingview-widget-container,
+        .category-ticker-tag .tradingview-widget-container__widget,
+        .category-ticker-tag iframe {
+            background: transparent !important;
+            background-color: transparent !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .category-ticker-tag .ticker-quote-widget,
+        .category-ticker-tag .ticker-quote-widget * {
+            background: #1b1b1b !important;
+            background-color: #1b1b1b !important;
+        }
+
+        .category-ticker-tag .ticker-quote-widget {
+            color-scheme: dark !important;
+        }
+
+        .category-ticker-tag .tradingview-widget-copyright {
+            display: none !important;
+        }
+
+        .category-quote-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 10px;
+            padding: 0;
+        }
+
+        .category-count-pill {
+            min-height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+            border: 1px solid var(--vscode-border);
+            border-radius: 4px;
+            background: var(--vscode-panel-2);
+            color: var(--vscode-muted);
+            font-size: 12px;
+            font-weight: 650;
+            white-space: nowrap;
+        }
+
+        .category-card>.category-ticker-tag {
+            margin-top: 8px;
+        }
+
+        .category-chart,
+        .watchlist-detail>.tradingview-widget-container {
+            border-color: var(--vscode-border) !important;
+            border-radius: 4px !important;
+            background: #1b1b1b !important;
+            box-shadow: none !important;
+            --tv-widget-background-color: #1b1b1b;
+            --tv-widget-text-color: #d4d4d4;
+            --tv-widget-hover-background-color: #2d2d30;
+        }
+
+        .watchlist-empty {
+            border-color: var(--vscode-border) !important;
+            border-radius: 6px !important;
+            background: var(--vscode-panel) !important;
+            color: var(--vscode-muted) !important;
+        }
+
+        @media (max-width: 899px) {
+            .tabs {
+                width: var(--vscode-rail) !important;
+                height: auto !important;
+                padding: 8px 6px !important;
+            }
+
+            body.is-nav-expanded .tabs {
+                width: 164px !important;
+            }
+
+            body.is-nav-expanded #tab-contents {
+                left: 164px !important;
+            }
+
+            .tabs button[data-tab="advanced-chart"],
+            .tabs button[data-tab="stock-heatmap"],
+            .tabs button[data-tab="etf-heatmap"],
+            .tabs button[data-tab="crypto-heatmap"] {
+                display: none !important;
+            }
+
+            #tab-contents {
+                top: 0 !important;
+                left: var(--vscode-rail) !important;
+                padding: 0 !important;
+            }
+
+            .watchlist-toolbar,
+            .is-compact-market-map .watchlist-toolbar {
+                min-height: 58px !important;
+                grid-template-columns: 34px minmax(0, 1fr) auto !important;
+                padding: 8px 10px !important;
+            }
+
+            .watchlist-view-button {
+                width: 34px !important;
+                min-width: 34px !important;
+                padding: 0 !important;
+                gap: 0 !important;
+            }
+
+            .watchlist-view-button-label {
+                display: none !important;
+            }
+
+            .category-grid,
+            .is-compact-market-map .category-grid {
+                grid-template-columns: 1fr !important;
+                grid-auto-rows: minmax(320px, 58vh) !important;
+                gap: 10px !important;
+                padding: 10px !important;
+            }
+
+            .category-card-header {
+                min-height: 34px !important;
+                height: auto !important;
+                padding-right: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            .category-ticker-tag {
+                width: auto !important;
+                height: 86px !important;
+            }
+
+            .category-quote-row {
+                grid-template-columns: 1fr;
+                gap: 7px;
+            }
+
+            .category-count-pill {
+                justify-self: start;
+            }
+        }
     </style>
 </head>
 
@@ -1244,12 +1849,13 @@
     <script type="module" src="https://widgets.tradingview-widget.com/w/es/tv-ticker-tag.js"></script>
 
     <div class="tabs">
-        <button class="tab-button active" data-tab="watchlist">Market Map</button>
-        <button class="tab-button" data-tab="advanced-chart">Advanced Chart</button>
-        <button class="tab-button" data-tab="stock-heatmap">Stock Heatmap</button>
-        <button class="tab-button" data-tab="etf-heatmap">ETF Heatmap</button>
-        <button class="tab-button" data-tab="crypto-heatmap">Crypto Heatmap</button>
-        <button class="tab-button" data-tab="usd-quotes">USD/ARS</button>
+        <button class="tabs-menu-button" type="button" aria-label="Expandir menu" aria-expanded="false" title="Menu"></button>
+        <button class="tab-button active" data-tab="watchlist" data-label="Market Map" title="Market Map">Market Map</button>
+        <button class="tab-button" data-tab="advanced-chart" data-label="Advanced Chart" title="Advanced Chart">Advanced Chart</button>
+        <button class="tab-button" data-tab="stock-heatmap" data-label="Stock Heatmap" title="Stock Heatmap">Stock Heatmap</button>
+        <button class="tab-button" data-tab="etf-heatmap" data-label="ETF Heatmap" title="ETF Heatmap">ETF Heatmap</button>
+        <button class="tab-button" data-tab="crypto-heatmap" data-label="Crypto Heatmap" title="Crypto Heatmap">Crypto Heatmap</button>
+        <button class="tab-button" data-tab="usd-quotes" data-label="USD/ARS" title="USD/ARS">USD/ARS</button>
     </div>
 
     <div id="tab-contents">
@@ -1580,15 +2186,76 @@
             return link;
         }
 
+        function createTickerQuoteWidget(symbolName, title) {
+            const container = document.createElement('div');
+            container.className = 'tradingview-widget-container ticker-quote-widget';
+            container.style.background = '#1b1b1b';
+            container.style.backgroundColor = '#1b1b1b';
+            container.style.colorScheme = 'dark';
+
+            const widget = document.createElement('div');
+            widget.className = 'tradingview-widget-container__widget';
+            widget.style.background = '#1b1b1b';
+            widget.style.backgroundColor = '#1b1b1b';
+            container.appendChild(widget);
+
+            const copyright = document.createElement('div');
+            copyright.className = 'tradingview-widget-copyright';
+            copyright.innerHTML = '<a href="https://www.tradingview.com/markets/" rel="noopener nofollow" target="_blank"><span class="blue-text">Markets today</span></a><span class="trademark"> by TradingView</span>';
+            container.appendChild(copyright);
+
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-tickers.js';
+            script.async = true;
+            script.text = JSON.stringify({
+                symbols: [
+                    {
+                        proName: symbolName,
+                        title: title || symbolName
+                    }
+                ],
+                colorTheme: "dark",
+                locale: "en",
+                largeChartUrl: "",
+                isTransparent: false,
+                showSymbolLogo: true
+            }, null, 2);
+            container.appendChild(script);
+
+            return container;
+        }
+
         function mountMarketQuotes(container, symbolsGroups) {
             const cfg = {
                 colorTheme: "dark",
-                locale: "es",
-                isTransparent: false,
-                showSymbolLogo: true,
+                dateRange: "3M",
+                locale: "en",
+                largeChartUrl: "",
+                isTransparent: true,
+                showFloatingTooltip: true,
+                plotLineColorGrowing: "rgba(76, 175, 80, 1)",
+                plotLineColorFalling: "rgba(242, 54, 69, 1)",
+                gridLineColor: "rgba(240, 243, 250, 0)",
+                scaleFontColor: "#DBDBDB",
+                belowLineFillColorGrowing: "rgba(76, 175, 80, 0.12)",
+                belowLineFillColorFalling: "rgba(242, 54, 69, 0.12)",
+                belowLineFillColorGrowingBottom: "rgba(76, 175, 80, 0)",
+                belowLineFillColorFallingBottom: "rgba(242, 54, 69, 0)",
+                symbolActiveColor: "rgba(255, 255, 255, 0.12)",
+                tabs: symbolsGroups.map(group => ({
+                    title: group.name,
+                    symbols: (group.symbols || []).map(symbol => ({
+                        s: symbol.name,
+                        d: symbol.displayName || symbol.shortName || symbol.name
+                    })),
+                    originalTitle: group.name
+                })),
+                support_host: "https://www.tradingview.com",
                 width: "100%",
                 height: "100%",
-                symbolsGroups: symbolsGroups
+                showSymbolLogo: true,
+                showChart: false
             };
 
             container.innerHTML = '';
@@ -1597,7 +2264,7 @@
             widgetContainer.innerHTML = '<div class="tradingview-widget-container__widget"></div>';
 
             const s = document.createElement('script');
-            s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js';
+            s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js';
             s.async = true;
             s.innerHTML = JSON.stringify(cfg, null, 2);
             widgetContainer.appendChild(s);
@@ -1706,7 +2373,14 @@
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.className = `watchlist-view-button${activeView === view ? ' active' : ''}`;
-                button.textContent = label;
+                button.dataset.view = view;
+                button.setAttribute('aria-label', label);
+
+                const labelText = document.createElement('span');
+                labelText.className = 'watchlist-view-button-label';
+                labelText.textContent = label;
+                button.appendChild(labelText);
+
                 button.addEventListener('click', () => setMarketMapView(node.id, view));
                 viewToggle.appendChild(button);
             });
@@ -1731,11 +2405,11 @@
             card.tabIndex = 0;
             card.setAttribute('role', 'button');
             card.addEventListener('click', event => {
-                if (event.defaultPrevented || event.target.closest('.category-ticker-link')) return;
+                if (event.defaultPrevented || event.target.closest('.category-ticker-tag')) return;
                 navigateToNode(node.id);
             });
             card.addEventListener('keydown', event => {
-                if (event.target.closest('.category-ticker-link')) return;
+                if (event.target.closest('.category-ticker-tag')) return;
                 if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault();
                     navigateToNode(node.id);
@@ -1761,17 +2435,30 @@
                 : `${symbolCount} simbolos`;
 
             heading.appendChild(cardTitle);
-            heading.appendChild(meta);
             header.appendChild(heading);
 
+            let quoteRow = null;
+
             if (representative) {
+                quoteRow = document.createElement('div');
+                quoteRow.className = 'category-quote-row';
+
                 const tagHost = document.createElement('div');
                 tagHost.className = 'category-ticker-tag';
-                tagHost.appendChild(createTickerLink(representative.name));
-                card.appendChild(tagHost);
+                tagHost.appendChild(createTickerQuoteWidget(representative.name, representative.shortName || node.name));
+
+                const count = document.createElement('div');
+                count.className = 'category-count-pill';
+                count.textContent = meta.textContent;
+
+                quoteRow.appendChild(tagHost);
+                quoteRow.appendChild(count);
             }
 
             card.appendChild(header);
+            if (quoteRow) {
+                card.appendChild(quoteRow);
+            }
 
             if (representative) {
                 const chart = document.createElement('div');
@@ -1803,14 +2490,22 @@
             meta.textContent = symbol.displayName || symbol.name;
 
             heading.appendChild(cardTitle);
-            heading.appendChild(meta);
             header.appendChild(heading);
+
+            const quoteRow = document.createElement('div');
+            quoteRow.className = 'category-quote-row';
 
             const tagHost = document.createElement('div');
             tagHost.className = 'category-ticker-tag';
-            tagHost.appendChild(createTickerLink(symbol.name));
-            card.appendChild(tagHost);
+            tagHost.appendChild(createTickerQuoteWidget(symbol.name, symbol.shortName || symbol.name));
+            const count = document.createElement('div');
+            count.className = 'category-count-pill';
+            count.textContent = symbol.type || 'simbolo';
+
+            quoteRow.appendChild(tagHost);
+            quoteRow.appendChild(count);
             card.appendChild(header);
+            card.appendChild(quoteRow);
 
             const chart = document.createElement('div');
             chart.className = 'category-chart is-loading';
@@ -1901,7 +2596,6 @@
 
 
         function initAdvancedChart(data) {
-            const symbolsList = Object.keys(data.symbols || {});
             const cfg = {
                 allow_symbol_change: true,
                 calendar: false,
@@ -1915,16 +2609,16 @@
                 locale: "es",
                 save_image: true,
                 style: "1",
-                symbol: "BCBA:IMV",
+                symbol: "AMEX:SPY",
                 theme: "dark",
                 timezone: "America/Argentina/Buenos_Aires",
                 backgroundColor: "#0d0f14",
                 gridColor: "rgba(42, 46, 57, 0.72)",
-                watchlist: symbolsList,
+                watchlist: [],
                 withdateranges: true,
                 range: "12M",
                 compareSymbols: [],
-                studies: ["DM@tv-basicstudies", "OBV@tv-basicstudies"],
+                studies: ["DM@tv-basicstudies", "OBV@tv-basicstudies", "STD;EMA"],
                 autosize: true,
                 support_host: "https://www.tradingview.com"
             };
@@ -2058,11 +2752,20 @@
             initSymbols();
 
             const tabs = document.querySelector('.tabs');
+            const menuButton = document.querySelector('.tabs-menu-button');
             let isDown = false;
             let startX = 0;
             let scrollLeft = 0;
 
+            menuButton?.addEventListener('click', () => {
+                const expanded = document.body.classList.toggle('is-nav-expanded');
+                menuButton.setAttribute('aria-expanded', String(expanded));
+                menuButton.setAttribute('aria-label', expanded ? 'Contraer menu' : 'Expandir menu');
+                menuButton.title = expanded ? 'Contraer menu' : 'Menu';
+            });
+
             tabs.addEventListener('mousedown', (e) => {
+                if (e.target.closest('button')) return;
                 if (e.button !== 0) return;
                 isDown = true;
                 startX = e.pageX - tabs.offsetLeft;
